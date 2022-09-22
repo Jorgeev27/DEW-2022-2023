@@ -7,7 +7,7 @@ acumulado en cada iteración en una variable.
 
 */
 
-var num = 0;
+let num = 0;
 for(i = 1; i<=10; i++){
     num += i;
 }
