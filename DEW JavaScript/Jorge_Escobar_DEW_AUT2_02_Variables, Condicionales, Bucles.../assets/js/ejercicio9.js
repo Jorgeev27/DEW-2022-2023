@@ -13,8 +13,8 @@ d) ‘¡¡Sólo sé contar de 0 a 6!!’, para los demás casos.
 
 */
 
-var num = parseInt(prompt("Dame un numero"));
-var resultado = num % 2;
+let num = parseInt(prompt("Dame un numero"));
+let resultado = num % 2;
 switch (num) {
     case 0:
         alert("Este es muy facil, prueba otro");
