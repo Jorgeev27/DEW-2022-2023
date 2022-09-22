@@ -13,3 +13,26 @@ d) ‘¡¡Sólo sé contar de 0 a 6!!’, para los demás casos.
 
 */
 
+var num = parseInt(prompt("Dame un numero"));
+var resultado = num % 2;
+switch (num) {
+    case 0:
+        alert("Este es muy facil, prueba otro");
+        resultado;
+        num=parseInt(prompt("Dame un numero"));
+        break;
+    case 2:
+    case 4:
+    case 6:
+        resultado;
+        alert("El numero es par");
+        break;
+    case 1:
+    case 3:
+    case 5:
+        resultado;
+        alert("El numero es impar");
+        break;
+    case 7:
+        alert("Solo se contar de 0 a 6");
+  }
