@@ -13,3 +13,9 @@ d) Dentro del bucle sólo puede estar la sentencia console.log(i, j).
 
 */
 
+for(i = 0; i > 8; i++){
+    console.log(i);
+    for(j = 20; j < 0; j-3){
+        console.log(j);
+    }
+}
