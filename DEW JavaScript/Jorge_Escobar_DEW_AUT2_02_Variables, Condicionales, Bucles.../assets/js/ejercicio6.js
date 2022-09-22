@@ -8,8 +8,8 @@ este proceso 4 veces más.
 */
 
 for(i = 0; i < 5; i++){
-    var num = parseInt(prompt("Introduce un numero"));
-    var numMas5 = alert("Estos son los 5 numeros siguientes al numero introducido: " + "("+ num + ") " + 
+    let num = parseInt(prompt("Introduce un numero"));
+    let numMas5 = alert("Estos son los 5 numeros siguientes al numero introducido: " + "("+ num + ") " + 
     parseInt(num +1) + "-" + parseInt(num +2) + "-" + parseInt(num +3) + "-" + parseInt(num +4) + "-" + parseInt(num +5));
     console.log(numMas5);
 }
