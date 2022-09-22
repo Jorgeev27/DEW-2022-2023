@@ -13,9 +13,9 @@ c) Las suma de las 3 variables es mayor que 10 Y las tres variables son diferent
 
 */
 
-var a = prompt ("Dame la variable a");
-var b = prompt ("Dame la variable b");
-var c = prompt ("Dame la variable c");
+let a = prompt ("Dame la variable a");
+let b = prompt ("Dame la variable b");
+let c = prompt ("Dame la variable c");
 
 if(a < 0 || b < 0 || c < 0){ //Si 1 de las variables es negativa
     alert("Al menos una de las 3 variables es negativa");
