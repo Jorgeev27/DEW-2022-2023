@@ -8,9 +8,9 @@ Este proceso deberás repetirlo 5 veces.
 */
 
 for(i = 0; i <5; i++){
-    var num1 = prompt("Primer numero");
-    var num2 = prompt("Segundo numero");
-    var resultado = 0;
+    let num1 = prompt("Primer numero");
+    let num2 = prompt("Segundo numero");
+    let resultado = 0;
     resultado =  parseInt(num1) + parseInt(num2);
     console.log(num1 + "+" + num2 + "=" + resultado);
 }
