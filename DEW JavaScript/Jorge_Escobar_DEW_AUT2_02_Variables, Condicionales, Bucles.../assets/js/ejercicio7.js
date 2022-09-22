@@ -7,12 +7,12 @@ número de intentos que le quedan.
 
 */
 
-var contadorFallo = 2;
-var capitalPais = "Bruselas";
-var acierto = false;
-var intro = alert("Te voy a decir un pais y tu me tienes que adivinar la capital");
+let contadorFallo = 2;
+let capitalPais = "Bruselas";
+let acierto = false;
+let intro = alert("Te voy a decir un pais y tu me tienes que adivinar la capital");
 while(contadorFallo >=0 && !acierto){
-    var respuestaCapital = prompt("Capital de... Belgica");
+    let respuestaCapital = prompt("Capital de... Belgica");
     if(respuestaCapital == capitalPais){
         acierto = true;
         alert("Felicidades!!!! Has acertado");
