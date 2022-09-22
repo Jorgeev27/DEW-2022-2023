@@ -7,9 +7,9 @@ el número posterior.
 
 */
 
-var numero1 = prompt("Introduzca el primer número");
-var numero2 = prompt("Introduzca el segundo número");
-var numero3 = prompt("Introduzca el tercer número");
+let numero1 = prompt("Introduzca el primer número");
+let numero2 = prompt("Introduzca el segundo número");
+let numero3 = prompt("Introduzca el tercer número");
 
 console.log(parseInt(numero1) +1);
 console.log(parseInt(numero2) +1);
