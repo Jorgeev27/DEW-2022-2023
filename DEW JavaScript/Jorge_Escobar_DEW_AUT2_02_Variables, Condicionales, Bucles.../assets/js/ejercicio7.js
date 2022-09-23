@@ -12,7 +12,7 @@ let capitalPais = "Bruselas";
 let acierto = false;
 let intro = alert("Te voy a decir un pais y tu me tienes que adivinar la capital");
 while(contadorFallo >=0 && !acierto){
-    let respuestaCapital = prompt("Capital de... Belgica");
+    var respuestaCapital = prompt("Capital de... Belgica");
     if(respuestaCapital == capitalPais){
         acierto = true;
         alert("Felicidades!!!! Has acertado");
