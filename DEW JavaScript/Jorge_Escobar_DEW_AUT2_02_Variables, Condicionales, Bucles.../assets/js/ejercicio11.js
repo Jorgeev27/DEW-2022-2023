@@ -7,7 +7,6 @@ y que 75.2ºF son 24ºC).
 
 */
 
-function tiempo(){
-let temperatura = parseInt(prompt("Introduce la temperatura"));
-let farenheitACelsius= (F-32) * 5/9;
-}
+let temperatura = parseFloat(prompt("Introduce la temperatura"));
+let farenheitACelsius = (temperatura - 32) * 5/9;
+alert("La temperatura es: " + farenheitACelsius + " grados Celsius");
