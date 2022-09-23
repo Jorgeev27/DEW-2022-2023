@@ -7,7 +7,7 @@ Este proceso deberás repetirlo 5 veces.
 
 */
 
-for(i = 0; i <5; i++){
+for(i = 0; i < 5; i++){
     let num1 = prompt("Primer numero");
     let num2 = prompt("Segundo numero");
     let resultado = 0;
