@@ -10,3 +10,23 @@ mínimo de billetes y monedas.
 
 */
 
+let dinero=prompt("Introduce tu dinero");
+var monedas=Array(500, 200, 100, 50, 20, 10, 5, 2, 1);
+var cambioMonedas=Array(0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+for(i = 0; i < monedas.length; i++){
+    if(dinero >= monedas[i]){
+        cambioMonedas[i] = parseInt(dinero/monedas[i]);
+        dinero = (dinero - (cambioMonedas[i] * monedas[i]));
+    }
+}
+
+for(i = 0; i < monedas.length; i++){
+    if(cambioMonedas[i] > 0){
+        if(monedas[i] >= 5){
+            document.write("Tienes en desglose: " + cambioMonedas[i] + " billetes de: " + monedas[i] + " euros <br/>");
+        }else{
+            document.write(cambioMonedas[i] + " monedas de: " + monedas[i] + " euros <br/>");
+        }
+    }
+}
