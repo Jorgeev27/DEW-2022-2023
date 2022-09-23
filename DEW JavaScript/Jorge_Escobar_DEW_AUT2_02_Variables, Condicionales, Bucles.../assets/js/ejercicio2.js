@@ -8,7 +8,7 @@ acumulado en cada iteración en una variable.
 */
 
 let num = 0;
-for(i = 1; i<=10; i++){
+for(i = 1; i < 11; i++){
     num += i;
+    console.log(num);
 }
-console.log(num);
