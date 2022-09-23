@@ -7,6 +7,6 @@ No podrás utilizar el operador aritmético de elevar a una potencia.
 
 let num = 15;
 for (a = 1; a <= 6; a++){
-   let resultado = num**a;
+   let resultado = num ** a;
+   console.log(resultado);
 }
-console.log(resultado);
