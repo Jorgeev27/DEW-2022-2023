@@ -18,8 +18,6 @@ let resultado = num % 2;
 switch (num) {
     case 0:
         alert("Este es muy facil, prueba otro");
-        resultado;
-        num=parseInt(prompt("Dame un numero"));
         break;
     case 2:
     case 4:
@@ -33,6 +31,6 @@ switch (num) {
         resultado;
         alert("El numero es impar");
         break;
-    case 7:
+    default:
         alert("Solo se contar de 0 a 6");
   }
