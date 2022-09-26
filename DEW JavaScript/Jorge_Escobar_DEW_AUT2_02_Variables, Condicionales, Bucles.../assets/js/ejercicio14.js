@@ -22,7 +22,7 @@ function calculoFecha(fecha, formatoFecha){
      
     if(formatoFecha == "d"){
         let dias = parseInt(diferenciaTiempo/24/3600); // segundos a dias
-        document.write("Pasaron " + dias + " segundos desde tu fecha de nacimiento");
+        document.write("Pasaron " + dias + " dias desde tu fecha de nacimiento");
     }else if(formatoFecha == "h"){
         let horas = parseInt(diferenciaTiempo/3600); // segundos a horas
         document.write("Pasaron " + horas + " horas desde tu fecha de nacimiento");
