@@ -10,20 +10,29 @@ Si no es ninguna de estas unidades, se mostrará un error.
 
 */
 
-let fechaNacimiento = prompt("Introduce tu fecha de nacimiento: formato yyyy-mm-dd");
-fechaEnSegMinHD(fechaNacimiento);
+let fecha = prompt("Dime tu fecha de nacimiento: formato YYYY-MM-DD");
+let formatoFecha = prompt("Formato de fecha en; d: dias, h: horas, m: minutos, s: segundos");
+calculoFecha(fecha, formatoFecha);
 
-function fechaEnSegMinHD(fechaSegMinHD){
-    let fechaActual = new Date();
-    fecha =  fechaActual.getFullYear() + "/" + (fechaActual.getMonth() + 1) + fechaActual.getDate();
-    let fechaSegundos = parseInt(fechaActual.getTime());
-    let fechaMinutos = parseInt(fechaSegundos / 60);
-    let fechaHoras = parseInt(fechaMinutos / 60);
-    let fechaDias = parseInt(fechaHoras / 24);
-    fechaSegMinHD = fechaSegundos, fechaMinutos, fechaHoras, fechaDias;
-
-    document.write("Pasaron " + fechaSegundos + " segundos desde tu fecha de nacimiento <br/>");
-    document.write("Pasaron " + fechaMinutos + " minutos desde tu fecha de nacimiento <br/>");
-    document.write("Pasaron " + fechaHoras + " horas desde tu fecha de nacimiento <br/>");
-    document.write("Pasaron " + fechaDias + " dias desde tu fecha de nacimiento <br/>");
+function calculoFecha(fecha, formatoFecha){
+    let date = new Date(fecha); // definicion de fecha actual recogida en parametros
+    dateUnix = date.getTime()/1000; // tiempo de la fecha de nacimiento en segundos
+    nowUnix = Date.now()/1000; // tiempo actual en segundos
+    diferenciaTiempo = nowUnix - dateUnix; // tiempo actual - tiempo de la fecha de nacimiento en segundos
+     
+    if(formatoFecha == "d"){
+        let dias = parseInt(diferenciaTiempo/24/3600); // segundos a dias
+        document.write("Pasaron " + dias + " segundos desde tu fecha de nacimiento");
+    }else if(formatoFecha == "h"){
+        let horas = parseInt(diferenciaTiempo/3600); // segundos a horas
+        document.write("Pasaron " + horas + " horas desde tu fecha de nacimiento");
+    }else if(formatoFecha == "m"){
+        let minutos = parseInt(diferenciaTiempo/60); // segundos a minutos
+        document.write("Pasaron " + minutos + " minutos desde tu fecha de nacimiento");
+    }else if(formatoFecha == "s"){
+        let segundos = parseInt(diferenciaTiempo); // segundos
+        document.write("Pasaron " + segundos + " segundos desde tu fecha de nacimiento");
+    }else{
+        alert("ERROR al introducir la fecha de nacimiento");
+    }
 }
