@@ -1,4 +1,5 @@
-/* 
+/*
+
 2. Escribe un programa que pida una nota 
 y muestre en una ventana emergente la siguiente información:
 a. Si la nota está entre 0 y 5 el mensaje indicará: Suspenso
@@ -10,7 +11,9 @@ e. Si no se introduce un número real: ERROR! – Indique un
     
 f. Si es un número que no está comprendido entre 0 y 10: ERROR! 
     Indique unnúmero del rango 0 a 10
+
 */
+
     let nota = prompt("Dame tu nota de clase");
     function notaClase(nota){
         if(nota < 0){
