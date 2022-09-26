@@ -1,4 +1,5 @@
-/* 
+/*
+
 1. Resuelve estas expresiones y explica porqué devuelve ese valor:
    a. 2 > 3 +2
    b. 1 + false +3.5 
