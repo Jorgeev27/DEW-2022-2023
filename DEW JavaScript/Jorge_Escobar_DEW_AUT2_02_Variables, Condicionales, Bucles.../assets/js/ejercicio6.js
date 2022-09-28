@@ -11,5 +11,7 @@ for(i = 0; i < 5; i++){
     let num = parseInt(prompt("Introduce un numero"));
     let numMas5 = alert("Estos son los 5 numeros siguientes al numero introducido: " + "("+ num + ") " + 
     parseInt(num +1) + "-" + parseInt(num +2) + "-" + parseInt(num +3) + "-" + parseInt(num +4) + "-" + parseInt(num +5));
-    console.log(numMas5);
+    let resultado = 0;
+    resultado = num + (num+1) + (num+2) + (num+3) + (num+4) + (num+5);
+    console.log(resultado);
 }

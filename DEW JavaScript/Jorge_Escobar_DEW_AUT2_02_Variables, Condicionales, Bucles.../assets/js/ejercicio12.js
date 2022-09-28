@@ -14,7 +14,6 @@ let temperatura = parseFloat(prompt("Introduce la temperatura"));
 let farenheitACelsius = (temperatura - 32) * 5/9;
 let unidad = prompt("¿Quieres la unidad?");
 let respuesta1 = "si";
-let respuesta2 = "no";
 
 
     if (unidad == respuesta1){

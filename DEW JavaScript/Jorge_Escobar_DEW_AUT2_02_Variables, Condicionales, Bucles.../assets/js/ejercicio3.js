@@ -7,7 +7,7 @@ dos índices en cada iteración. Realiza 10 iteraciones en cada bucle.
 
 for(i = 1; i <= 11; i++){
     console.log(i);
-    for(i = 1; i <=11; j++){
+    for(j = 1; j <=11; j++){
         console.log(j);
     }
 }

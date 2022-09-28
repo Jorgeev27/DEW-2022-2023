@@ -33,4 +33,4 @@ switch (num) {
         break;
     default:
         alert("Solo se contar de 0 a 6");
-  }
+}

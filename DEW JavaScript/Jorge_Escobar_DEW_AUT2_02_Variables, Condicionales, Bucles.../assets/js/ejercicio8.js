@@ -13,14 +13,17 @@ c) Las suma de las 3 variables es mayor que 10 Y las tres variables son diferent
 
 */
 
-let a = prompt ("Dame la variable a");
-let b = prompt ("Dame la variable b");
-let c = prompt ("Dame la variable c");
+let a = prompt("Dame la variable a");
+let b = prompt("Dame la variable b");
+let c = prompt("Dame la variable c");
+let suma = a + b + c;
 
 if(a < 0 || b < 0 || c < 0){ //Si 1 de las variables es negativa
     alert("Al menos una de las 3 variables es negativa");
 }else if(a == 0 && b == 0 && c == 0){ //Si las 3 variables son iguales a 0
     alert("Las tres variables son iguales a 0");
-}else if(a + b + c > 10 && (a != b) && (b != c) && (c != a)){ //Si entre las 3 variables es mayor a 10 y las 3 variables son diferentes
-    alert("Las suma de las 3 variables es mayor que 10 y las 3 variables son diferentes");
+}else if(suma<10){ //Si entre las 3 variables es mayor a 10 y las 3 variables son diferentes
+    alert("Las suma de las 3 variables es mayor que 10");
+}else{
+    alert("Las 3 variables son diferentes");
 }

@@ -12,6 +12,7 @@ c) i se incrementa de 1 en 1, j se decrementa de 3 en 3.
 d) Dentro del bucle sólo puede estar la sentencia console.log(i, j).
 
 */
-for (let i = 0, j = 20; i > 8 && j < 0; i++, j - 3){
+
+for (let i = 0, j = 20; i < 9 && j < 0; i++, j - 3){
     console.log(i, j);
 }
