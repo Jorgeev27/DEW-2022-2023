@@ -1,10 +1,15 @@
 /* 
 
 3. Conversión de variables:  ¿Qué generan los siguientes códigos?
+
 a. parseInt("15");
+
 b. parseInt("15.5");
+
 c. parseInt(15.5);
+
 d. parseInt("true");
+
 e. parseInt(true);
 
 */
