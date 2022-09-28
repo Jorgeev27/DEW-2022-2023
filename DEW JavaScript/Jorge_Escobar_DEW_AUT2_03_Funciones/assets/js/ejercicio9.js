@@ -8,3 +8,9 @@ Implementar también la función inversa hms2hdec(h,m,s).
 
 */
 
+let decAHora = prompt("Dime una hora en formato decimal para pasarlo a formato hh:mm:ss");
+decimalAHora(decAHora);
+
+function decimalAHora(decAHora){
+    
+}

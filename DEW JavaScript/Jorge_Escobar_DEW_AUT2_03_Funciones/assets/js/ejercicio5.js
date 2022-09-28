@@ -15,7 +15,7 @@ partir del número del NIF.
 
 */
 
-let dni = prompt("Dime tu DNI para saber la letra");
+let dni = parseInt(prompt("Dime tu DNI para saber la letra"));
 
 function letraDNI(dni){
     if(dni < 0 || dni > 99999999){

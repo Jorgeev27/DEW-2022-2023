@@ -26,3 +26,12 @@ salido el valor 2440587.5?
 
 */
 
+let fecha = prompt("Dime una fecha en formato yyyy-mm-dd");
+fechaJuliana();
+
+function fechaJuliana(){
+    let date = new Date();
+    let fecha_juliana = tiempo_unix + 2440587.5;
+    dateUnix = date.getTime()/1000;
+    nowUnix = Date.getTime()/1000;
+}

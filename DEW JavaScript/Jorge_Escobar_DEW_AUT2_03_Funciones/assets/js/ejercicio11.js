@@ -30,3 +30,23 @@ cosDegAlt(x) usando para ello sinDeg(x)
 
 */
 
+
+//let gradosARadianes = prompt("Dime los grados: ");
+let radianesAGrados= prompt("Dime los radianes: ");
+let radianes = 0;
+let grados = 0;
+deg2rad(gradosARadianes);
+rad2deg(radianesAGrados);
+/*function deg2rad(gradosARadianes){
+    radianes = gradosARadianes * (Math.PI / 180);
+    return radianes;
+}
+document.write("Los radianes son: " + radianes.toFixed(2));
+*/
+
+
+function rad2deg(radianesAGrados){
+    grados = (radianesAGrados * 180) / Math.PI;
+    return grados;
+}
+document.write("Los grados son: " + grados.toFixed(2));

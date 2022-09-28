@@ -13,7 +13,7 @@ function cuadradoCubo(num){
             let cuadrado = Math.pow(num, 2);
             console.log(num + "**" + 2 + "=" + cuadrado);
         }else{
-            let cubo = Math.pow(num,3);
+            let cubo = Math.pow(num, 3);
             console.log(num + "**" + 3 + "=" + cubo);
         }
         num ++;

@@ -5,12 +5,16 @@ formato: “DD/MM/YYYY hh:mm:ss TimeZone”.
 
 */
 
+let fecha = new Date();
+fechaActual();
+
 setTimeout(
     function(){
         location.reload();
     }, 
     1000);
 
-let fecha = new Date();
-document.write("Hoy es " + fecha.getDate() + "/" + fecha.getMonth() + "/" + fecha.getFullYear() + "<br/>");
-document.write("Y son las " + fecha.getHours() + ":"+ fecha.getMinutes() + ":" + fecha.getSeconds());
+function fechaActual(){
+    document.write("Hoy es " + fecha.getDate() + "/" + fecha.getMonth() + "/" + fecha.getFullYear() + "<br/>");
+    document.write("Y son las " + fecha.toTimeString());
+}
