@@ -30,23 +30,86 @@ cosDegAlt(x) usando para ello sinDeg(x)
 
 */
 
-
-//let gradosARadianes = prompt("Dime los grados: ");
-let radianesAGrados= prompt("Dime los radianes: ");
-let radianes = 0;
-let grados = 0;
+/**
+ * APARTADO A:
+ */
+let gradosARadianes = prompt("Dime los grados:");
 deg2rad(gradosARadianes);
-rad2deg(radianesAGrados);
-/*function deg2rad(gradosARadianes){
-    radianes = gradosARadianes * (Math.PI / 180);
+
+function deg2rad(gradosARadianes){
+    let radianes = gradosARadianes * 180 / Math.PI;
     return radianes;
 }
 document.write("Los radianes son: " + radianes.toFixed(2));
-*/
 
+
+
+
+let radianesAGrados= prompt("Dime los radianes:");
+rad2deg(radianesAGrados);
 
 function rad2deg(radianesAGrados){
-    grados = (radianesAGrados * 180) / Math.PI;
+    let grados = radianesAGrados * Math.PI / 180;
     return grados;
 }
 document.write("Los grados son: " + grados.toFixed(2));
+
+
+
+/**
+ * APARTADO B:
+ */
+
+/*
+let anguloSeno = prompt("Dime un angulo:");
+sinDeg(anguloSeno);
+
+function sinDeg(anguloSeno){
+    let radianesAngulo = deg2rad(anguloSeno);
+    let seno = Math.sin(radianesAngulo);
+    return seno;
+}
+document.write("El seno de este angulo es: " + anguloSeno.toFixed(2));
+
+
+
+
+let anguloCoseno = prompt("Dime un angulo:");
+cosDeg(anguloCoseno);
+
+function cosDeg(anguloCoseno){
+    let radianesAngulo = deg2rad(anguloCoseno);
+    let coseno = Math.cos(radianesAngulo);
+    return coseno;
+}
+document.write("El coseno de este angulo es: " +anguloCoseno.toFixed(2));
+*/
+
+
+
+/**
+ * APARTADO C:
+ */
+
+/*
+let senoCoseno = prompt("Dime un angulo:");
+sinDegAlt(senoCoseno);
+
+function sinDegAlt(senoCoseno){
+    let seno = Math.sqrt(1- Math.pow(cosDeg(anguloCoseno), 2));
+    return seno;
+}
+document.write("El seno del coseno del angulo es: " + senoCoseno);
+
+
+
+
+let cosenoSeno = prompt("Dime un angulo:");
+sinDegAlt(cosenoSeno);
+
+function sinDegAlt(cosenoSeno){
+    let coseno = Math.sqrt(1- Math.pow(sinDeg(anguloSeno), 2));
+    return coseno;
+}
+document.write("El coseno del seno del angulo es: " + caches);
+*/

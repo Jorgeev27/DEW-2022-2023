@@ -27,11 +27,15 @@ salido el valor 2440587.5?
 */
 
 let fecha = prompt("Dime una fecha en formato yyyy-mm-dd");
-fechaJuliana();
+fechaJuliana(fecha);
 
-function fechaJuliana(){
-    let date = new Date();
-    let fecha_juliana = tiempo_unix + 2440587.5;
-    dateUnix = date.getTime()/1000;
-    nowUnix = Date.getTime()/1000;
+function fechaJuliana(fecha){
+    let fechaA = new Date(fecha); // / definicion de fecha recogida en parametros
+    fechaA = fechaA.getTime(); // milisegundos desde 1970
+    fechaA = fechaA / 1000; // milisegundos a segundos
+    fechaA = fechaA / 3600; // segundos a horas
+    fechaA = fechaA / 24; // horas a dias
+    let fecha_juliana = fechaA + 2440587.5; // valor de los dias más 2440587.5 y tienes la fecha juliana
+    return fecha_juliana;
 }
+document.write("La fecha juliana es: " + fechaJuliana(fecha));
