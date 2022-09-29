@@ -30,12 +30,12 @@ let fecha = prompt("Dime una fecha en formato yyyy-mm-dd");
 fechaJuliana(fecha);
 
 function fechaJuliana(fecha){
-    let fechaA = new Date(fecha); // / definicion de fecha recogida en parametros
-    fechaA = fechaA.getTime(); // milisegundos desde 1970
-    fechaA = fechaA / 1000; // milisegundos a segundos
-    fechaA = fechaA / 3600; // segundos a horas
-    fechaA = fechaA / 24; // horas a dias
-    let fecha_juliana = fechaA + 2440587.5; // valor de los dias más 2440587.5 y tienes la fecha juliana
+    let fechaUsuario = new Date(fecha); // / definicion de fecha recogida en parametros
+    fechaUsuario = fechaUsuario.getTime(); // milisegundos desde 1970
+    fechaUsuario = fechaUsuario / 1000; // milisegundos a segundos
+    fechaUsuario = fechaUsuario / 3600; // segundos a horas
+    fechaUsuario = fechaUsuario / 24; // horas a dias
+    let fecha_juliana = fechaUsuario + 2440587.5; // valor de los dias más 2440587.5 y tienes la fecha juliana
     return fecha_juliana;
 }
 document.write("La fecha juliana es: " + fechaJuliana(fecha));
