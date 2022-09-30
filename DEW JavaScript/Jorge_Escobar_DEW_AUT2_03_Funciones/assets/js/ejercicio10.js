@@ -32,9 +32,7 @@ fechaJuliana(fecha);
 function fechaJuliana(fecha){
     let fechaUsuario = new Date(fecha); // / definicion de fecha recogida en parametros
     fechaUsuario = fechaUsuario.getTime(); // milisegundos desde 1970
-    fechaUsuario = fechaUsuario / 1000; // milisegundos a segundos
-    fechaUsuario = fechaUsuario / 3600; // segundos a horas
-    fechaUsuario = fechaUsuario / 24; // horas a dias
+    fechaUsuario = fechaUsuario / 1000 / 3600 / 24; //valor de segundos, horas y dias
     let fecha_juliana = fechaUsuario + 2440587.5; // valor de los dias más 2440587.5 y tienes la fecha juliana
     return fecha_juliana;
 }

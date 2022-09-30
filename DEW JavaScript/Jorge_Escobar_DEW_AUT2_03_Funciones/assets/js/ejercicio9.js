@@ -12,5 +12,13 @@ let decAHora = prompt("Dime una hora en formato decimal para pasarlo a formato h
 decimalAHora(decAHora);
 
 function decimalAHora(decAHora){
-    
+    if(decAHora < 0 || decAHora > 24){
+        prompt("ERROR!! Indica un numero entre 1 y 24");
+    }else{
+        alert("Tu numero es: " + decAHora);
+    }
 }
+
+
+// numero *60 /100
+// numero *100/60

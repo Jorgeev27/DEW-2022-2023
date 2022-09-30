@@ -47,28 +47,3 @@ function vocalesFrase(frase){
     document.write("Hay " + vocalesFrasesO + " vocales de O en la frase <br/>");
     document.write("Hay " + vocalesFrasesU + " vocales de U en la frase <br/>");
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*function vocalesFrase(frase){
-    let vocales = Array("a", "A", "e", "E", "i", "I", "o", "O", "u", "U");
-        if (vocales.indexOf(frase.charAt(0) != -1)){
-            contadorVocales++;
-        }
-    }
-    alert("Hay " + contadorVocales + " vocales");
-    */
