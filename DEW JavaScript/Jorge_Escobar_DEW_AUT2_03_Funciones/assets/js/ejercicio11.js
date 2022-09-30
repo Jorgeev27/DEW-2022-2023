@@ -33,83 +33,73 @@ cosDegAlt(x) usando para ello sinDeg(x)
 /**
  * APARTADO A:
  */
-let gradosARadianes = prompt("Dime los grados:");
-deg2rad(gradosARadianes);
+
+function a(){
+    let gradosARadianes = parseInt(prompt("Introduce los grados para pasarlo a Radianes"));
+    alert("Los Radianes son: " + deg2rad(gradosARadianes).toFixed(3));
+}
 
 function deg2rad(gradosARadianes){
-    let radianes = gradosARadianes * 180 / Math.PI;
+    let radianes = gradosARadianes * Math.PI / 180;
     return radianes;
 }
-document.write("Los radianes son: " + radianes.toFixed(2));
 
-
-
-
-let radianesAGrados= prompt("Dime los radianes:");
-rad2deg(radianesAGrados);
+function b(){
+    let radianesAGrados = parseInt(prompt("Introduce los radianes para pasarlo a Grados"));
+    alert("Los Grados son: " + rad2deg(radianesAGrados).toFixed(3));
+}
 
 function rad2deg(radianesAGrados){
-    let grados = radianesAGrados * Math.PI / 180;
+    let grados = radianesAGrados * 180 / Math.PI;
     return grados;
 }
-document.write("Los grados son: " + grados.toFixed(2));
-
-
 
 /**
- * APARTADO B:
+ * APARTADO B
  */
 
-/*
-let anguloSeno = prompt("Dime un angulo:");
-sinDeg(anguloSeno);
+function c(){
+    let anguloGradoSeno = parseInt(prompt("Introduce un angulo para averiguar el seno de dicho angulo"));
+    alert("El Seno del Angulo es: " + sinDeg(anguloGradoSeno).toFixed(3));
+}
 
-function sinDeg(anguloSeno){
-    let radianesAngulo = deg2rad(anguloSeno);
-    let seno = Math.sin(radianesAngulo);
+function sinDeg(anguloGradoSeno){
+    let anguloEnRadianes = deg2rad(anguloGradoSeno);
+    let seno = Math.sin(anguloEnRadianes);
     return seno;
 }
-document.write("El seno de este angulo es: " + anguloSeno.toFixed(2));
 
+function d(){
+    let anguloGradoCoseno = parseInt(prompt("Introduce un angulo para averiguar el coseno de dicho angulo"));
+    alert("El Coseno del Angulo es: " + cosDeg(anguloGradoCoseno).toFixed(3));
+}
 
-
-
-let anguloCoseno = prompt("Dime un angulo:");
-cosDeg(anguloCoseno);
-
-function cosDeg(anguloCoseno){
-    let radianesAngulo = deg2rad(anguloCoseno);
-    let coseno = Math.cos(radianesAngulo);
+function cosDeg(anguloGradoCoseno){
+    let anguloEnRadianes = deg2rad(anguloGradoCoseno);
+    let coseno = Math.cos(anguloEnRadianes);
     return coseno;
 }
-document.write("El coseno de este angulo es: " +anguloCoseno.toFixed(2));
-*/
-
-
 
 /**
- * APARTADO C:
+ * APARTADO C
  */
 
-/*
-let senoCoseno = prompt("Dime un angulo:");
-sinDegAlt(senoCoseno);
+function e(){
+    let anguloGradoCosenoSeno = parseInt(prompt("Introduce el coseno para averiguar el seno del angulo"));
+    alert("El Coseno del Seno del Angulo es: " + sinDegAlt(anguloGradoCosenoSeno).toFixed(3));
+}
 
-function sinDegAlt(senoCoseno){
-    let seno = Math.sqrt(1- Math.pow(cosDeg(anguloCoseno), 2));
+function sinDegAlt(anguloGradoCosenoSeno){
+    let seno = Math.sqrt(1 - Math.pow(cosDeg(anguloGradoCosenoSeno), 2));
     return seno;
 }
-document.write("El seno del coseno del angulo es: " + senoCoseno);
 
+function f(){
+    let anguloGradoSenoCoseno = parseInt(prompt("Introduce el seno para averigurar el coseno del angulo"));
+    alert("El Seno del Coseno del Angulo es: " + cosDegAlt(anguloGradoSenoCoseno).toFixed(3));
+}
 
-
-
-let cosenoSeno = prompt("Dime un angulo:");
-sinDegAlt(cosenoSeno);
-
-function sinDegAlt(cosenoSeno){
-    let coseno = Math.sqrt(1- Math.pow(sinDeg(anguloSeno), 2));
+function cosDegAlt(anguloGradoSenoCoseno){
+    let coseno = Math.sqrt(1 - Math.pow(sinDeg(anguloGradoSenoCoseno), 2));
     return coseno;
 }
-document.write("El coseno del seno del angulo es: " + caches);
-*/
