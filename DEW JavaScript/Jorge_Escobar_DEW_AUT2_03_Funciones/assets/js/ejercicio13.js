@@ -16,7 +16,6 @@ let seis = "SEIS";
 let siete = "SIETE";
 let ocho = "OCHO";
 let nueve = "NUEVE";
-let decenas = Array(30, 40, 50, 60, 70, 80, 90);
 numeroALetras(numero);
 
 function numeroALetras(numero){
