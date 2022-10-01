@@ -8,17 +8,40 @@ Implementar también la función inversa hms2hdec(h,m,s).
 
 */
 
-let decAHora = prompt("Dime una hora en formato decimal para pasarlo a formato hh:mm:ss");
-decimalAHora(decAHora);
-
-function decimalAHora(decAHora){
-    if(decAHora < 0 || decAHora > 24){
-        prompt("ERROR!! Indica un numero entre 1 y 24");
-    }else{
-        alert("Tu numero es: " + decAHora);
-    }
+function a(){
+    let hora = parseFloat(prompt("Hora formato decimal"));
+    alert("La hora es: " + hdec2hms(hora));
 }
 
+function hdec2hms(hora){
+    let horas;
+    let minutos;
+    let segundos;
+    let minutosSegundos = hora - Math.floor(hora); //saca min y seg del numero
+    horas = Math.floor(hora); // hora entera del numero
+    segundos = minutosSegundos * 3600; // segundos del numero entero
+    minutos = Math.floor(segundos / 60); // minutos del numero entero
+    segundos %= 60; // segundos
 
-// numero *60 /100
-// numero *100/60
+    let decimalHora = horas + ":" + minutos + ":" + segundos.toFixed(0);
+    return decimalHora;
+}
+
+function b(){
+    let hora = prompt("Introduce hora. Formato hh:mm:ss");
+    alert("El formato decimal es: " + hms2hdec(hora));
+}
+
+function hms2hdec(hora){
+    let horas;
+    let minutos;
+    let segundos;
+    const tiempoArray = hora.split(":");
+
+    horas = parseInt(tiempoArray[0]);
+    minutos = parseInt(tiempoArray[1]);
+    segundos = parseInt(tiempoArray[2]);
+
+    let horaDecimal = horas + (minutos / 60) + (segundos / 3600);
+    return horaDecimal;
+}

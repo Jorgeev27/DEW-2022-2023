@@ -35,31 +35,60 @@ tener que asignar un valor inicial a la variable result.
 
 */
 
-let result = 1, arg1, arg2, res1, res2;
-
-//C:
-let valor = false;
-
-while(valor == true){
-    arg1 = Math.random() - 0.5;
-
-    if(arg1 > 0){
-        console.log("ERROR!!");
-        //B: 
-        break;
-    }else{
+function a(){
+    let result = 1, arg1, arg2, res1, res2;
+    while (result > 0) {
+        arg1 = Math.random() - 0.5;
+        if(arg1 < 0){
+            continue; //Continue si el numero de la raiz cuadrada negativo
+        }
         res1 = Math.sqrt(arg1);
-    }
+        arg2 = Math.random();
+        if(arg1 + arg2 == 0){
+            break; //Break si la suma es 0
+        }
+        res2 = res1/(arg1 + arg2);
+        result = res1 + res2;
+        console.log(result);
 
-    arg2 = Math.random();
-    if(arg1 + arg2 == 0){
-        //A:
-        console.log("ERROR!!");
-        continue;
-    }else{
-        res2 = res1 / (arg1 + arg2);
     }
-    result = res1 + res2;
-    valor = false;
-    console.log(result);
+}
+
+function b(){
+    let result = 1, arg1, arg2, res1, res2;
+    let divisionPorCero = false;
+    while (result > !divisionPorCero) {
+        arg1 = Math.random() - 0.5;
+        if(arg1 < 0){
+            res1 = Math.sqrt(arg1);
+            arg2 = Math.random();
+        }
+        if(arg1 + arg2 == 0){
+            divisionPorCero = true;
+        }else{
+        res2 = res1/(arg1 + arg2);
+        result = res1 + res2;
+        console.log(result);
+        }
+    }
+}
+
+function c(){
+    let result, arg1, arg2, res1, res2;
+    do{ //Cambiamos do por do while para asegurar de que result no este inicializado
+        arg1 = Math.random() - 0.5;
+        if(arg1 < 0){
+            continue;
+        }
+        res1 = Math.sqrt(arg1);
+        arg2 = Math.random();
+        if(arg1 + arg2 == 0){
+            break;
+        }
+        res2 = res1/(arg1 + arg2);
+        result = res1 + res2;
+        console.log(result);
+        
+
+    }while(result > 0);
 }
