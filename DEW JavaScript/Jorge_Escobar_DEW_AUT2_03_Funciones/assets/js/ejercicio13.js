@@ -267,7 +267,7 @@ function numeroALetras(numero){
                     document.write(numero + ": " + "CUARENTA Y " + cuatro);
                 }
                 break;
-            case '55':
+            case '45':
                 if(numero == 45){
                     document.write(numero + ": " + "CUARENTA Y " + cinco);
                 }
