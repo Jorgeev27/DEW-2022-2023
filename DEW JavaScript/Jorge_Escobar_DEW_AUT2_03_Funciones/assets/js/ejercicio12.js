@@ -41,7 +41,7 @@ function vocalesFrase(frase){
             vocalesFrasesU++;
         }
     }
-    vocales = document.write("Total de vocales: " + (vocalesFrasesA + vocalesFrasesE + vocalesFrasesI + vocalesFrasesO + vocalesFrasesU) + " vocales <br/>");
+    vocales = document.write("Total de vocales: " + (vocalesFrasesA + vocalesFrasesE + vocalesFrasesI + vocalesFrasesO + vocalesFrasesU) + "<br/>");
     document.write("Hay " + vocalesFrasesA + " vocales de A en la frase <br/>");
     document.write("Hay " + vocalesFrasesE + " vocales de E en la frase <br/>");
     document.write("Hay " + vocalesFrasesI + " vocales de I en la frase <br/>");
