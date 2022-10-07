@@ -62,7 +62,7 @@ function coloresParImparYRaton(){
               event.target.style.backgroundColor = "orange"; // Evento para que cuando deje de pasar el ratón, vuelva a su color original
           });
       }else{
-          td[i].style.backgroundColor = "yellow"; // Color naranja
+          td[i].style.backgroundColor = "yellow"; // Color amarillo
           td[i].addEventListener("mouseover", function(event){
               event.target.style.backgroundColor = "red"; // Evento para que cuando pase el ratón sea de color rojo
           });
