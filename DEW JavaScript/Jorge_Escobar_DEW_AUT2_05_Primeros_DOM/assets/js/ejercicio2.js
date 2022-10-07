@@ -11,7 +11,9 @@
    
 */
 
-
+/**
+ * Función que muestra el texto a la mitad y si pulsamos el botón lo veremos completo
+ */
 
 function muestra() {
     document.getElementById("adicional").style.display = "inline"; // Cambiamos a inline para ver el texto completo

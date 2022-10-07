@@ -10,10 +10,19 @@
     Todas las respuestas debes añadirlas en la sección "información"
    
 */
+
+/**
+ * Función que muestra el número de enlaces que hay en la página
+ */
+
 function numeroEnlacesPagina(){
     let infomacion = document.getElementById("informacion"); // Se selecciona el elemento id "informacion"
     infomacion.innerHTML += "El numero de enlaces de la pagina es: " + document.getElementsByTagName("a").length + "<br/>"; // Se le añade a la informacion
 }
+
+/**
+ * Función que muestra la dirección del penúltimo enlace
+ */
 
 function direccionPenultimoEnlace(){
     let enlaces = document.getElementsByTagName("a"); // Cogemos todos los elementos "a"
@@ -21,6 +30,10 @@ function direccionPenultimoEnlace(){
     let informacion = document.getElementById("informacion"); // Se selecciona el elemento id "informacion"
     informacion.innerHTML += "La direccion del penultimo enlace: " + penultimoEnlace.href + "<br/>"; // Se le añade a la informacion
 }
+
+/**
+ * Función que muestra el número de enlaces que hay de http://prueba/
+ */
 
 function numeroEnlacesPrueba(){
     let enlaces = document.getElementsByTagName("a"); // Cogemos todos los elementos "a"
@@ -34,6 +47,10 @@ function numeroEnlacesPrueba(){
     let informacion = document.getElementById("informacion"); // Se selecciona el elemento id "informacion"
     informacion.innerHTML = "El numero de enlaces que hay a http://prueba/ es: " + conteoEnlaces + "<br/>"; // Se le añade a la informacion
 }
+
+/**
+ * Función que muestra el número de enlaces que hay en el tercer párrafo
+ */
 
 function numeroEnlacesTercerParrafo(){
     let tercerParrafo = document.getElementsByTagName("p")[2]; // Cogemos el indice 2 del array "p"

@@ -8,7 +8,9 @@ En este ejercicio, sólo se debe saber que al pinchar sobre el botón, se ejecut
    
 */
 
-
+/**
+ * Función que añade el elemento a la lista
+ */
 
 function anade() {
     let elementoNuevo = document.createElement("li"); // Creamos elemento "li"
