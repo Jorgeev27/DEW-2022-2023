@@ -34,7 +34,7 @@ Realiza:
 }
 
 /**
-* Función que cuando se puse en la celda de algún número descienda,
+* Función que cuando se puse en la celda de algún número descienda.
 */
 
 function descender(){
