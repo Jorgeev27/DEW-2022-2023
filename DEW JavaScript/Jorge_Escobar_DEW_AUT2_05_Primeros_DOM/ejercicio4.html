@@ -6,11 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jorge Escobar DEW Ejercicio 4</title>
 </head>
+<style>
+    table{
+        border: 1px solid black;
+        text-align: center;
+        width: 15%;
+    }
+    td{
+        border: 1px solid black;
+    }
+</style>
 <body>
     <form action="index.html">
         <input type="submit" value="Atras"/><br/>
     </form>
     <h1>Ejercicio 4 DEW</h1>
+    <table id="tabla">
+        <tr>
+            <td id="numero" onclick="descender(this)">1</td>
+        </tr>
+        <tr>
+            <td id="numero" onclick="descender(this)">2</td>
+        </tr>
+        <tr>
+            <td id="numero" onclick="descender(this)">3</td>
+        </tr>
+    </table><br/>
+    <div class="botones">
+        <button onclick="elemento4()">Elemento 4</button>
+        <button onclick="coloresParImparYRaton()">Colores Par-Impar Y Raton</button>
+    </div>
     <script src="assets/js/ejercicio4.js"></script>
 </body>
 </html>
