@@ -26,7 +26,7 @@ Realiza:
       td.innerHTML = "4"; // Le ponemos texto y/o numero. En este caso, lo puse con numero
       td.id = "3"; // Le pasamos el id "cuatro" que tiene que crear
       td.onclick = function(){
-          descender(this); // Y ponemos la función descender que hace que cuando pulsemos en la celda, dicho número descienda
+          descender(); // Y ponemos la función descender que hace que cuando pulsemos en la celda, dicho número descienda
       }
       tr.appendChild(td); // Añadimos el td
       tabla.append(tr); // Añadimos el tr
@@ -72,4 +72,3 @@ function coloresParImparYRaton(){
       }
   }
 }
-
