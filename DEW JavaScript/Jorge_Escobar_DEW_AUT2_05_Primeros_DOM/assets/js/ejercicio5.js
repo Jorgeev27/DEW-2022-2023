@@ -14,16 +14,28 @@ viendo que cada vez le cuesta más (aunque el algoritmo es muy rápido).
    
 */
 
-let fecha = Date.now(); //Creamos la fecha ahora
-let numeroPi = new CalculatePi(60); //Te calcula el numero PI
-let numeros = numeroPi.name.split("");
+let inicio = Date.now();
+let pi = new CalculatePi(60);
+let nums = pi.name.split("");
+document.write("<table>");
+ //primera fila   
+document.write("<td><b>Dígitos</b></td>");
+document.write("<td> <b>Tiempo</b></td>");//Calculamos la diferencia de ms después del calculo y añadimos a segundo td
+document.write("<td><b>Num. PI</b></td>");
+document.write("</tr>");
 
-for(let i = 3; i <= 60; i++){
-    let fechaOriginar = Date.now(); //Creas la fecha
-    let pi = new CalculatePi(i).name;
-
-    let fechas = document.write(i + ": " + (Date.now() - fechaOriginar)) + "<br/>";
+for (let i = 3; i <= 60; i++){
+    document.write("<tr>");
+    let fecha_originar = Date.now(); //Obtenemos los ms antes de el calculo
+    let pi = new CalculatePi(i).name;//Calculamos pi
+    
+    
+    document.write("<td>"+i+"</td>");
+    document.write("<td>"+(Date.now() - fecha_originar) + " ms" +"</td>");//Calculamos la diferencia de ms después del calculo y añadimos a segundo td
+    document.write("<td>"+pi+"</td>");
+    document.write("</tr>");
 }
+    document.write("</tr></table>");
 
 /**
  * Función que calcula los decimales de PI
