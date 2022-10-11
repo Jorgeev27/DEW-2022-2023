@@ -1,0 +1,46 @@
+body{
+    background-color: white;
+}
+.container{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.pantalla{
+    background-color: green;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+}
+#modPantalla{
+    color: white;
+    font-weight: bolder;
+}
+.ventana{
+    background-color: orange;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    justify-content: center;
+    border-radius: 20px;
+    width: 30%;
+    text-align: center;
+}
+#modVentana{
+    color: white;
+    font-weight: bolder;
+}
+.despedida{
+    background-color: blueviolet;
+    
+}
+#modDespedida{
+    color: white;
+    font-weight: bolder;
+}
+#textoDes{
+    color: white;
+}
