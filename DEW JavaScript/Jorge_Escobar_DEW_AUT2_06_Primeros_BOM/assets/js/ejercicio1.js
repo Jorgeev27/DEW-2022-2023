@@ -22,7 +22,7 @@
 
 */
 
-let ventana = undefined;
+let ventana;
 
 /**
  * Función que abre la ventana del navegador
@@ -37,9 +37,48 @@ function abrir(){
  */
 
 function cerrar(){
-  if(ventana == undefined || ventana.close){
-    alert("ERROR!! No hay ventana que cerrar");
-  }else{
+  if(ventana){
     ventana.close();
+    alert("Ventana cerrada");
+  }else{
+    alert("ERROR!! No hay ventana que cerrar");
   }
+}
+
+/**
+ * Función que amplia la ventana del navegador
+ */
+
+function ampliar(){
+  if(ventana){
+    ventana.location.href="about:blank";
+    ventana.resizeBy(30,30);
+  }else{
+    alert("ERROR!! No hay ventana que cerrar");
+  }
+}
+
+/**
+ * Función que reduce la ventana del navegador
+ */
+function reducir(){
+  if(ventana){
+    ventana.location.href="about:blank";
+    ventana.resizeBy(-30, -30);
+  }else{
+    alert("ERROR!! No hay ventana que cerrar");
+  }
+  if(ventana >= window.screen){
+    alert("ERROR");
+  }
+}
+
+/**
+ * Función que mueve la ventana del navegador
+ */
+function mover(){
+    ventana.location.href="about:blank";
+    let coorX = document.getElementById("coordX").values;
+    let coordY = document.getElementById("coordY").values;
+    ventana.moveTo(coorX, coordY);
 }
