@@ -14,29 +14,29 @@ se cargará este último CSS y no el anterior y se verá tal que:
 
 window.onload = function(){
     //Modo Pantalla
-    document.getElementById("alturaDis").innerHTML = window.screen.availHeight; //Altura disponible
-    document.getElementById("anchoDis").innerHTML = window.screen.availWidth; //Anchura Disponible
-    document.getElementById("alturaTot").innerHTML = window.screen.height;
-    document.getElementById("anchoTot").innerHTML = window.screen.width;
-    document.getElementById("proColor").innerHTML = window.screen.colorDepth;
-    document.getElementById("resolucion").innerHTML = window.screen.colorDepth;
+    document.getElementById("alturaDis").innerHTML = window.screen.availHeight; // Altura Disponible
+    document.getElementById("anchoDis").innerHTML = window.screen.availWidth; // Anchura Disponible
+    document.getElementById("alturaTot").innerHTML = window.screen.height; // Altura Total
+    document.getElementById("anchoTot").innerHTML = window.screen.width; // Anchura Total
+    document.getElementById("proColor").innerHTML = window.screen.colorDepth; // Profundidad de color
+    document.getElementById("resolucion").innerHTML = window.screen.colorDepth; // Resolución (bits por pixel)
 
         //Modo Ventana
-        document.getElementById("alturaExt").innerHTML = window.outerHeight;
-        document.getElementById("anchoExt").innerHTML = window.outerWidth;
-        document.getElementById("coorX").innerHTML = window.screenX;
-        document.getElementById("coorY").innerHTML = window.screenY;
-        document.getElementById("contadorPagina").innerHTML = "Ha visitado esta pagina: " + window.history.length + " paginas";
+        document.getElementById("alturaExt").innerHTML = window.outerHeight; // Altura Exterior
+        document.getElementById("anchoExt").innerHTML = window.outerWidth; //Anchura Exterior
+        document.getElementById("coorX").innerHTML = window.screenX; // Coordenada X
+        document.getElementById("coorY").innerHTML = window.screenY; //Coordenada Y
+        document.getElementById("contadorPagina").innerHTML = "Ha visitado esta pagina: " + window.history.length + " paginas"; // Contador de páginas
 
-        if(window.navigator.userAgent.indexOf("Mozilla") > -1){ //Si es el navegador Mozilla, le asignamos la hoja de estilo correpondiente
-            let head = document.getElementsByName('HEAD')[0]; //Creamos el link al css y se lo añadimos al head
+        if(window.navigator.userAgent.indexOf("Mozilla") > -1){ // Si es el navegador Mozilla, le asignamos la hoja de estilo correpondiente
+            let head = document.getElementsByName('HEAD')[0]; // Creamos el link al css y se lo añadimos al head
             let link = document.createElement('link');
             link.rel = 'stylesheet';
             link.type = 'text/css';
             link.href = '../css/firefox.css';
             head.appendChild(link);
-        }if(window.navigator.userAgent.indexOf("Chrome") > -1){ //Si es el navegador Chrome, le asignamos la hoja de estilo correpondiente
-            let head = document.getElementsByName('HEAD')[0]; //Creamos el link al css y se lo añadimos al head
+        }if(window.navigator.userAgent.indexOf("Chrome") > -1){ // Si es el navegador Chrome, le asignamos la hoja de estilo correpondiente
+            let head = document.getElementsByName('HEAD')[0]; // Creamos el link al css y se lo añadimos al head
             let link = document.createElement('link');
             link.rel = 'stylesheet';
             link.type = 'text/css';

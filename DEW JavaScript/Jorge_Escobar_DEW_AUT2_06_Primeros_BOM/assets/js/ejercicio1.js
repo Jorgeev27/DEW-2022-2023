@@ -24,9 +24,17 @@
 
 let ventana = undefined;
 
+/**
+ * Función que abre la ventana del navegador
+ */
+
 function abrir(){
   ventana = window.open("https://www.google.es","","width=400, height=400");
 }
+
+/**
+ * Función que cierra la ventana del navegador
+ */
 
 function cerrar(){
   if(ventana == undefined || ventana.close){
