@@ -76,9 +76,18 @@ function reducir(){
 /**
  * Función que mueve la ventana del navegador
  */
-function mover(){
-    ventana.location.href="about:blank";
-    let coorX = document.getElementById("coordX").values;
-    let coordY = document.getElementById("coordY").values;
-    ventana.moveTo(coorX, coordY);
+function mover() {
+  if (ventana){ // Si la ventana está abierta
+    ventana.location.href="about:blank"; // La ponemos en about:blank
+    x = document.getElementById("x").value; // Cogemos todos los id que se llamen "X"
+    y = document.getElementById("y").value; // Cogemos todos los id que se llamen "Y"
+    if (isNaN(parseInt(x)) || isNaN(parseInt(y))) { // Si no son numeros, tanto las X como Y
+      alert("Numeros no válidos") // Alert de no validos
+    }else{
+      ventana.focus(); // Establece el foco en la ventana
+      ventana.moveTo(parseInt(x), parseInt(y)); // Y mueve las ventanas a la dirección que le asignamos
+    }
+  }else{
+    alert("ERROR!! No hay ventana que cerrar"); // Alert de no hay ventana que cerrar
+  }
 }

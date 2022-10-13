@@ -13,33 +13,30 @@
     </form>
     <h1>Ejercicio 1 DEW</h1>
     <div class="row">
-        <div class="col-2">
+        <div class="col-3">
             <button class="btn btn-primary" onclick="abrir()">Abrir Ventana</button>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <button class="btn btn-primary" onclick="cerrar()">Cerrar Ventana</button>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <button class="btn btn-primary" onclick="ampliar()">Ampliar Ventana</button>
         </div>
-        <div class="col-2">
+        <div class="col-3">
             <button class="btn btn-primary" onclick="reducir()">Reducir Ventana</button>
-        </div>
-        <div class="col-2">
-            <button class="btn btn-primary" onclick="mover()">Mover ventana</button>
         </div>
     </div><br/>
     <div class="row">
         <div class="col-2">
-            <label for="coordenadaX">Coordenada X: </label>
-            <input type="text" class="form-control" id="coordX">
+            <label for="x">Posicion X</label>
+            <input type="text" name="x" id="x">
         </div>
         <div class="col-2">
-            <label for="coordenadaY">Coordenada Y: </label>
-            <input type="text" class="form-control" id="coordY">
+            <label for="y">Posicion Y</label>
+            <input type="text" name="y" id="y">
         </div>
         <div class="col-2">
-            <button class="btn btn-primary" type="submit">Enviar Coordenadas</button>
+            <button class="btn btn-primary" onclick="mover()">Mover</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
