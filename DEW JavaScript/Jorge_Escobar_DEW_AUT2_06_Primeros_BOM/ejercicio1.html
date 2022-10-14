@@ -7,40 +7,46 @@
     <title>Jorge Escobar DEW Ejercicio 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-primary">
     <form action="index.html">
         <input type="submit" value="Atras"/><br/>
     </form>
     <h1>Ejercicio 1 DEW</h1>
     <div class="row">
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="abrir()">Abrir Ventana</button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="cerrar()">Cerrar Ventana</button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="ampliar()">Ampliar Ventana</button>
-        </div>
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="reducir()">Reducir Ventana</button>
-        </div>
-    </div><br/>
-    <div class="row">
-        <div class="col-2">
-            <label for="x">Posicion X</label>
-            <input type="number" name="x" id="x">
+        <div class="col-11">
+            <h1 class="text-light text-center justify-content-center">Ventana Principal</h1><br>
         </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <button class="btn btn-light" onclick="abrir()">Abrir Ventana</button>
+        </div>
         <div class="col-2">
-            <label for="y">Posicion Y</label>
+            <button class="btn btn-light" onclick="cerrar()">Cerrar Ventana</button>
+        </div>
+    </div><br/>
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <button class="btn btn-light" onclick="ampliar()">Ampliar Ventana</button>
+        </div>
+        <div class="col-2">
+            <button class="btn btn-light" onclick="reducir()">Reducir Ventana</button>
+        </div>
+    </div>
+    </div><br/>
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <label class="text-light" for="x">Posicion X</label>
+            <input type="number" name="x" id="x">
+        </div>
+        <div class="col-2">
+            <label class="text-light" for="y">Posicion Y</label>
             <input type="number" name="y" id="y">
         </div>
     </div><br>
-    <div class="row">
-        <div class="col-3">
-            <button class="btn btn-primary" onclick="mover()">Mover</button>
+    <div class="row justify-content-center">
+        <div class="col-1">
+            <button class="btn btn-light" onclick="mover()">Mover</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
