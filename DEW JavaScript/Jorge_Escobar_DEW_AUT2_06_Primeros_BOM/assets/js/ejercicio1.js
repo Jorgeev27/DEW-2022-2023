@@ -22,14 +22,20 @@
 
 */
 
-let ventana;
+let ventana; // Variable ventana
+let x; // Variable coordenada X
+let y; // Variable coordenada Y
 
 /**
  * Función que abre la ventana del navegador
  */
 
 function abrir(){
-  ventana = window.open("https://www.google.es","","width=400, height=400");
+  if(ventana){ // Si la ventana está abierta
+    alert("ERROR!! Ya hay una ventana abierta"); // Error de que ya está abierta
+  }else{
+    ventana = window.open("https://www.google.es","","width=400, height=400"); // Sino crea una ventana nueva
+  }
 }
 
 /**
@@ -37,11 +43,11 @@ function abrir(){
  */
 
 function cerrar(){
-  if(ventana){
+  if(ventana){ // Si la ventana está abierta
     ventana.close();
-    alert("Ventana cerrada");
+    alert("Ventana cerrada. No hay ventana que cerrar"); // La cierra y mensaje de que se ha cerrado
   }else{
-    alert("ERROR!! No hay ventana que cerrar");
+    alert("ERROR!! No hay ventana que cerrar"); // Sino hay ninguna ventana abierta y le da al botón, mensaje de error al cerrar la ventana
   }
 }
 
@@ -50,11 +56,15 @@ function cerrar(){
  */
 
 function ampliar(){
-  if(ventana){
-    ventana.location.href="about:blank";
-    ventana.resizeBy(30,30);
+  if(ventana){ // Si la ventana está abierta
+    ventana.location.href="about:blank"; // Pone la ventana en blanco
+    if(ventana.innerHeight + 30 > screen.height || ventana.innerWidth + 30 > screen.width){ // Si la ventana supera los límites de la pantalla
+      alert("ERROR!! Esta ventana no se puede ampliar mas"); // Error de que no se puede ampliar más
+    }else{
+    ventana.resizeBy(30, 30); // Sino la ventana se amplia
+    }
   }else{
-    alert("ERROR!! No hay ventana que cerrar");
+    alert("ERROR!! No hay ventana que ampliar"); // Sino hay ninguna ventana abierta y le da al botón, mensaje de error al ampliar la ventana
   }
 }
 
@@ -62,14 +72,15 @@ function ampliar(){
  * Función que reduce la ventana del navegador
  */
 function reducir(){
-  if(ventana){
-    ventana.location.href="about:blank";
-    ventana.resizeBy(-30, -30);
+  if(ventana){ // Si la ventana está abierta
+    ventana.location.href="about:blank"; // Pone la ventana en blanco
+    if(ventana.innerHeight - 30 < 100 || ventana.innerWidth - 30 < 100){ // Si la ventana es más pequeña que 100
+      alert("ERROR!! Esta ventana no se puede reducir mas"); // Error de que no se puede reducir más
+    }else{
+    ventana.resizeBy(-30, -30); // Sino la ventana se reduce
+    }
   }else{
-    alert("ERROR!! No hay ventana que cerrar");
-  }
-  if(ventana >= window.screen){
-    alert("ERROR");
+    alert("ERROR!! No hay ventana que reducir"); // Sino hay ninguna ventana abierta y le da al botón, mensaje de error al reducir la ventana
   }
 }
 
@@ -78,7 +89,7 @@ function reducir(){
  */
 function mover() {
   if (ventana){ // Si la ventana está abierta
-    ventana.location.href="about:blank"; // La ponemos en about:blank
+    ventana.location.href="about:blank"; // La ponemos en blanco
     x = document.getElementById("x").value; // Cogemos todos los id que se llamen "X"
     y = document.getElementById("y").value; // Cogemos todos los id que se llamen "Y"
     if (isNaN(parseInt(x)) || isNaN(parseInt(y))) { // Si no son numeros, tanto las X como Y
@@ -88,6 +99,7 @@ function mover() {
       ventana.moveTo(parseInt(x), parseInt(y)); // Y mueve las ventanas a la dirección que le asignamos
     }
   }else{
-    alert("ERROR!! No hay ventana que cerrar"); // Alert de no hay ventana que cerrar
+    alert("ERROR!! No hay ventana que mover"); // Alert de no hay ventana que cerrar
   }
+  //El problema que hay con esta función: mover(), es que si le pasas numeros y letras, la ventana se mueve. Pero si solo le pasas letras, salta el error de sólo números
 }
