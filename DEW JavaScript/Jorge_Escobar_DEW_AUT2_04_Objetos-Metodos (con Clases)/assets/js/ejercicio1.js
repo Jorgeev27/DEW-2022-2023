@@ -4,9 +4,9 @@
 
 Queremos crear un objeto llamado bola que guarde: 
 
-- Coordenadas x  e  y: las coordenadas horizontal y vertical donde comienza la bola en la pantalla. 
+- Coordenadas x e y: las coordenadas horizontal y vertical donde comienza la bola en la pantalla. 
 Esto puede oscilar entre 0 (esquina superior izquierda) y el ancho y alto de la ventana del navegador 
-(esquina inferior derecha)- 600.
+(esquina inferior derecha) - 600.
 
 - Velocidad horizontal y vertical (velX y velY): a cada bola se le asigna una velocidad horizontal y vertical; 
 en términos reales, estos valores se agregan regularmente a los valores de las coordenadas x / y cuando 
@@ -16,8 +16,8 @@ animamos las bolas, para moverlas tanto en cada cuadro.
 
 - Tamaño: cada bola tiene un tamaño: este es su radio, en píxeles.
 
-Esta 'bola' tendrá un método 'dibuja' donde vamos a mostrar las coordenadas de la bola, 
-y otro método 'mover', donde la bola va a avanzar y tomará la nueva posición ( x e y ) de x+velX.
+Esta bola tendrá un método 'dibuja' donde vamos a mostrar las coordenadas de la bola, 
+y otro método 'mover', donde la bola va a avanzar y tomará la nueva posición (x e y) de x + velX.
 
 */
 
@@ -75,7 +75,7 @@ class Bola{
     }
 
     /**
-    * Método mover() que la bola avanzará a la nueva posición X e Y
+    * Método mover() que la bola avanzará a la nueva posición (X e Y), de x + velocidadX
     */
 
     mover(){
