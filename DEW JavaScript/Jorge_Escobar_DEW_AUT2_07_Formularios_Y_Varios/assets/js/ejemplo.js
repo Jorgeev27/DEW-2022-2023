@@ -7,7 +7,7 @@
  * 
  * Mostrar todos sus atributos que sean enteros.
  */
- class Persona {
+class Persona {
     nombre;
     apellidos;
     dni;
