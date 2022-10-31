@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Escobar DEW Ejercicio 10</title>
+</head>
+<body>
+    <form action="../index.html">
+        <input type="submit" value="Atras"/><br/>
+    </form>
+    <h1>Ejercicio 10 DEW</h1>
+    <div id="marcar">
+        <h2>Marcado</h2>
+        <input type="checkbox" name="abc" id="a" onclick="marcado()"/><label for="">A</label><br/>
+        <input type="checkbox" name="abc" id="b" onclick="marcado()"/><label for="">B</label><br/>
+        <input type="checkbox" name="abc" id="c" onclick="marcado()"/><label for="">C</label><br/>
+    </div>
+    <div id="select">
+        <h2>Selección</h2>
+        <label for="">Numero Inicial: </label><input type="number" id="selectIni" value="0"/><br/>
+        <label for="">Numero Final: </label><input type="number" id="selectFin" value="10"/><br/><br/>
+        <input type="text" id="selection" value="Fase de Pruebas"/><br/>
+        <button onclick="seleccion()">Seleccionar</button>
+    </div>
+
+    <div id="validez">
+        <h2>Validar</h2>
+        <label for="validacion">Pruebas: </label><input type="text" name="validacion" id="validacion" pattern="[abc]"/><br/>
+        <button onclick="validar()">Enviar</button>
+    </div>
+    <script src="../assets/js/ejercicio10.js"></script>
+</body>
+</html>
