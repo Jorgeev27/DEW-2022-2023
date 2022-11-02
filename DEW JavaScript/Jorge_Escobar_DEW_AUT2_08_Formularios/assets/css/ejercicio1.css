@@ -1,0 +1,28 @@
+label {
+    width: 150px;
+    float: left;
+    margin-bottom: 5px;
+    clear: both;
+}
+
+input {
+    float: left;
+}
+
+input, select {
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+fieldset {
+    background-color: burlywood;
+    width: 350px;
+}
+
+.error {
+    border: solid 2px #ff0000;
+}
+
+#hombre, #mujer, #asir, #daw, #dam, #pro, #ets, #fol, #dew, #dsw, #emr {
+    width: 20px;
+}

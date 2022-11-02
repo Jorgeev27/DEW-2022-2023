@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Jorge Escobar DEW Ejercicio 1</title>
+	<link rel="stylesheet" href="assets/css/ejercicio1.css" type="text/css">
+</head>
+<body>
+	<fieldset>
+		<legend>Validar Formulario</legend>
+		<form method="post" name="formulario" id="formulario">
+			<table>
+				<tr>
+					<td>
+						<label for="nombre">Nombre:</label>
+					</td>
+					<td>
+						<input type="text" name="nombre" id="nombre"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="apellidos">Apellidos:</label>
+					</td>
+					<td>
+						<input type="text" name="apellidos" id="apellidos"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="sexo">Sexo:</label>
+					</td>
+					<td>
+						<label for="hombre">Hombre <input type="radio" name="sexo" id="hombre" value="hombre"/></label>
+					</td>
+					<td>
+						<label for="mujer">Mujer <input type="radio" name="sexo" id="mujer" value="mujer"/></label>
+					</td>
+				</tr>
+				<tr>
+				<td>
+					<label for="edad">Edad:</label>
+				</td>
+				<td>
+					<input type="number" name="edad" id="edad" min="18" max="125"/>
+				</td>
+				</tr>
+				<tr>
+					<td>
+						<label for="color">Color favorito:</label>
+					</td>
+					<td>
+						<input type="color" name="colorFav" id="colorFav"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form name="formularioCiclos" id="formularioCiclos" onchange="mostrarCursos()">
+			<table>
+				<tr>
+					<td>
+						<label for="">Ciclo:</label>
+					</td>
+					<td>
+						<label for="asir">ASIR <input type="radio" name="ciclo" id="asir" value="asir"/></label>
+					</td>
+					<td>
+						<label for="daw">DAW <input type="radio" name="ciclo" id="daw" value="daw"/></label>
+					</td>
+					<td>
+						<label for="dam">DAM <input type="radio" name="ciclo" id="dam" value="dam"/></label>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form name="formularioCursos" id="formularioCursos" onchange="mostrarModulos()">
+			<table>
+				<tr>
+					<td>
+						<label for="">Curso:</label>
+					</td>
+					<td>
+						<select id="curso" name="cursos">
+							<option value="ningunCurso" selected="selected"></option>
+							<option value="primero">Primero</option>
+							<option value="segundo">Segundo</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<form name="formularioModulos" id="formularioModulos" action="">
+			<table>
+				<tr>
+					<td>
+						<label for="">Módulos:</label>
+					</td>
+					<td>
+						<input type="checkbox" name="primeroModulos" id="pro"/>
+					</td>
+					<td>
+						<label for="pro" id="priPro">PRO</label>
+					</td>
+					<td>
+						<input type="checkbox" name="primeroModulos" id="ets"/>
+					</td>
+					<td>
+						<label for="ets" id="priEts">ETS</label>
+					</td>
+					<td>
+						<input type="checkbox" name="primeroModulos" id="fol"/>
+					</td>
+					<td>
+						<label for="fol" id="priFol">FOL</label>
+					</td>
+					<td>
+						<input type="checkbox" name="segundoModulos" id="dew"/>
+					</td>
+					<td>
+						<label for="dew" id="segDew">DEW</label>
+					</td>
+					<td>
+						<input type="checkbox" name="segundoModulos" id="dsw"/>
+					</td>
+					<td>
+						<label for="dsw" id="segDsw">DSW</label>
+					</td>
+					<td>
+						<input type="checkbox" name="segundoModulos" id="emr"/>
+					</td>
+					<td>
+						<label for="emr" id="segEmr">EMR</label>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<tr>
+			<td>
+				<button type="button" name="enviar" id="enviar" onclick="validacion()">Matricular</button>
+			</td>
+			<td>
+				<button type="reset" name="limpiar" id="limpiar" onclick="limpiarForms()">Limpiar</button>
+			</td>
+		</tr>
+	</fieldset>
+	<p id="datos"></p>
+	<script src="assets/js/ejercicio1.js" type="text/javascript"></script>
+</body>
+</html>
