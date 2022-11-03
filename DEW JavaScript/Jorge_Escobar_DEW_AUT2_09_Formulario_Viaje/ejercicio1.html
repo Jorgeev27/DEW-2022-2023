@@ -15,15 +15,23 @@
         <form class="form" id="form" autocomplete="off" novalidate>
             <fieldset>
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" class="input-form" maxlength="30"/>
+                <input type="text" id="nombre" class="input-form" maxlength="30" pattern="^([\w]+){4,30}([\s]?)([\w]?){4,30}$"/>
             </fieldset>
             <fieldset>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" class="input-form" maxlength="50"/>
+                <input type="text" id="apellidos" class="input-form" maxlength="50" pattern=""/>
             </fieldset>
             <fieldset>
-                <label for="dni">DNI</label>
-                <input type="text" id="dni" class="input-form" placeholder="12345678A" maxlength="10"/>
+                <label for="dni">DNI/NIE</label>
+                <div class="select">
+                    <select id="dniNie">
+                        <option></option>
+                        <option value="dni" id="dni">DNI</option>
+                        <option value="nie" id="nie">NIE</option>
+                    </select>
+                </div>
+                <input type="text" id="nie" class="input-form" placeholder="Y12345678Z" pattern=""/><br>
+                <input type="text" id="dni" class="input-form" placeholder="12345678A" pattern=""/>
             </fieldset>
             <fieldset>
                 <label for="codigoPostal">Código Postal</label>
@@ -39,11 +47,11 @@
             </fieldset>
             <fieldset>
                 <label for="fechaIda">Fecha de Ida</label>
-                <input type="text" id="fechaIda" class="input-form" placeholder="01/01/2022"/>
+                <input type="date" id="fechaIda" class="input-form"/>
             </fieldset>
             <fieldset>
                 <label for="numeroPersonas">Número de Personas</label>
-                <input type="number" id="numeroPersonas" class="input-form"/>
+                <input type="number" id="numeroPersonas" class="input-form" min="1" placeholder="1"/>
             </fieldset>
             <fieldset>
                 <label for="telefonoFijo">Teléfono fijo</label>
@@ -91,7 +99,7 @@
             </fieldset>
             <fieldset>
                 <label for="motivo">Motivos</label>
-                <textarea name="textarea" id="motivo" cols="90" rows="5" placeholder="Motivos" onchange="validarMotivo(this.value)"></textarea>
+                <textarea name="textarea" id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud"></textarea>
             </fieldset>
             <button class="btn" type="button" id="enviar">Enviar</button>
         </form>
