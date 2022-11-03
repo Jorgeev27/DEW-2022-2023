@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Escobar DEW Ejercicio 1</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/ejercicio1.css"/>
+</head>
+<body>
+    <div class="checkout">
+        <div>
+            <p class="title">Formulario Solicitud Viaje en Barco</p>
+        </div>
+        <form class="form" id="form" autocomplete="off" novalidate>
+            <fieldset>
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" class="input-form" maxlength="30"/>
+            </fieldset>
+            <fieldset>
+                <label for="apellidos">Apellidos</label>
+                <input type="text" id="apellidos" class="input-form" maxlength="50"/>
+            </fieldset>
+            <fieldset>
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" class="input-form" placeholder="12345678A" maxlength="10"/>
+            </fieldset>
+            <fieldset>
+                <label for="codigoPostal">Código Postal</label>
+                <div class="select">
+                    <select id="codigoPostal">
+                        <option></option>
+                        <option>38400</option>
+                        <option>38311</option>
+                        <option>38450</option>
+                        <option>Otro</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="fechaIda">Fecha de Ida</label>
+                <input type="text" id="fechaIda" class="input-form" placeholder="01/01/2022"/>
+            </fieldset>
+            <fieldset>
+                <label for="numeroPersonas">Número de Personas</label>
+                <input type="number" id="numeroPersonas" class="input-form"/>
+            </fieldset>
+            <fieldset>
+                <label for="telefonoFijo">Teléfono fijo</label>
+                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789" maxlength="10"/>
+            </fieldset>
+            <fieldset>
+                <label for="telefonoMovil">Teléfono móvil</label>
+                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789 - +34123456789" maxlength="10"/>
+            </fieldset>
+            <fieldset>
+                <label for="residente">Residente</label>
+                <div class="select">
+                    <select id="residente">
+                        <option></option>
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="email">Email</label>
+                <input type="email" id="email" class="input-form" placeholder="email@email.com"/>
+            </fieldset>
+            <fieldset>
+                <label for="instagram">Instagram</label>
+                <input type="text" id="instagram" class="input-form" placeholder="usuario"/>
+            </fieldset>
+            <fieldset>
+                <label for="twitter">Twitter</label>
+                <input type="text" id="twitter" class="input-form" placeholder="@usuario"/>
+            </fieldset>
+            <fieldset>
+                <label for="vehiculo">Vehículo</label>
+                <div class="select">
+                    <select id="vehiculo">
+                        <option></option>
+                        <option>Si</option>
+                        <option>No</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for="ip">Dirección IP</label>
+                <input type="text" id="ip" class="input-form"/>
+            </fieldset>
+            <fieldset>
+                <label for="motivo">Motivo</label>
+                <textarea name="textarea" id="motivo" cols="90" rows="5" placeholder="Motivos" onchange="validarMotivo(this.value)"></textarea>
+            </fieldset>
+            <button class="btn" type="button" id="enviar">Enviar</button>
+        </form>
+    </div>
+    <script src="assets/js/ejercicio1.js"></script>
+</body>
+</html>
