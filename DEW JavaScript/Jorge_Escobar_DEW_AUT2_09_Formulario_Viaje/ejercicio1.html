@@ -12,14 +12,14 @@
         <div>
             <p class="title">Formulario Solicitud Viaje</p>
         </div>
-        <form class="form" id="form" autocomplete="off" novalidate>
+        <form class="form" id="form" autocomplete="off">
             <fieldset>
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" class="input-form" maxlength="30" pattern="^([\w]+){4,30}([\s]?)([\w]?){4,30}$"/>
+                <input type="text" id="nombre" class="input-form" pattern="([\w]+){4,30}([\s]?)([\w]?){4,30}$"/>
             </fieldset>
             <fieldset>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" class="input-form" maxlength="50" pattern=""/>
+                <input type="text" id="apellidos" class="input-form" pattern=""/>
             </fieldset>
             <fieldset>
                 <label for="dni">DNI / NIE</label>
@@ -56,11 +56,11 @@
             </fieldset>
             <fieldset>
                 <label for="telefonoFijo">Teléfono fijo</label>
-                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789" maxlength="10"/>
+                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789"/>
             </fieldset>
             <fieldset>
                 <label for="telefonoMovil">Teléfono móvil</label>
-                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789/+34123456789" maxlength="10"/>
+                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789/+34123456789"/>
             </fieldset>
             <fieldset>
                 <label for="residente">Residente</label>
@@ -103,7 +103,7 @@
                 <label for="motivo">Motivos</label>
                 <textarea name="textarea" id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud"></textarea>
             </fieldset>
-            <button class="btn" type="button" id="enviar">Enviar</button>
+            <button class="btn" id="enviar">Enviar</button>
         </form>
     </div>
     <script src="assets/js/ejercicio1.js"></script>
