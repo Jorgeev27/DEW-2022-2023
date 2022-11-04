@@ -1,3 +1,29 @@
+/* Obtener los elementos del archivo HTML. */
+
+//DNI
+let nieTexto = document.getElementById("nieTexto");
+let dniTexto = document.getElementById("dniTexto");
+let dniNie = document.getElementById("dniNie");
+
+//VEHICULO
+let vehiculo = document.getElementById("vehiculo");
+let marcaVehiculo = document.getElementById("marcaVehiculo");
+let matriculaVehiculo = document.getElementById("matriculaVehiculo");
+
+//CÓDIGO POSTAL
+let codigoPostal = document.getElementById("codigoPostal");
+let cpOtro = document.getElementById("cpOtro");
+
+/* Ocultar los elementos del archivo HTML. */
+
+onload = () =>{
+    dniTexto.style.display = "none";
+    nieTexto.style.display = "none";
+    marcaVehiculo.style.display = "none";
+    matriculaVehiculo.style.display = "none";
+    cpOtro.style.display = "none";
+}
+
 class formularioViaje{
     /* Declarar las variables que se utilizarán en la clase. */
     nombre;
@@ -50,5 +76,50 @@ class formularioViaje{
         this.vehiculo = vehiculo;
         this.direccionIP = direccionIP;
         this.motivos = motivos;
+    }
+}
+
+/**
+ * Muestra el campo de entrada de DNI o NIE según el valor del elemento seleccionado
+ */
+function mostrarDniNie(){
+    if(dniNie.value == "dni"){
+        dniTexto.style.display = "block";
+        nieTexto.style.display = "none";
+    }else if(dniNie.value == "nie"){
+        nieTexto.style.display = "block";
+        dniTexto.style.display = "none";
+    }else{
+        nieTexto.style.display = "none";
+        dniTexto.style.display = "none";
+    }
+}
+
+/**
+ * Si el valor del elemento seleccionado con el id de "vehiculo" es "si", entonces muestre los
+ * elementos de entrada con los id de "marcaVehiculo" y "matriculaVehiculo", de lo contrario, se ocultan.
+ */
+function mostrarMarcaMatriculaVehiculo(){
+    if(vehiculo.value == "si"){
+        marcaVehiculo.style.display = "block";
+        matriculaVehiculo.style.display = "block";
+    }else if(vehiculo.value == "no"){
+        marcaVehiculo.style.display = "none";
+        matriculaVehiculo.style.display = "none";
+    }else{
+        marcaVehiculo.style.display = "none";
+        matriculaVehiculo.style.display = "none";
+    }
+}
+
+/**
+ * Si el valor del elemento de selección con el id "codigoPostal" es "otro", entonces mostrar el
+ * elemento de entrada con el id "cpOtro", de lo contrario se oculta
+ */
+function mostrarOtroCP(){
+    if(codigoPostal.value == "otro"){
+        cpOtro.style.display = "block";
+    }else{
+        cpOtro.style.display = "none";
     }
 }
