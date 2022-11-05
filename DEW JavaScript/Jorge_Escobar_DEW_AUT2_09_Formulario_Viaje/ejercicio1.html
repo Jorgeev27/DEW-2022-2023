@@ -30,7 +30,7 @@
                         <option value="nie" id="nie">NIE</option>
                     </select>
                 </div><br/>
-                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[X|Y|Z]?[\d+]{8}[A-Z]{1}$"/>
+                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[XYZ][0-9]{7}[A-Z]$"/>
                 <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" pattern="^\d{8}[A-Z]$"/>
             </fieldset>
             <fieldset>
@@ -59,7 +59,7 @@
             </fieldset>
             <fieldset>
                 <label for="telefonoFijo">Teléfono fijo</label>
-                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789"/>
+                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789" pattern="^[8-9]\d{8}$">
             </fieldset>
             <fieldset>
                 <label for="telefonoMovil">Teléfono móvil</label>
@@ -77,7 +77,7 @@
             </fieldset>
             <fieldset>
                 <label for="email">Email</label>
-                <input type="email" id="email" class="input-form" placeholder="email@email.com"/>
+                <input type="email" id="email" class="input-form" placeholder="email@email.com" pattern="^[\w.-]+@([A-Z0-9-]+\.)[A-Z]{2,3}$"/>
             </fieldset>
             <fieldset>
                 <label for="redesSociales">Redes Sociales</label>
@@ -89,9 +89,9 @@
                     </select><br/><br/>
                     <div>
                         <label for="instagram" id="instagram2">Instagram</label>
-                        <input type="text" id="instagram" class="input-form" placeholder="usuario"/><br/>
+                        <input type="text" id="instagram" class="input-form" placeholder="usuario" pattern="^[a-z0-9-_.]+$" /><br/>
                         <label for="twitter" id="twitter2">Twitter</label>
-                        <input type="text" id="twitter" class="input-form" placeholder="@usuario"/>
+                        <input type="text" id="twitter" class="input-form" placeholder="@usuario" pattern="^@[A-Z0-9-_]+$"/>
                     </div>
                 </div>
             </fieldset>
@@ -105,7 +105,7 @@
                     </select>
                 </div><br/>
                 <input type="text" id="marcaVehiculo" class="input-form" placeholder="Marca: BMW"/><br/>
-                <input type="text" id="matriculaVehiculo" class="input-form" placeholder="Matrícula: 1234-ABC"/>
+                <input type="text" id="matriculaVehiculo" class="input-form" placeholder="Matrícula: 1234-ABC" pattern="^\d{4}-[A-Z]{3}$"/>
             </fieldset>
             <fieldset>
                 <label for="ip">Dirección IP</label>
