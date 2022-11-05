@@ -15,11 +15,11 @@
         <form class="form" id="form" autocomplete="off">
             <fieldset>
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" class="input-form" pattern="([\w]+){4,30}([\s]?)([\w]?){4,30}$"/>
+                <input type="text" id="nombre" class="input-form" pattern="^(([A-Z]{1}[a-z]+[\s]?)*)"/>
             </fieldset>
             <fieldset>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" class="input-form" pattern=""/>
+                <input type="text" id="apellidos" class="input-form" pattern="^(([A-Z]{1}[a-z]+[\s]?)*)"/>
             </fieldset>
             <fieldset>
                 <label for="dni">DNI / NIE</label>
@@ -30,8 +30,8 @@
                         <option value="nie" id="nie">NIE</option>
                     </select>
                 </div><br/>
-                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern=""/>
-                <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" pattern=""/>
+                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[Y|Z]?[\d+]{8}[A-Z]{1}$"/>
+                <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" pattern="^\d{8}[A-Z]$"/>
             </fieldset>
             <fieldset>
                 <label for="codigoPostal">Código Postal</label>
@@ -44,7 +44,10 @@
                         <option value="otro">Otro</option>
                     </select>
                 </div><br/>
-                <input type="text" id="cpOtro" class="input-form" placeholder="38320" pattern=""/>
+                <div>
+                    <label for="codigoPostal" id="cpOtro2">Otro: Código Postal</label>
+                    <input type="text" id="cpOtro" class="input-form" placeholder="38320" pattern="^[\d+]{5}$"/>
+                </div>
             </fieldset>
             <fieldset>
                 <label for="fechaIda">Fecha de Ida</label>
@@ -76,12 +79,20 @@
                 <input type="email" id="email" class="input-form" placeholder="email@email.com"/>
             </fieldset>
             <fieldset>
-                <label for="instagram">Instagram</label>
-                <input type="text" id="instagram" class="input-form" placeholder="usuario"/>
-            </fieldset>
-            <fieldset>
-                <label for="twitter">Twitter</label>
-                <input type="text" id="twitter" class="input-form" placeholder="@usuario"/>
+                <label for="redesSociales">Redes Sociales</label>
+                <div class="select">
+                    <select id="redesSociales" onchange="mostrarRedesSociales()">
+                        <option value="ningunVehiculo" selected="selected"></option>
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select><br/><br/>
+                    <div>
+                        <label for="instagram" id="instagram2">Instagram</label>
+                        <input type="text" id="instagram" class="input-form" placeholder="usuario"/><br/>
+                        <label for="twitter" id="twitter2">Twitter</label>
+                        <input type="text" id="twitter" class="input-form" placeholder="@usuario"/>
+                    </div>
+                </div>
             </fieldset>
             <fieldset>
                 <label for="vehiculo">Vehículo</label>
@@ -99,7 +110,7 @@
                 <label for="ip">Dirección IP</label>
                 <input type="text" id="ip" class="input-form"/>
             </fieldset>
-            <fieldset>
+            <fieldset><br>
                 <label for="motivo">Motivos</label>
                 <textarea name="textarea" id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud"></textarea>
             </fieldset>
