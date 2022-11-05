@@ -192,7 +192,7 @@ class Persona{
 
     /**
      * Establece el valor de la variable numeroPersonas al valor de la
-     * variable numeroPersonas
+     * variable numeroPersonas.
      * @param numeroPersonas - Número de personas en el grupo.
      */
     set setNumeroPersonas(numeroPersonas){
@@ -232,7 +232,7 @@ class Persona{
     }
 
     /**
-     * Devuelve el valor de la variable residente
+     * Devuelve el valor de la variable residente.
      * @returns El valor de la variable residente.
      */
     get getResidente(){
@@ -273,7 +273,7 @@ class Persona{
     }
 
     /**
-     * Establece la variable de instagram
+     * Establece la variable de instagram.
      * @param instagram - El nombre de usuario de Instagram.
      */
     set setInstagram(instagram){
@@ -289,7 +289,7 @@ class Persona{
     }
 
     /**
-     * Establece la variable de twitter
+     * Establece la variable de twitter.
      * @param twitter - El nombre de usuario de twitter.
      */
     set setTwitter(twitter){
@@ -365,7 +365,7 @@ class Persona{
 
 
 /**
- * Muestra el campo de entrada de DNI o NIE según el valor del elemento seleccionado
+ * Muestra el campo de entrada de DNI o NIE según el valor del elemento seleccionado.
  */
 function mostrarDniNie(){
     if(dniNie.value == "dni"){
@@ -397,6 +397,10 @@ function mostrarMarcaMatriculaVehiculo(){
     }
 }
 
+/**
+ * Si el valor del elemento seleccionado con el id de "redes sociales" es "si", entonces muestre los
+ * elementos de entrada con los id de "instagram" y "twitter", de lo contrario, se ocultan.
+ */
 function mostrarRedesSociales(){
     if(redesSociales.value == "si"){
         instagram.style.display = "block";
@@ -418,7 +422,7 @@ function mostrarRedesSociales(){
 
 /**
  * Si el valor del elemento de selección con el id "codigoPostal" es "otro", entonces mostrar el
- * elemento de entrada con el id "cpOtro", de lo contrario se oculta
+ * elemento de entrada con el id "cpOtro", de lo contrario se oculta.
  */
 function mostrarOtroCP(){
     if(codigoPostal.value == "otro"){

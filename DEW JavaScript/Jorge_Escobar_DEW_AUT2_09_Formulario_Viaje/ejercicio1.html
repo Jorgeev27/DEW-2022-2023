@@ -25,19 +25,19 @@
                 <label for="dni">DNI / NIE</label>
                 <div class="select">
                     <select id="dniNie" onchange="mostrarDniNie()">
-                        <option value="ningunDni" selected="selected"></option>
+                        <option selected="selected"></option>
                         <option value="dni" id="dni">DNI</option>
                         <option value="nie" id="nie">NIE</option>
                     </select>
                 </div><br/>
-                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[Y|Z]?[\d+]{8}[A-Z]{1}$"/>
+                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[X|Y|Z]?[\d+]{8}[A-Z]{1}$"/>
                 <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" pattern="^\d{8}[A-Z]$"/>
             </fieldset>
             <fieldset>
                 <label for="codigoPostal">Código Postal</label>
                 <div class="select">
                     <select id="codigoPostal" onchange="mostrarOtroCP()">
-                        <option value="ningunCP" selected="selected"></option>
+                        <option selected="selected"></option>
                         <option>38400</option>
                         <option>38311</option>
                         <option>38450</option>
@@ -69,7 +69,8 @@
                 <label for="residente">Residente</label>
                 <div class="select">
                     <select id="residente">
-                        <option value="si" selected="selected">Si</option>
+                        <option selected="selected"></option>
+                        <option value="si">Si</option>
                         <option value="no">No</option>
                     </select>
                 </div>
@@ -82,7 +83,7 @@
                 <label for="redesSociales">Redes Sociales</label>
                 <div class="select">
                     <select id="redesSociales" onchange="mostrarRedesSociales()">
-                        <option value="ningunVehiculo" selected="selected"></option>
+                        <option selected="selected"></option>
                         <option value="si">Si</option>
                         <option value="no">No</option>
                     </select><br/><br/>
@@ -103,18 +104,18 @@
                         <option value="no" id="no">No</option>
                     </select>
                 </div><br/>
-                <input type="text" id="marcaVehiculo" class="input-form" placeholder="BMW"/><br/>
-                <input type="text" id="matriculaVehiculo" class="input-form" placeholder="1234-ABC"/>
+                <input type="text" id="marcaVehiculo" class="input-form" placeholder="Marca: BMW"/><br/>
+                <input type="text" id="matriculaVehiculo" class="input-form" placeholder="Matrícula: 1234-ABC"/>
             </fieldset>
             <fieldset>
                 <label for="ip">Dirección IP</label>
                 <input type="text" id="ip" class="input-form"/>
             </fieldset>
-            <fieldset><br>
+            <fieldset><br/>
                 <label for="motivo">Motivos</label>
-                <textarea name="textarea" id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud"></textarea>
+                <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud"></textarea>
             </fieldset>
-            <button class="btn" id="enviar">Enviar</button>
+            <button type="submit" class="btn" id="enviar">Enviar</button>
         </form>
     </div>
     <script src="assets/js/ejercicio1.js"></script>
