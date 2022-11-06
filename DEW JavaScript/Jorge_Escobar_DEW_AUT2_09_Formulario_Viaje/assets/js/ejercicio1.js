@@ -504,6 +504,7 @@ function validarDni(){
     let letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
     let dniTexto = document.getElementById("dniTexto").value;
     if(pattern.test(dniTexto)){
+        
         let numero = dniTexto.substring(0, dniTexto.length - 1);
         let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
         let posicion = numero % 23;
