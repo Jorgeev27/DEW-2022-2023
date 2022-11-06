@@ -14,6 +14,7 @@ let matriculaVehiculo = document.getElementById("matriculaVehiculo");
 let codigoPostal = document.getElementById("codigoPostal");
 let cpOtro = document.getElementById("cpOtro");
 let cpOtro2 = document.getElementById("cpOtro2");
+let aniadirOtro = document.getElementById("aniadirOtro");
 
 //REDES SOCIALES
 let redesSociales = document.getElementById("redesSociales");
@@ -36,6 +37,7 @@ onload = () =>{
     //CÓDIGO POSTAL
     cpOtro.style.display = "none";
     cpOtro2.style.display = "none";
+    aniadirOtro.style.display = "none";
 
     //REDES SOCIALES
     instagram.style.display = "none";
@@ -428,8 +430,89 @@ function mostrarOtroCP(){
     if(codigoPostal.value == "otro"){
         cpOtro.style.display = "block";
         cpOtro2.style.display = "block";
+        aniadirOtro.style.display = "block";
     }else{
         cpOtro.style.display = "none";
         cpOtro2.style.display = "none";
+        aniadirOtro.style.display = "none";
+    }
+}
+
+/**
+ * Comprueba si el valor del elemento de selección es "otro" y, si lo es, muestra el elemento de
+ * entrada y el elemento de botón y después el elemento botón hace que se añada otra opción al código postal. 
+ * Si el valor del elemento de selección no es "otro", oculta el elemento de entrada y el elemento de botón
+ */
+function aniadirOtroCP(){
+    if(codigoPostal.value == "otro"){
+        cpOtro.style.display = "block";
+        cpOtro2.style.display = "block";
+        aniadirOtro.style.display = "block";
+        let pattern = /^\d{5}$/;
+        let codPostal = document.getElementById("codigoPostal");
+        let otroCP = document.getElementById("cpOtro").value;
+        if(pattern.test(otroCP)){
+            let option = document.createElement("option");
+            option.text = otroCP;
+            codPostal.add(option);
+            alert("Se ha añadido el nuevo codigo postal");
+        }else{
+            alert("ERROR!! Sólo 5 dígitos de 0 a 9");
+        }
+    }else{
+        cpOtro.style.display = "none";
+        cpOtro2.style.display = "none";
+        aniadirOtro.style.display = "none";
+    }
+}
+
+/**
+ * Comprueba si el número de teléfono es válido, si lo es, alerta al usuario que el número de teléfono
+ * es válido, si no lo es, alerta al usuario que el número de teléfono no es válido
+ */
+function validarTelefonoMovil(){
+        let pattern = /^(\+34)?[6-7]\d{8}$/;
+        let global = /^(\+\d{1,3})\d{9}$/;
+        let telefonoMovil = document.getElementById("telefonoMovil").value;
+        if(pattern.test(telefonoMovil)){
+            alert("Teléfono Móvil válido");
+        }else if(global.test(telefonoMovil) && (telefonoMovil.substring(0,3) !== '+34')){
+            alert("Teléfono Móvil válido");
+        }else{
+            alert("Teléfono Móvil invalido");
+        }
+}
+
+/**
+ * Comprueba si la primera letra de la cadena está en mayúscula
+ */
+function validarMotivo(){
+    let pattern = /^[A-Z]/;
+    let motivo = document.getElementById("motivo").value;
+    if(pattern.test(motivo)){
+        alert("Motivo válido");
+    }else{
+        alert("Motivo inválido. La primera letra tiene que empezar por mayúscula");
+    }
+}
+
+/**
+ * Valida un número de DNI (Documento Nacional de Identidad) español y la letra correspondiente
+ */
+function validarDni(){
+    let pattern = /^\d{8}[A-Z]$/;
+    let letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
+    let dniTexto = document.getElementById("dniTexto").value;
+    if(pattern.test(dniTexto)){
+        let numero = dniTexto.substring(0, dniTexto.length - 1);
+        let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
+        let posicion = numero % 23;
+        let letraDni = letrasDNI.substring(posicion, posicion + 1);
+
+        if(letra.toLowerCase() !== letraDni.toLowerCase()){
+            alert("DNI inválido");
+        }else{
+            alert("DNI válido");
+        }
     }
 }

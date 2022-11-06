@@ -31,7 +31,7 @@
                     </select>
                 </div><br/>
                 <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[XYZ][0-9]{7}[A-Z]$"/>
-                <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" pattern="^\d{8}[A-Z]$"/>
+                <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" onchange="validarDni()"/>
             </fieldset>
             <fieldset>
                 <label for="codigoPostal">Código Postal</label>
@@ -46,7 +46,8 @@
                 </div><br/>
                 <div>
                     <label for="codigoPostal" id="cpOtro2">Otro: Código Postal</label>
-                    <input type="text" id="cpOtro" class="input-form" placeholder="38320" pattern="^[\d+]{5}$"/>
+                    <input type="text" id="cpOtro" class="input-form" placeholder="38320" pattern="^\d{5}$"/>
+                    <button type="button" onclick="aniadirOtroCP()" id="aniadirOtro">Añadir</button>
                 </div>
             </fieldset>
             <fieldset>
@@ -63,7 +64,7 @@
             </fieldset>
             <fieldset>
                 <label for="telefonoMovil">Teléfono móvil</label>
-                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789/+34123456789"/>
+                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789/+34123456789" onchange="validarTelefonoMovil()"/>
             </fieldset>
             <fieldset>
                 <label for="residente">Residente</label>
@@ -113,7 +114,7 @@
             </fieldset>
             <fieldset><br/>
                 <label for="motivo">Motivos</label>
-                <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud"></textarea>
+                <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud" onchange="validarMotivo()"></textarea>
             </fieldset>
             <button type="submit" class="btn" id="enviar">Enviar</button>
         </form>
