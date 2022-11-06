@@ -516,3 +516,19 @@ function validarDni(){
         }
     }
 }
+
+/**
+ * Comprueba si la cadena de entrada es una dirección IPv4 o IPv6 válida
+ */
+function validarIp(){
+    let ip4Pattern = /^((\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.){4}$/;
+    let ip6Pattern = /^(([\da-fA-F]{1,4}):){8}$/;
+    let ip = document.getElementById("ip").value;
+    if(ip4Pattern.test(ip + '.')){
+        alert("Tu dirección ip es de tipo IPv4");
+    }else if(ip6Pattern.test(ip + ':')){
+        alert("Tu dirección ip es de tipo IPv6");
+    }else{
+        alert("Desconozco esta dirección IP ...");
+    }
+}
