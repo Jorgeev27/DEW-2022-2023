@@ -508,12 +508,43 @@ function validarDni(){
         let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
         let posicion = numero % 23;
         let letraDni = letrasDNI.substring(posicion, posicion + 1);
-
         if(letra.toLowerCase() !== letraDni.toLowerCase()){
             alert("DNI inválido");
         }else{
             alert("DNI válido");
         }
+    }else{
+        alert("No entiendo el DNI ...");
+    }
+}
+
+
+
+/**
+ * NO FUNCIONA, VER EN CLASE
+ * 
+ * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
+ * módulo 23 del número, y compara el resultado con la última letra
+ */
+function validarNie(){
+    let pattern = /^[X-Z]?\d{7}[A-Z]$/;
+    let letrasNIE = 'TRWAGMYFPDXBNJZSQVHLCKET';
+    let nieTexto = document.getElementById("nieTexto").value;
+    if(pattern.test(nieTexto)){
+        let numero = nieTexto.substring(0, nieTexto.length - 1);
+        numero = nieTexto.replace('X',0);
+        numero = nieTexto.replace('Y',1);
+        numero = nieTexto.replace('Z',2);
+        let letra = nieTexto.substring(nieTexto.length -1, 1);
+        let posicion = numero % 23;
+        let letraNie = letrasNIE.substring(posicion, posicion + 1);
+        if(letraNie != letra){
+            alert("NIE inválido");
+        }else{
+            alert("NIE válido");
+        }
+    }else{
+        alert("No entiendo el NIE ...");
     }
 }
 

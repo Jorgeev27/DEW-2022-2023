@@ -30,7 +30,7 @@
                         <option value="nie" id="nie">NIE</option>
                     </select>
                 </div><br/>
-                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" pattern="^[XYZ][0-9]{7}[A-Z]$"/>
+                <input type="text" id="nieTexto" class="input-form" placeholder="Y1234567Z" onchange="validarNie()"/>
                 <input type="text" id="dniTexto" class="input-form" placeholder="12345678A" onchange="validarDni()"/>
             </fieldset>
             <fieldset>
@@ -46,7 +46,7 @@
                 </div><br/>
                 <div>
                     <label for="codigoPostal" id="cpOtro2">Otro: Código Postal</label>
-                    <input type="text" id="cpOtro" class="input-form" placeholder="38320" pattern="^\d{5}$"/>
+                    <input type="text" id="cpOtro" class="input-form" placeholder="38320"/>
                     <button type="button" onclick="aniadirOtroCP()" id="aniadirOtro">Añadir</button>
                 </div>
             </fieldset>
