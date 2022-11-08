@@ -24,7 +24,6 @@ let twitter = document.getElementById("twitter");
 let twitter2 = document.getElementById("twitter2");
 
 /* Ocultar los elementos del archivo HTML. */
-
 onload = () =>{
     //DNI-NIE
     dniTexto.style.display = "none";
@@ -104,261 +103,177 @@ class Persona{
     }
 
     /**
-     * Devuelve el valor de la propiedad nombre.
-     * @returns El valor de la variable nombre.
+     * GETTER Y SETTER DE NOMBRE
      */
     get getNombre(){
         return this.nombre;
     }
 
-    /**
-     * Toma un parámetro llamado nombre y establece el valor de la propiedad
-     * nombre al valor del parámetro nombre.
-     * @param nombre - El nombre de la variable.
-     */
     set setNombre(nombre){
         this.nombre = nombre;
     }
 
     /**
-     * Devuelve el valor de la propiedad de los apellidos.
-     * @returns El valor de la variable apellidos.
+     * GETTER Y SETTER DE APELLIDOS
      */
     get getApellidos(){
         return this.apellidos;
     }
 
-    /**
-     * Establece el valor de la variable apellidos.
-     * @param apellidos - El apellido de la persona.
-     */
     set setApellidos(apellidos){
         this.apellidos = apellidos;
     }
 
     /**
-     * Devuelve el valor de la propiedad de identificación.
-     * @returns El valor de la variable identificación.
+     * GETTER Y SETTER DE IDENTIFICACIÓN
      */
     get getIdenficacion(){
         return this.identificacion;
     }
 
-    /**
-     * Establece el valor de la variable identificación.
-     * @param identificacion - El número de identificación de la persona.
-     */
     set setIdentificacion(identificacion){
         this.identificacion = identificacion;
     }
 
     /**
-     * Devuelve el valor de la propiedad codigoPostal.
-     * @returns El valor de la variable codigoPostal.
+     * GETTER Y SETTER DE CÓDIGO POSTAL
      */
     get getCodigoPostal(){
         return this.codigoPostal;
     }
 
-    /**
-     * Establece el valor de la variable codigoPostal.
-     * @param codigoPostal - El código postal de la dirección.
-     */
     set setCodigoPostal(codigoPostal){
         this.codigoPostal = codigoPostal;
     }
 
     /**
-     * Esta función devuelve el valor de la variable fechaIda.
-     * @returns La fecha del viaje.
+     * GETTER Y SETTER DE FECHA DE IDA
      */
     get getFechaIda(){
         return this.fechaIda;
     }
 
-    /**
-     * Establece el valor de la variable fechaIda.
-     * @param fechaIda - La fecha del vuelo.
-     */
     set setFechaIda(fechaIda){
         this.fechaIda = fechaIda;
     }
 
     /**
-     * Devuelve el valor de la variable numeroPersonas.
-     * @returns El número de personas en el grupo.
+     * GETTER Y SETTER DE NÚMERO DE PERSONAS
      */
     get getNumeroPersonas(){
         return this.numeroPersonas;
     }
 
-    /**
-     * Establece el valor de la variable numeroPersonas al valor de la
-     * variable numeroPersonas.
-     * @param numeroPersonas - Número de personas en el grupo.
-     */
     set setNumeroPersonas(numeroPersonas){
         this.numeroPersonas = numeroPersonas;
     }
 
     /**
-     * Devuelve el valor de la variable telefonoFijo.
-     * @returns El valor de la variable telefonoFijo.
+     * GETTER Y SETTER DE TELÉFONO FIJO
      */
     get getTelefonoFijo(){
         return this.telefonoFijo;
     }
 
-    /**
-     * Establece el valor de la variable telefonoFijo.
-     * @param telefonoFijo - El número de teléfono a validar.
-     */
     set setTelefonoFijo(telefonoFijo){
         this.telefonoFijo = telefonoFijo;
     }
 
     /**
-     * Devuelve el valor de la variable telefonoMovil.
-     * @returns El valor de la variable telefonoMovil.
+     * GETTER Y SETTER DE TELÉFONO MÓVIL
      */
     get getTelefonoMovil(){
         return this.telefonoMovil;
     }
 
-    /**
-     * Establece el valor de la variable telefonoMovil.
-     * @param telefonoMovil - El número de teléfono.
-     */
     set setTelefonoMovil(telefonoMovil){
         this.telefonoMovil = telefonoMovil;
     }
 
     /**
-     * Devuelve el valor de la variable residente.
-     * @returns El valor de la variable residente.
+     * GETTER Y SETTER DE RESIDENTE O NO RESIDENTE
      */
     get getResidente(){
         return this.residente;
     }
 
-    /**
-     * Establece el valor de la variable residente.
-     * @param residente - Que se usará para establecer el residente del ticket.
-     */
     set setResidente(residente){
         this.residente = residente;
     }
 
     /**
-     * Devuelve la propiedad de correo electrónico de la persona.
-     * @returns La dirección de correo electrónico de la persona.
+     * GETTER Y SETTER DE EMAIL
      */
     get getEmail(){
         return this.email;
     }
 
-    /**
-     * Toma un parámetro de correo electrónico y establece la propiedad de correo
-     * electrónico en el parámetro de correo electrónico.
-     * @param email - La dirección de correo electrónico del usuario.
-     */
     set setEmail(email){
         this.email = email;
     }
 
     /**
-     * Devuelve el valor de la propiedad de instagram.
-     * @returns La variable de instagram.
+     * GETTER Y SETTER DE INSTAGRAM
      */
     get getInstagram(){
         return this.instagram;
     }
 
-    /**
-     * Establece la variable de instagram.
-     * @param instagram - El nombre de usuario de Instagram.
-     */
     set setInstagram(instagram){
         this.instagram = instagram;
     }
 
     /**
-     * Devuelve el valor de la propiedad de twitter.
-     * @returns El nombre de usuario de twitter.
+     * GETTER Y SETTER DE TWITTER
      */
     get getTwitter(){
         return this.twitter;
     }
 
-    /**
-     * Establece la variable de twitter.
-     * @param twitter - El nombre de usuario de twitter.
-     */
     set setTwitter(twitter){
         this.twitter = twitter;
     }
 
     /**
-     * Devuelve el valor de la propiedad marca.
-     * @returns La marca del coche.
+     * GETTER Y SETTER DE MARCA DE VEHÍCULO
      */
     get getMarca(){
         return this.marca;
     }
 
-    /**
-     * Toma un parámetro marca y establece el valor de la variable marca al valor
-     * del parámetro marca.
-     * @param marca - La marca del coche.
-     */
     set setMarca(marca){
         this.marca = marca;
     }
 
     /**
-     * Devuelve el valor de la propiedad matricula.
-     * @returns La matrícula del coche.
+     * GETTER Y SETTER DE MATRÍCULA DE VEHÍCULO
      */
     get getMatricula(){
         return this.matricula;
     }
 
-    /**
-     * Establece el valor de la variable matricula.
-     * @param matricula - La matrícula del coche.
-     */
     set setMatricula(matricula){
         this.matricula = matricula;
     }
 
     /**
-     * Devuelve el valor de la variable direccionIP.
-     * @returns La dirección IP.
+     * GETTER Y SETTER DE DIRECCIÓN IP
      */
     get getDireccionIP(){
         return this.direccionIP;
     }
 
-    /**
-     * Establece el valor de la variable direccionIP.
-     * @param direccionIP - La dirección IP.
-     */
     set setDireccionIP(direccionIP){
         this.direccionIP = direccionIP;
     }
 
     /**
-     * Devuelve el valor de la variable motivos.
-     * @returns Se devuelve el método motivos.
+     * GETTER Y SETTER DE MOTIVOS DEL VIAJE
      */
     get getMotivos(){
         return this.motivos;
     }
 
-    /**
-     * Establece el valor de la variable motivos al valor de la variable motivos.
-     * @param motivos - La lista de razones del usuario.
-     */
     set setMotivos(motivos){
         this.motivos = motivos;
     }
@@ -494,6 +409,10 @@ function validarMotivo(){
     }else{
         alert("Motivo inválido. La primera letra tiene que empezar por mayúscula");
     }
+
+    for(let i = 0; i < motivo.length; i++){
+        
+    }
 }
 
 /**
@@ -522,12 +441,11 @@ function validarDni(){
 
 /**
  * NO FUNCIONA, VER EN CLASE
- * 
  * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
  * módulo 23 del número, y compara el resultado con la última letra
  */
 function validarNie(){
-    let pattern = /^[X-Z]?\d{7}[A-Z]$/;
+    let pattern = /^[X-Z]\d{7}[A-Z]$/;
     let letrasNIE = 'TRWAGMYFPDXBNJZSQVHLCKET';
     let nieTexto = document.getElementById("nieTexto").value;
     if(pattern.test(nieTexto)){
@@ -535,7 +453,8 @@ function validarNie(){
         numero = nieTexto.replace('X',0);
         numero = nieTexto.replace('Y',1);
         numero = nieTexto.replace('Z',2);
-        let letra = nieTexto.substring(nieTexto.length -1, 1);
+        let letra = nieTexto.charAt(nieTexto.length-1);
+        console.log(letra);
         let posicion = numero % 23;
         let letraNie = letrasNIE.substring(posicion, posicion + 1);
         if(letraNie != letra){
@@ -552,12 +471,12 @@ function validarNie(){
  * Comprueba si la cadena de entrada es una dirección IPv4 o IPv6 válida
  */
 function validarIp(){
-    let ip4Pattern = /^((\d|[1-9]\d|1\d\d|2([0-4]\d|5[0-5]))\.){4}$/;
-    let ip6Pattern = /^(([\da-fA-F]{1,4}):){8}$/;
+    let ip4Pattern = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    let ip6Pattern = /(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/;
     let ip = document.getElementById("ip").value;
-    if(ip4Pattern.test(ip + '.')){
+    if(ip4Pattern.test(ip)){
         alert("Tu dirección ip es de tipo IPv4");
-    }else if(ip6Pattern.test(ip + ':')){
+    }else if(ip6Pattern.test(ip)){
         alert("Tu dirección ip es de tipo IPv6");
     }else{
         alert("Desconozco esta dirección IP ...");
