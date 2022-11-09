@@ -1,5 +1,7 @@
 /* Obtener los elementos del archivo HTML. */
 
+let nombrePersona = document.getElementById("nombre").value;
+
 //DNI-NIE
 let nieTexto = document.getElementById("nieTexto");
 let dniTexto = document.getElementById("dniTexto");
@@ -123,10 +125,6 @@ function mostrarOtroCP(){
  * Si el valor del elemento de selección no es "otro", oculta el elemento de entrada y el elemento de botón
  */
 function aniadirOtroCP(){
-    if(codigoPostal.value == "otro"){
-        cpOtro.style.display = "block";
-        cpOtro2.style.display = "block";
-        aniadirOtro.style.display = "block";
         let pattern = /^\d{5}$/;
         let codPostal = document.getElementById("codigoPostal");
         let otroCP = document.getElementById("cpOtro").value;
@@ -135,14 +133,13 @@ function aniadirOtroCP(){
             option.text = otroCP;
             codPostal.add(option);
             alert("Se ha añadido el nuevo codigo postal");
+            option.setAttribute("selected", "selected");
+            cpOtro.style.display = "none";
+            cpOtro2.style.display = "none";
+            aniadirOtro.style.display = "none";
         }else{
             alert("ERROR!! Sólo 5 dígitos de 0 a 9");
         }
-    }else{
-        cpOtro.style.display = "none";
-        cpOtro2.style.display = "none";
-        aniadirOtro.style.display = "none";
-    }
 }
 
 /**
@@ -163,19 +160,28 @@ function validarTelefonoMovil(){
 }
 
 /**
- * Comprueba si la primera letra de la cadena está en mayúscula
+ * Valida la entrada de un área de texto, asegurándose de que la primera letra de cada palabra esté en
+ * mayúscula y elimina los espacios innecesarios
  */
 function validarMotivo(){
     let pattern = /^[A-Z]/;
     let motivo = document.getElementById("motivo").value;
+    let motivos = motivo.split(/[\s\n]+/);
     if(pattern.test(motivo)){
         alert("Motivo válido");
     }else{
         alert("Motivo inválido. La primera letra tiene que empezar por mayúscula");
     }
 
-    for(let i = 0; i < motivo.length; i++){
-        
+    for(let i = 0; i < motivos.length; i++){
+        if(motivos[i] == ""){
+            motivos.splice(i, 1);
+            i--;
+        }
+        if(motivos[i] == "\n"){
+            motivos.splice(i, 1);
+            i--;
+        }
     }
 }
 
@@ -204,21 +210,20 @@ function validarDni(){
 
 
 /**
- * NO FUNCIONA, VER EN CLASE
  * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
  * módulo 23 del número, y compara el resultado con la última letra
  */
 function validarNie(){
     let numero;
     let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-    let nie = document.getElementById("nieTexto").value;
+    let nieTexto = document.getElementById("nieTexto").value;
     let pattern = /[XYZ]{1}\d{7}[A-Z]{1}$/;
-    if(pattern.test(nie)){
-        numero = nie.substring(0, nie.length - 1);
+    if(pattern.test(nieTexto)){
+        numero = nieTexto.substring(0, nieTexto.length - 1);
         numero = numero.replace('X', 0);
         numero = numero.replace('Y', 1);
         numero = numero.replace('Z', 2);
-        let letra = nie.charAt(nie.length - 1);
+        let letra = nieTexto.charAt(nieTexto.length - 1);
         numero = numero % 23;
         if(letra == letras[numero]){
             alert("NIE válido")
