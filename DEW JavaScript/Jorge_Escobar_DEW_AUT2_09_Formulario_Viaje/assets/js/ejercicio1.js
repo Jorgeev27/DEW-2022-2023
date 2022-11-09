@@ -1,7 +1,5 @@
 /* Obtener los elementos del archivo HTML. */
 
-let nombrePersona = document.getElementById("nombre").value;
-
 //DNI-NIE
 let nieTexto = document.getElementById("nieTexto");
 let dniTexto = document.getElementById("dniTexto");
@@ -210,6 +208,7 @@ function validarDni(){
 
 
 /**
+ * NO FUNCIONA, VER EN CLASE
  * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
  * módulo 23 del número, y compara el resultado con la última letra
  */
