@@ -45,6 +45,209 @@ onload = () =>{
     twitter2.style.display = "none";
 }
 
+/**
+ * Muestra el campo de entrada de DNI o NIE según el valor del elemento seleccionado.
+ */
+function mostrarDniNie(){
+    if(dniNie.value == "dni"){
+        dniTexto.style.display = "block";
+        nieTexto.style.display = "none";
+    }else if(dniNie.value == "nie"){
+        nieTexto.style.display = "block";
+        dniTexto.style.display = "none";
+    }else{
+        nieTexto.style.display = "none";
+        dniTexto.style.display = "none";
+    }
+}
+
+/**
+ * Si el valor del elemento seleccionado con el id de "vehiculo" es "si", entonces muestre los
+ * elementos de entrada con los id de "marcaVehiculo" y "matriculaVehiculo", de lo contrario, se ocultan.
+ */
+function mostrarMarcaMatriculaVehiculo(){
+    if(vehiculo.value == "si"){
+        marcaVehiculo.style.display = "block";
+        matriculaVehiculo.style.display = "block";
+    }else if(vehiculo.value == "no"){
+        marcaVehiculo.style.display = "none";
+        matriculaVehiculo.style.display = "none";
+    }else{
+        marcaVehiculo.style.display = "none";
+        matriculaVehiculo.style.display = "none";
+    }
+}
+
+/**
+ * Si el valor del elemento seleccionado con el id de "redes sociales" es "si", entonces muestre los
+ * elementos de entrada con los id de "instagram" y "twitter", de lo contrario, se ocultan.
+ */
+function mostrarRedesSociales(){
+    if(redesSociales.value == "si"){
+        instagram.style.display = "block";
+        twitter.style.display = "block";
+        instagram2.style.display = "block";
+        twitter2.style.display = "block";
+    }else if(redesSociales.value == "no"){
+        instagram.style.display = "none";
+        twitter.style.display = "none";
+        instagram2.style.display = "none";
+        twitter2.style.display = "none";
+    }else{
+        instagram.style.display = "none";
+        twitter.style.display = "none";
+        instagram2.style.display = "none";
+        twitter2.style.display = "none";
+    }
+}
+
+/**
+ * Si el valor del elemento de selección con el id "codigoPostal" es "otro", entonces mostrar el
+ * elemento de entrada con el id "cpOtro", de lo contrario se oculta.
+ */
+function mostrarOtroCP(){
+    if(codigoPostal.value == "otro"){
+        cpOtro.style.display = "block";
+        cpOtro2.style.display = "block";
+        aniadirOtro.style.display = "block";
+    }else{
+        cpOtro.style.display = "none";
+        cpOtro2.style.display = "none";
+        aniadirOtro.style.display = "none";
+    }
+}
+
+/**
+ * Comprueba si el valor del elemento de selección es "otro" y, si lo es, muestra el elemento de
+ * entrada y el elemento de botón y después el elemento botón hace que se añada otra opción al código postal. 
+ * Si el valor del elemento de selección no es "otro", oculta el elemento de entrada y el elemento de botón
+ */
+function aniadirOtroCP(){
+    if(codigoPostal.value == "otro"){
+        cpOtro.style.display = "block";
+        cpOtro2.style.display = "block";
+        aniadirOtro.style.display = "block";
+        let pattern = /^\d{5}$/;
+        let codPostal = document.getElementById("codigoPostal");
+        let otroCP = document.getElementById("cpOtro").value;
+        if(pattern.test(otroCP)){
+            let option = document.createElement("option");
+            option.text = otroCP;
+            codPostal.add(option);
+            alert("Se ha añadido el nuevo codigo postal");
+        }else{
+            alert("ERROR!! Sólo 5 dígitos de 0 a 9");
+        }
+    }else{
+        cpOtro.style.display = "none";
+        cpOtro2.style.display = "none";
+        aniadirOtro.style.display = "none";
+    }
+}
+
+/**
+ * Comprueba si el número de teléfono es válido, si lo es, alerta al usuario que el número de teléfono
+ * es válido, si no lo es, alerta al usuario que el número de teléfono no es válido
+ */
+function validarTelefonoMovil(){
+        let pattern = /^(\+34)?[6-7]\d{8}$/;
+        let global = /^(\+\d{1,3})\d{9}$/;
+        let telefonoMovil = document.getElementById("telefonoMovil").value;
+        if(pattern.test(telefonoMovil)){
+            alert("Teléfono Móvil válido");
+        }else if(global.test(telefonoMovil) && (telefonoMovil.substring(0,3) !== '+34')){
+            alert("Teléfono Móvil válido");
+        }else{
+            alert("Teléfono Móvil invalido");
+        }
+}
+
+/**
+ * Comprueba si la primera letra de la cadena está en mayúscula
+ */
+function validarMotivo(){
+    let pattern = /^[A-Z]/;
+    let motivo = document.getElementById("motivo").value;
+    if(pattern.test(motivo)){
+        alert("Motivo válido");
+    }else{
+        alert("Motivo inválido. La primera letra tiene que empezar por mayúscula");
+    }
+
+    for(let i = 0; i < motivo.length; i++){
+        
+    }
+}
+
+/**
+ * Valida un número de DNI (Documento Nacional de Identidad) español y la letra correspondiente
+ */
+function validarDni(){
+    let pattern = /^\d{8}[A-Z]$/;
+    let letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
+    let dniTexto = document.getElementById("dniTexto").value;
+    if(pattern.test(dniTexto)){
+        let numero = dniTexto.substring(0, dniTexto.length - 1);
+        let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
+        let posicion = numero % 23;
+        let letraDni = letrasDNI.substring(posicion, posicion + 1);
+        if(letra.toLowerCase() !== letraDni.toLowerCase()){
+            alert("DNI inválido");
+        }else{
+            alert("DNI válido");
+        }
+    }else{
+        alert("No entiendo el DNI ...");
+    }
+}
+
+
+
+/**
+ * NO FUNCIONA, VER EN CLASE
+ * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
+ * módulo 23 del número, y compara el resultado con la última letra
+ */
+function validarNie(){
+    let numero;
+    let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    let nie = document.getElementById("nieTexto").value;
+    let pattern = /[XYZ]{1}\d{7}[A-Z]{1}$/;
+    if(pattern.test(nie)){
+        numero = nie.substring(0, nie.length - 1);
+        numero = numero.replace('X', 0);
+        numero = numero.replace('Y', 1);
+        numero = numero.replace('Z', 2);
+        let letra = nie.charAt(nie.length - 1);
+        numero = numero % 23;
+        if(letra == letras[numero]){
+            alert("NIE válido")
+        }else{
+            alert("NIE inválido");
+        }
+    }else{
+        alert("No entiendo el NIE ...");
+    }
+}
+
+
+/**
+ * Comprueba si la cadena de entrada es una dirección IPv4 o IPv6 válida
+ */
+function validarIp(){
+    let ip4Pattern = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    let ip6Pattern = /(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/;
+    let ip = document.getElementById("ip").value;
+    if(ip4Pattern.test(ip)){
+        alert("Tu dirección ip es de tipo IPv4");
+    }else if(ip6Pattern.test(ip)){
+        alert("Tu dirección ip es de tipo IPv6");
+    }else{
+        alert("Desconozco esta dirección IP ...");
+    }
+}
+
+
 class Persona{
     /* Declarar las variables que se utilizarán en la clase. */
     nombre;
@@ -276,209 +479,5 @@ class Persona{
 
     set setMotivos(motivos){
         this.motivos = motivos;
-    }
-}
-
-
-
-/**
- * Muestra el campo de entrada de DNI o NIE según el valor del elemento seleccionado.
- */
-function mostrarDniNie(){
-    if(dniNie.value == "dni"){
-        dniTexto.style.display = "block";
-        nieTexto.style.display = "none";
-    }else if(dniNie.value == "nie"){
-        nieTexto.style.display = "block";
-        dniTexto.style.display = "none";
-    }else{
-        nieTexto.style.display = "none";
-        dniTexto.style.display = "none";
-    }
-}
-
-/**
- * Si el valor del elemento seleccionado con el id de "vehiculo" es "si", entonces muestre los
- * elementos de entrada con los id de "marcaVehiculo" y "matriculaVehiculo", de lo contrario, se ocultan.
- */
-function mostrarMarcaMatriculaVehiculo(){
-    if(vehiculo.value == "si"){
-        marcaVehiculo.style.display = "block";
-        matriculaVehiculo.style.display = "block";
-    }else if(vehiculo.value == "no"){
-        marcaVehiculo.style.display = "none";
-        matriculaVehiculo.style.display = "none";
-    }else{
-        marcaVehiculo.style.display = "none";
-        matriculaVehiculo.style.display = "none";
-    }
-}
-
-/**
- * Si el valor del elemento seleccionado con el id de "redes sociales" es "si", entonces muestre los
- * elementos de entrada con los id de "instagram" y "twitter", de lo contrario, se ocultan.
- */
-function mostrarRedesSociales(){
-    if(redesSociales.value == "si"){
-        instagram.style.display = "block";
-        twitter.style.display = "block";
-        instagram2.style.display = "block";
-        twitter2.style.display = "block";
-    }else if(redesSociales.value == "no"){
-        instagram.style.display = "none";
-        twitter.style.display = "none";
-        instagram2.style.display = "none";
-        twitter2.style.display = "none";
-    }else{
-        instagram.style.display = "none";
-        twitter.style.display = "none";
-        instagram2.style.display = "none";
-        twitter2.style.display = "none";
-    }
-}
-
-/**
- * Si el valor del elemento de selección con el id "codigoPostal" es "otro", entonces mostrar el
- * elemento de entrada con el id "cpOtro", de lo contrario se oculta.
- */
-function mostrarOtroCP(){
-    if(codigoPostal.value == "otro"){
-        cpOtro.style.display = "block";
-        cpOtro2.style.display = "block";
-        aniadirOtro.style.display = "block";
-    }else{
-        cpOtro.style.display = "none";
-        cpOtro2.style.display = "none";
-        aniadirOtro.style.display = "none";
-    }
-}
-
-/**
- * Comprueba si el valor del elemento de selección es "otro" y, si lo es, muestra el elemento de
- * entrada y el elemento de botón y después el elemento botón hace que se añada otra opción al código postal. 
- * Si el valor del elemento de selección no es "otro", oculta el elemento de entrada y el elemento de botón
- */
-function aniadirOtroCP(){
-    if(codigoPostal.value == "otro"){
-        cpOtro.style.display = "block";
-        cpOtro2.style.display = "block";
-        aniadirOtro.style.display = "block";
-        let pattern = /^\d{5}$/;
-        let codPostal = document.getElementById("codigoPostal");
-        let otroCP = document.getElementById("cpOtro").value;
-        if(pattern.test(otroCP)){
-            let option = document.createElement("option");
-            option.text = otroCP;
-            codPostal.add(option);
-            alert("Se ha añadido el nuevo codigo postal");
-        }else{
-            alert("ERROR!! Sólo 5 dígitos de 0 a 9");
-        }
-    }else{
-        cpOtro.style.display = "none";
-        cpOtro2.style.display = "none";
-        aniadirOtro.style.display = "none";
-    }
-}
-
-/**
- * Comprueba si el número de teléfono es válido, si lo es, alerta al usuario que el número de teléfono
- * es válido, si no lo es, alerta al usuario que el número de teléfono no es válido
- */
-function validarTelefonoMovil(){
-        let pattern = /^(\+34)?[6-7]\d{8}$/;
-        let global = /^(\+\d{1,3})\d{9}$/;
-        let telefonoMovil = document.getElementById("telefonoMovil").value;
-        if(pattern.test(telefonoMovil)){
-            alert("Teléfono Móvil válido");
-        }else if(global.test(telefonoMovil) && (telefonoMovil.substring(0,3) !== '+34')){
-            alert("Teléfono Móvil válido");
-        }else{
-            alert("Teléfono Móvil invalido");
-        }
-}
-
-/**
- * Comprueba si la primera letra de la cadena está en mayúscula
- */
-function validarMotivo(){
-    let pattern = /^[A-Z]/;
-    let motivo = document.getElementById("motivo").value;
-    if(pattern.test(motivo)){
-        alert("Motivo válido");
-    }else{
-        alert("Motivo inválido. La primera letra tiene que empezar por mayúscula");
-    }
-
-    for(let i = 0; i < motivo.length; i++){
-        
-    }
-}
-
-/**
- * Valida un número de DNI (Documento Nacional de Identidad) español y la letra correspondiente
- */
-function validarDni(){
-    let pattern = /^\d{8}[A-Z]$/;
-    let letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
-    let dniTexto = document.getElementById("dniTexto").value;
-    if(pattern.test(dniTexto)){
-        let numero = dniTexto.substring(0, dniTexto.length - 1);
-        let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
-        let posicion = numero % 23;
-        let letraDni = letrasDNI.substring(posicion, posicion + 1);
-        if(letra.toLowerCase() !== letraDni.toLowerCase()){
-            alert("DNI inválido");
-        }else{
-            alert("DNI válido");
-        }
-    }else{
-        alert("No entiendo el DNI ...");
-    }
-}
-
-
-
-/**
- * NO FUNCIONA, VER EN CLASE
- * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
- * módulo 23 del número, y compara el resultado con la última letra
- */
-function validarNie(){
-    let pattern = /^[X-Z]\d{7}[A-Z]$/;
-    let letrasNIE = 'TRWAGMYFPDXBNJZSQVHLCKET';
-    let nieTexto = document.getElementById("nieTexto").value;
-    if(pattern.test(nieTexto)){
-        let numero = nieTexto.substring(0, nieTexto.length - 1);
-        numero = nieTexto.replace('X',0);
-        numero = nieTexto.replace('Y',1);
-        numero = nieTexto.replace('Z',2);
-        let letra = nieTexto.charAt(nieTexto.length-1);
-        console.log(letra);
-        let posicion = numero % 23;
-        let letraNie = letrasNIE.substring(posicion, posicion + 1);
-        if(letraNie != letra){
-            alert("NIE inválido");
-        }else{
-            alert("NIE válido");
-        }
-    }else{
-        alert("No entiendo el NIE ...");
-    }
-}
-
-/**
- * Comprueba si la cadena de entrada es una dirección IPv4 o IPv6 válida
- */
-function validarIp(){
-    let ip4Pattern = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-    let ip6Pattern = /(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/;
-    let ip = document.getElementById("ip").value;
-    if(ip4Pattern.test(ip)){
-        alert("Tu dirección ip es de tipo IPv4");
-    }else if(ip6Pattern.test(ip)){
-        alert("Tu dirección ip es de tipo IPv6");
-    }else{
-        alert("Desconozco esta dirección IP ...");
     }
 }
