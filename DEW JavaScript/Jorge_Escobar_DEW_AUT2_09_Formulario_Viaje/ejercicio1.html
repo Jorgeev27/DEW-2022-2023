@@ -15,11 +15,11 @@
         <form class="form" id="form" autocomplete="off">
             <fieldset>
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" class="input-form" pattern="^(([A-Z]{1}([a-z][áéíóú]?)+[\s]?)*)" placeholder="Juan/Juan Diego" required/>
+                <input type="text" id="nombre" class="input-form" placeholder="Juan/Juan Diego" onchange="validarNombre()" required/>
             </fieldset>
             <fieldset>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" class="input-form" pattern="^(([A-Z]{1}([a-z][áéíóú]?)+[\s]?)*)" placeholder="Pérez/Pérez Martínez" required/>
+                <input type="text" id="apellidos" class="input-form" placeholder="Pérez/Pérez Martínez" onchange="validarApellidos()"/>
             </fieldset>
             <fieldset>
                 <label for="dni">DNI / NIE</label>
@@ -52,24 +52,24 @@
             </fieldset>
             <fieldset>
                 <label for="fechaIda">Fecha de Ida</label>
-                <input type="date" id="fechaIda" class="input-form" required/>
+                <input type="date" id="fechaIda" class="input-form"/>
             </fieldset>
             <fieldset>
                 <label for="numeroPersonas">Número de Personas</label>
-                <input type="number" id="numeroPersonas" class="input-form" min="1" placeholder="1" required/>
+                <input type="number" id="numeroPersonas" class="input-form" min="1" placeholder="1" onchange="validarNumeroPersonas()"/>
             </fieldset>
             <fieldset>
                 <label for="telefonoFijo">Teléfono fijo</label>
-                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789" pattern="^[8-9]\d{8}$" required/>
+                <input type="text" id="telefonoFijo" class="input-form" placeholder="123456789" onchange="validarTelefonoFijo()"/>
             </fieldset>
             <fieldset>
                 <label for="telefonoMovil">Teléfono móvil</label>
-                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789/+34123456789" onchange="validarTelefonoMovil()" required/>
+                <input type="text" id="telefonoMovil" class="input-form" placeholder="123456789/+34123456789" onchange="validarTelefonoMovil()"/>
             </fieldset>
             <fieldset>
                 <label for="residente">Residente</label>
                 <div class="select">
-                    <select id="residente">
+                    <select id="residente" onchange="validarResidente()">
                         <option selected="selected"></option>
                         <option value="si">Si</option>
                         <option value="no">No</option>
@@ -78,7 +78,7 @@
             </fieldset>
             <fieldset>
                 <label for="email">Email</label>
-                <input type="email" id="email" class="input-form" placeholder="email@email.com" required/>
+                <input type="text" id="email" class="input-form" placeholder="email@email.com" onchange="validarEmail()"/>
             </fieldset>
             <fieldset>
                 <label for="redesSociales">Redes Sociales</label>
@@ -90,9 +90,9 @@
                     </select><br/><br/>
                     <div>
                         <label for="instagram" id="instagram2">Instagram</label>
-                        <input type="text" id="instagram" class="input-form" placeholder="usuario" pattern="^[a-z0-9-_.]+$" /><br/>
+                        <input type="text" id="instagram" class="input-form" placeholder="usuario" onchange="validarInstagram()" /><br/>
                         <label for="twitter" id="twitter2">Twitter</label>
-                        <input type="text" id="twitter" class="input-form" placeholder="@usuario" pattern="^@[A-Z0-9-_]+$"/>
+                        <input type="text" id="twitter" class="input-form" placeholder="@usuario" onchange="validarTwitter()"/>
                     </div>
                 </div>
             </fieldset>
@@ -105,22 +105,19 @@
                         <option value="no" id="no">No</option>
                     </select>
                 </div><br/>
-                <input type="text" id="marcaVehiculo" class="input-form" placeholder="Marca: BMW" pattern="^(([A-Z]{1}[a-z]+[\s]?)*)"/><br/>
-                <input type="text" id="matriculaVehiculo" class="input-form" placeholder="Matrícula: 1234-ABC" pattern="^\d{4}-[A-Z]{3}$"/>
+                <input type="text" id="marcaVehiculo" class="input-form" placeholder="Marca: BMW" onchange="validarMarcaVehiculo()"/><br/>
+                <input type="text" id="matriculaVehiculo" class="input-form" placeholder="Matrícula: 1234-ABC" onchange="validarMatriculaVehiculo()"/>
             </fieldset>
             <fieldset>
                 <label for="ip">Dirección IP</label>
-                <input type="text" id="ip" class="input-form" onchange="validarIp()" required/>
+                <input type="text" id="ip" class="input-form" onchange="validarIp()"/>
             </fieldset>
-            <fieldset><br/><br/>
+            <fieldset><br/><br/><br><br>
                 <label for="motivo">Motivos</label>
-                <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud" onchange="validarMotivo()" required></textarea>
+                <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud" onchange="validarMotivo()"></textarea>
             </fieldset>
-            <button type="submit" class="btn" id="enviar" onclick="mostrarResultado()">Enviar</button>
+            <button type="button" class="btn" id="enviar" onclick="mostrarResultado()">Enviar</button>
         </form>
-    </div>
-    <div id="resultadoPersona">
-
     </div>
     <script src="assets/js/ejercicio1.js"></script>
 </body>

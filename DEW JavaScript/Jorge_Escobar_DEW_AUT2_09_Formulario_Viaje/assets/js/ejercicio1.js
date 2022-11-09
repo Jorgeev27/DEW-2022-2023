@@ -23,8 +23,6 @@ let instagram2 = document.getElementById("instagram2");
 let twitter = document.getElementById("twitter");
 let twitter2 = document.getElementById("twitter2");
 
-let resultadoPersona = document.getElementById("resultadoPersona");
-
 /* Ocultar los elementos del archivo HTML. */
 onload = () =>{
     //DNI-NIE
@@ -377,6 +375,114 @@ function aniadirOtroCP(){
 }
 
 /**
+ * Valida un nombre, que debe comenzar con una letra mayúscula, seguido de cualquier número de letras
+ * minúsculas, y opcionalmente seguido de un espacio y cualquier número de nombres
+ */
+function validarNombre(){
+    let pattern = /^(([A-Z]{1}([a-z]?)+[\s]?)*)$/;
+    let nombre = document.getElementById("nombre").value;
+    if(pattern.test(nombre)){
+        alert("Nombre válido");
+    }else{
+        alert("Desconozco ese nombre ...");
+    }
+}
+
+/**
+ * Comprueba si el valor del campo de entrada con el id "apellidos" coincide con el patrón de expresión
+ * regular. Si lo hace, muestra un mensaje de alerta que dice "Apellidos válido". Si no es así, muestra
+ * un mensaje de alerta que dice "Desconozco esos apellidos ..."
+ */
+function validarApellidos(){
+    let pattern = /^(([A-Z]{1}([a-z]?)+[\s]?)*)$/;
+    let apellidos = document.getElementById("apellidos").value;
+    if(pattern.test(apellidos)){
+        alert("Apellidos válido");
+    }else{
+        alert("Desconozco esos apellidos ...");
+    }
+}
+
+/**
+ * Valida un número de DNI (Documento Nacional de Identidad) español y la letra correspondiente
+ */
+function validarDni(){
+    let pattern = /^\d{8}[A-Z]$/;
+    let letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
+    let dniTexto = document.getElementById("dniTexto").value;
+    if(pattern.test(dniTexto)){
+        let numero = dniTexto.substring(0, dniTexto.length - 1);
+        let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
+        let posicion = numero % 23;
+        let letraDni = letrasDNI.substring(posicion, posicion + 1);
+        if(letra.toLowerCase() !== letraDni.toLowerCase()){
+            alert("DNI inválido");
+        }else{
+            alert("DNI válido");
+        }
+    }else{
+        alert("No entiendo el DNI ...");
+    }
+}
+
+/**
+ * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
+ * módulo 23 del número, y compara el resultado con la última letra
+ */
+function validarNie(){
+    let numero;
+    let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    let nieTexto = document.getElementById("nieTexto").value;
+    let pattern = /[XYZ]{1}\d{7}[A-Z]{1}$/;
+    if(pattern.test(nieTexto)){
+        numero = nieTexto.substring(0, nieTexto.length - 1);
+        numero = numero.replace('X', 0);
+        numero = numero.replace('Y', 1);
+        numero = numero.replace('Z', 2);
+        let letra = nieTexto.charAt(nieTexto.length - 1);
+        numero = numero % 23;
+        if(letra == letras[numero]){
+            alert("NIE válido")
+        }else{
+            alert("NIE inválido");
+        }
+    }else{
+        alert("No entiendo el NIE ...");
+    }
+}
+
+/**
+ * Valida que el número de personas sea mayor a 0 y que solo contenga dígitos
+ */
+function validarNumeroPersonas(){
+    let pattern = /^[0-9]$/;
+    let numeroPersonas = document.getElementById("numeroPersonas").value;
+    if(pattern.test(numeroPersonas)){
+        if(numeroPersonas < 1){
+            alert("El número de personas tiene que ser mayor a 0");
+        }else{
+            alert("Número de personas válido");
+        }
+    }else{
+        alert("ERROR!! El número de personas tiene que ser mayor a 0 y sólo dígitos");
+    }
+}
+
+/**
+ * Valida un número de teléfono con el formato de 9 dígitos
+ */
+function validarTelefonoFijo(){
+    let pattern = /^[8-9]\d{8}$/;
+    let telefonoFijo = document.getElementById("telefonoFijo").value;
+    if(pattern.test(telefonoFijo)){
+        alert("Teléfono Fijo válido");
+    }else{
+        alert("Teléfono Fijo invalido");
+    }
+}
+
+
+/**
  * Comprueba si el número de teléfono es válido, si lo es, alerta al usuario que el número de teléfono
  * es válido, si no lo es, alerta al usuario que el número de teléfono no es válido
  */
@@ -391,6 +497,108 @@ function validarTelefonoMovil(){
         }else{
             alert("Teléfono Móvil invalido");
         }
+}
+
+/**
+ * Devuelve verdadero si el valor de la entrada de residente es "si" y falso si el valor de la entrada
+ * de residente es "no"
+ * @returns un valor booleano.
+ */
+function validarResidente(){
+    let residente = document.getElementById("residente").value;
+    if(residente.value == "si"){
+        return true;
+    }else if(residente.value == "no"){
+        return false;
+    }else{
+        return false;
+    }
+}
+
+/**
+ * Toma el valor de la entrada con el id "correo electrónico" y lo compara con el patrón de expresión
+ * regular. Si el patrón coincide, avisa "Email válido". Si el patrón no coincide, alerta "Email
+ * invalido"
+ */
+function validarEmail(){
+    let pattern = /^[\w.-]+@([A-Z0-9-]+\.)[A-Z]{2,3}$/i;
+    let email = document.getElementById("email").value;
+    if(pattern.test(email)){
+        alert("Email válido");
+    }else{
+        alert("Email invalido");
+    }
+}
+
+/**
+ * Toma el valor de la entrada con el id "instagram" y comprueba. 
+ * Si lo hace, avisa a "Instagram válido". Si no lo hace, alerta "Instagram invalido"
+ */
+function validarInstagram(){
+    let pattern = /^[a-z0-9-_.]+$/;
+    let instagram = document.getElementById("instagram").value;
+    if(pattern.test(instagram)){
+        alert("Instagram válido");
+    }else{
+        alert("Instagram invalido");
+    }
+}
+
+/**
+ * Toma el valor de la entrada con el id "twitter" y comprueba.
+ * Si lo hace, avisa a "Twitter válido". Si no lo hace, alerta "Twitter invalido"
+ */
+function validarTwitter(){
+    let pattern = /^@(\w){1,15}$/;
+    let twitter = document.getElementById("twitter").value;
+    if(pattern.test(twitter)){
+        alert("Twitter válido");
+    }else{
+        alert("Twitter invalido");
+    }
+}
+
+/**
+ * Valida que el valor de la entrada con el id "marcaVehiculo" es una cadena que comienza con una letra
+ * mayúscula, seguida de cero o más letras minúsculas y cero o más espacios
+ */
+function validarMarcaVehiculo(){
+    let pattern = /^(([A-Z]{1}([a-z]?)+[\s]?)*)$/;
+    let marcaVehiculo = document.getElementById("marcaVehiculo").value;
+    if(pattern.test(marcaVehiculo)){
+        alert("Marca del vehículo válido");
+    }else{
+        alert("Marca del vehículo inválido");
+    }
+}
+
+/**
+ * Valida la matrícula de un vehículo
+ */
+function validarMatriculaVehiculo(){
+    let pattern = /^\d{4}-[A-Z]{3}$/;
+    let matriculaVehiculo = document.getElementById("matriculaVehiculo").value;
+    if(pattern.test(matriculaVehiculo)){
+        alert("Matrícula del vehículo válido");
+    }else{
+        alert("Matrícula del vehículo inválido");
+    }
+}
+
+/**
+ * Comprueba si la cadena de entrada es una dirección IPv4 o IPv6 válida
+ */
+function validarIp(){
+    let ip4Pattern = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
+    let ip6Pattern = /(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/;
+    let ip = document.getElementById("ip").value;
+    if(ip4Pattern.test(ip)){
+        alert("Tu dirección ip es de tipo IPv4");
+    }else if(ip6Pattern.test(ip)){
+        alert("Tu dirección ip es de tipo IPv6");
+    }else{
+        alert("Desconozco esta dirección IP ...");
+    }
 }
 
 /**
@@ -420,85 +628,20 @@ function validarMotivo(){
 }
 
 /**
- * Valida un número de DNI (Documento Nacional de Identidad) español y la letra correspondiente
+ * Crea un nuevo objeto de la clase Persona y luego lo imprime en la consola.
  */
-function validarDni(){
-    let pattern = /^\d{8}[A-Z]$/;
-    let letrasDNI = 'TRWAGMYFPDXBNJZSQVHLCKET';
-    let dniTexto = document.getElementById("dniTexto").value;
-    if(pattern.test(dniTexto)){
-        let numero = dniTexto.substring(0, dniTexto.length - 1);
-        let letra = dniTexto.substring(dniTexto.length -1, dniTexto.length);
-        let posicion = numero % 23;
-        let letraDni = letrasDNI.substring(posicion, posicion + 1);
-        if(letra.toLowerCase() !== letraDni.toLowerCase()){
-            alert("DNI inválido");
-        }else{
-            alert("DNI válido");
-        }
-    }else{
-        alert("No entiendo el DNI ...");
-    }
-}
-
-
-
-/**
- * NO FUNCIONA, VER EN CLASE
- * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
- * módulo 23 del número, y compara el resultado con la última letra
- */
-function validarNie(){
-    let numero;
-    let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-    let nieTexto = document.getElementById("nieTexto").value;
-    let pattern = /[XYZ]{1}\d{7}[A-Z]{1}$/;
-    if(pattern.test(nieTexto)){
-        numero = nieTexto.substring(0, nieTexto.length - 1);
-        numero = numero.replace('X', 0);
-        numero = numero.replace('Y', 1);
-        numero = numero.replace('Z', 2);
-        let letra = nieTexto.charAt(nieTexto.length - 1);
-        numero = numero % 23;
-        if(letra == letras[numero]){
-            alert("NIE válido")
-        }else{
-            alert("NIE inválido");
-        }
-    }else{
-        alert("No entiendo el NIE ...");
-    }
-}
-
-
-/**
- * Comprueba si la cadena de entrada es una dirección IPv4 o IPv6 válida
- */
-function validarIp(){
-    let ip4Pattern = /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/;
-    let ip6Pattern = /(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))/;
-    let ip = document.getElementById("ip").value;
-    if(ip4Pattern.test(ip)){
-        alert("Tu dirección ip es de tipo IPv4");
-    }else if(ip6Pattern.test(ip)){
-        alert("Tu dirección ip es de tipo IPv6");
-    }else{
-        alert("Desconozco esta dirección IP ...");
-    }
-}
-
 function mostrarResultado(){
     let nombre = document.getElementById("nombre").value;
     let apellidos = document.getElementById("apellidos").value;
     let identificacion = document.getElementById("dniNie");
     if(identificacion.value == "dni"){
-        let dni = document.getElementById("dniTexto").value;
+        identificacion = document.getElementById("dniTexto").value;
     }else{
-        let nie = document.getElementById("nieTexto").value;
+        identificacion = document.getElementById("nieTexto").value;
     }
     let codigoPostal = document.getElementById("codigoPostal");
     if(codigoPostal.value == "otro"){
-        let cpOtro = document.getElementById("cpOtro").value;
+        codigoPostal = document.getElementById("cpOtro").value;
     }
     let fechaIda = document.getElementById("fechaIda").value;
     let numeroPersonas = document.getElementById("numeroPersonas").value;
@@ -507,15 +650,20 @@ function mostrarResultado(){
     let residente = document.getElementById("residente");
     let email = document.getElementById("email").value;
     let redesSociales = document.getElementById("redesSociales");
+    let instagram;
+    let twitter;
     if(redesSociales.value == "si"){
-        let instagram = document.getElementById("instagram").value;
-        let twitter = document.getElementById("twitter").value;
+        instagram = document.getElementById("instagram").value;
+        twitter = document.getElementById("twitter").value;
     }
     let vehiculo = document.getElementById("vehiculo");
+    let marcaVehiculo;
+    let matriculaVehiculo;
     if(vehiculo.value == "si"){
-        let marca = document.getElementById("marcaVehiculo").value;
-        let matricula = document.getElementById("matriculaVehiculo").value;
+        marcaVehiculo = document.getElementById("marcaVehiculo").value;
+        matriculaVehiculo = document.getElementById("matriculaVehiculo").value;
     }
-    let ip = document.getElementById("ip").value;
     let motivo = document.getElementById("motivo").value;
+    let persona = new Persona(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente.value, email, instagram, twitter, vehiculo, marcaVehiculo, matriculaVehiculo, motivo);
+    console.log(persona);
 }
