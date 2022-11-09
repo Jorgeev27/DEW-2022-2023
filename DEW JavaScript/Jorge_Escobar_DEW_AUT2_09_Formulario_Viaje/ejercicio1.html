@@ -15,11 +15,11 @@
         <form class="form" id="form" autocomplete="off">
             <fieldset>
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" class="input-form" pattern="^(([A-Z]{1}[a-z]+[\s]?)*)" placeholder="Juan/Juan Diego" required/>
+                <input type="text" id="nombre" class="input-form" pattern="^(([A-Z]{1}([a-z][áéíóú]?)+[\s]?)*)" placeholder="Juan/Juan Diego" required/>
             </fieldset>
             <fieldset>
                 <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" class="input-form" pattern="^(([A-Z]{1}[a-z]+[\s]?)*)" placeholder="Pérez/Pérez Martínez" required/>
+                <input type="text" id="apellidos" class="input-form" pattern="^(([A-Z]{1}([a-z][áéíóú]?)+[\s]?)*)" placeholder="Pérez/Pérez Martínez" required/>
             </fieldset>
             <fieldset>
                 <label for="dni">DNI / NIE</label>
@@ -116,8 +116,11 @@
                 <label for="motivo">Motivos</label>
                 <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud" onchange="validarMotivo()" required></textarea>
             </fieldset>
-            <button type="submit" class="btn" id="enviar">Enviar</button>
+            <button type="submit" class="btn" id="enviar" onclick="mostrarResultado()">Enviar</button>
         </form>
+    </div>
+    <div id="resultadoPersona">
+
     </div>
     <script src="assets/js/ejercicio1.js"></script>
 </body>
