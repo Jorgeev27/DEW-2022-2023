@@ -270,7 +270,7 @@ class Persona{
  * minúsculas, y opcionalmente seguido de un espacio y cualquier número de nombres.
  */
 function validarNombre(){
-    let pattern = /^(([A-Z]{1}([a-z]?)+[\s]?)*)$/;
+    let pattern = /^(([A-Z]{1}([a-z]?[áéíóú]?[ñ]?)+[\s]?)*)$/;
     let nombre = document.getElementById("nombre").value;
     if(pattern.test(nombre)){
         alert("Nombre válido.");
@@ -285,7 +285,7 @@ function validarNombre(){
  * un mensaje de alerta que dice "Desconozco esos apellidos ..."
  */
 function validarApellidos(){
-    let pattern = /^(([A-Z]{1}([a-z]?)+[\s]?)*)$/;
+    let pattern = /^(([A-Z]{1}([a-z]?[áéíóú]?[ñ]?)+[\s]?)*)$/;
     let apellidos = document.getElementById("apellidos").value;
     if(pattern.test(apellidos)){
         alert("Apellidos válido.");
@@ -547,7 +547,7 @@ function mostrarMarcaMatriculaVehiculo(){
  * mayúscula, seguida de cero o más letras minúsculas y cero o más espacios.
  */
 function validarMarcaVehiculo(){
-    let pattern = /^(([A-Z]{1}([a-z]?)+[\s]?)*)$/;
+    let pattern = /^(([A-Z]{1}([a-z]?[áéíóú]?[ñ]?)+[\s]?)*)$/;
     let marcaVehiculo = document.getElementById("marcaVehiculo").value;
     if(pattern.test(marcaVehiculo)){
         alert("Marca del vehículo válido.");
@@ -625,12 +625,12 @@ function mostrarResultado(){
     }
     let vehiculo = document.getElementById("vehiculo");
     if(vehiculo.value == "si"){
-        vehiculo = document.getElementById("marcaVehiculo").value;
-        vehiculo = document.getElementById("matriculaVehiculo").value;
+        let marcaVehiculo = document.getElementById("marcaVehiculo").value;
+        let matriculaVehiculo = document.getElementById("matriculaVehiculo").value;
     }
     let motivo = document.getElementById("motivo");
 
 /* Creando un nuevo objeto llamado persona y asignándole los valores de las variables que se le pasan y mostrando los datos por CONSOLA. */
-    let persona = new Persona(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente, email, instagram.value, twitter.value, vehiculo, marcaVehiculo.value, matriculaVehiculo, motivo.value);
+    let persona = new Persona(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente, email, instagram.value, twitter.value, marcaVehiculo.value, matriculaVehiculo.value, motivo.value);
     console.log(persona);
 }
