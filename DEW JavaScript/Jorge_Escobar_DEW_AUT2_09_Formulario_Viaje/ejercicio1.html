@@ -112,12 +112,15 @@
                 <label for="ip">Dirección IP</label>
                 <input type="text" id="ip" class="input-form" onchange="validarIp()" required="required"/>
             </fieldset>
-            <fieldset><br/><br/><br/><br/>
+            <fieldset><br/><br/>
                 <label for="motivo">Motivos</label>
                 <textarea id="motivo" cols="90" rows="5" placeholder="Motivos de la solicitud" onchange="validarMotivo()" required="required"></textarea>
             </fieldset>
             <button type="button" class="btn" id="enviar" onclick="mostrarResultado()">Enviar</button>
         </form>
+        <div id="resultadoPersona">
+            
+        </div>
     </div>
     <script src="assets/js/ejercicio1.js"></script>
 </body>

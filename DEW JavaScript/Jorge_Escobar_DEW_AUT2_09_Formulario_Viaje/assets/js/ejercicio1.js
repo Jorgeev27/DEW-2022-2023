@@ -1,5 +1,8 @@
 /* Obtener los elementos del archivo HTML. */
 
+//RESULTADO PERSONA
+let resultadoPersona = document.getElementById("resultadoPersona");
+
 //DNI-NIE.
 let nieTexto = document.getElementById("nieTexto");
 let dniTexto = document.getElementById("dniTexto");
@@ -81,7 +84,7 @@ class Persona{
      * @param matricula - Matrícula del vehículo.
      * @param motivos - El motivo del usuario.
      */
-    constructor(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente, email, instagram, twitter, marca, matricula, motivos){
+    constructor(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente, email, instagram="no", twitter="no", marca ="", matricula="", motivos){
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.identificacion = identificacion;
@@ -334,7 +337,7 @@ function validarDni(){
 
 /**
  * Toma el número NIE, quita la última letra, reemplaza la primera letra por un número, calcula el
- * módulo 23 del número, y compara el resultado con la última letra.
+ * módulo del número entre 23, y compara el resultado con la última letra.
  */
 function validarNie(){
     let numero;
@@ -585,22 +588,38 @@ function validarIp(){
     }
 }
 
+
 /**
- * Valida la entrada de un área de texto, asegurándose de que la primera letra de cada palabra esté en
+ * Valida la entrada de un área de texto, asegurándose de que la primera letra de cada línea sea
  * mayúscula.
  */
 function validarMotivo(){
-    let pattern = /^[A-Z]/;
+    let pattern = /^[A-Z]{1}/;
     let motivo = document.getElementById("motivo").value;
-    if(pattern.test(motivo)){
-        alert("Motivo válido.");
-    }else{
+    /* El código anterior está dividiendo la cadena en una matriz de palabras. */
+    let motivoArray = motivo.split(/[\n\s]+/);
+
+    /* Eliminación de cadenas vacías y nuevas líneas de la matriz. */
+    for(let i = 0; i < motivoArray.length; i++){
+        if(motivoArray[i] == ""){
+            motivoArray.splice(i, 1);
+            i--;
+        }
+        if(motivoArray[i] == "\n"){
+            motivoArray.splice(i, 1);
+            i--;
+        }
+    }
+
+    if(!pattern.test(motivo)){
         alert("ERROR!! Motivo inválido. La primera letra tiene que empezar por mayúscula.");
     }
 }
 
+
 /**
- * Crea un nuevo objeto de la clase Persona y luego lo imprime en la consola.
+ * Crea un nuevo objeto llamado `persona` y le asigna los valores de las variables que se le pasan, y
+ * luego muestra los datos.
  */
 function mostrarResultado(){
     let nombre = document.getElementById("nombre").value;
@@ -619,18 +638,42 @@ function mostrarResultado(){
     let residente = document.getElementById("residente").value;
     let email = document.getElementById("email").value;
     let redesSociales = document.getElementById("redesSociales");
+    let instagram;
+    let twitter;
     if(redesSociales.value == "si"){
-        let instagram = document.getElementById("instagram").value;
-        let twitter = document.getElementById("twitter").value;
+        instagram = document.getElementById("instagram").value;
+        twitter = document.getElementById("twitter").value;
     }
     let vehiculo = document.getElementById("vehiculo");
+    let marcaVehiculo;
+    let matriculaVehiculo;
     if(vehiculo.value == "si"){
-        let marcaVehiculo = document.getElementById("marcaVehiculo").value;
-        let matriculaVehiculo = document.getElementById("matriculaVehiculo").value;
+        marcaVehiculo = document.getElementById("marcaVehiculo").value;
+        matriculaVehiculo = document.getElementById("matriculaVehiculo").value;
     }
-    let motivo = document.getElementById("motivo");
+    let motivo = document.getElementById("motivo").value;
+    motivo = motivo.toUpperCase();
 
-/* Creando un nuevo objeto llamado persona y asignándole los valores de las variables que se le pasan y mostrando los datos por CONSOLA. */
-    let persona = new Persona(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente, email, instagram.value, twitter.value, marcaVehiculo.value, matriculaVehiculo.value, motivo.value);
-    console.log(persona);
+/* Creando un nuevo objeto llamado persona y asignándole los valores de las variables que se le pasan y mostrando los datos. */
+    let persona = new Persona(nombre, apellidos, identificacion, codigoPostal, fechaIda, numeroPersonas, telefonoFijo, telefonoMovil, residente, email, instagram, twitter, marcaVehiculo, matriculaVehiculo, motivo);
+    
+    /* Iterando a través del objeto e imprimiendo la clave y el valor de cada propiedad. */
+    resultadoPersona.innerHTML = "";
+    for(const [clave, valor] of Object.entries(persona)){
+        resultadoPersona.innerHTML += clave + ": " + valor + "<br/>";
+    }
+
+    /* Comprobando si hay una fecha en el motivo. */
+    let motivoFecha = /^([\d]{1,2}(\/){1})*[\d]{4}$/gm;
+    if(motivoFecha.test(motivo)){
+        resultadoPersona.innerHTML += "Hay fechas en el motivo" + "<br/>";
+    }
+
+
+    /* El código anterior está contando el número de palabras en el área de texto. */
+    let contadorEspacios = motivo.split(/[\s]+/);
+    if(contadorEspacios == ""){
+        contadorEspacios.length = 0;
+    }
+    resultadoPersona.innerHTML += "Contador de palabras: " + contadorEspacios.length;
 }
