@@ -1,0 +1,65 @@
+{
+    "peliculasSeries": [
+        {
+            "id": 0,
+            "nombre": "Alien: El Octavo Pasajero",
+            "director": "Ridley scott",
+            "clasificacion": "Ciencia Ficción, Terror",
+            "anio": "1979",
+            "actores": "Sigourney Weaver, Tom Skerritt, Veronica Cartwright...",
+            "sinopsis": "La tripulación del remolcador espacial Nostromo atiende una señal de socorro y, sin saberlo, sube a bordo una letal forma de vida extraterrestre.",
+            "imagen": "../img/AlienOctavoPasajero.jpg"
+        },
+        {
+            "id": 1,
+            "nombre": "Star Wars: The Clone Wars",
+            "director": "George Lucas",
+            "clasificacion": "Ciencia Ficción",
+            "anio": "2008",
+            "actores": "Matt Lanter, Ashley Eckstein, James Arnold Taylor...",
+            "sinopsis": "La primera serie semanal de televisión de Lucasfilm Animation, hace una crónica de las aventuras de Anakin Skywalker, Yoda, Obi-Wan Kenobi y otros personajes populares del universo de Star Wars durante la violencia del Clone Wars mientras el grupo minoritario de caballeros Jedi lucha para restaurar la paz.",
+            "imagen": "../img/StarWarsCloneWars.jpg"
+        },
+        {
+            "id": 2,
+            "nombre": "El Corredor del Laberinto",
+            "director": "Wes Ball",
+            "clasificacion": "Misterio, Ciencia Ficción, Thriller",
+            "anio": "2014",
+            "actores": "Dylan O'Brien, Kaya Scodelario, Will Poulter...",
+            "sinopsis": "Thomas es un adolescente cuya memoria fue borrada y que ha sido encerrado junto a otros chicos de su edad en un laberinto plagado de monstruos y misterios. Para sobrevivir, tendrá que adaptarse a las normas y a los demás habitantes del laberinto.",
+            "imagen": "../img/CorredorLaberinto.jpg"
+        },
+        {
+            "id": 3,
+            "nombre": "The Good Doctor",
+            "director": "David Shore",
+            "clasificacion": "Drama Médico",
+            "anio": "2017",
+            "actores": "Freddie Highmore, Antonia Thoams, Paige Spara...",
+            "sinopsis": "Un cirujano joven y autista que padece el síndrome del sabio empieza a trabajar en un hospital prestigioso. Allá tendrá que vencer el escepticismo con el que sus colegas lo reciben.",
+            "imagen": "../img/GoodDoctor.jpg"
+        },
+        {
+            "id": 4,
+            "nombre": "60 Segundos",
+            "director": "Dominic Senna",
+            "clasificacion": "Acción",
+            "anio": "2000",
+            "actores": "Nicolas Cage, Angelina Jolie, Will Patton...",
+            "sinopsis": "Randall (Memphis) Raines, un exladrón de coches, se ve obligado a reunir a su antigua banda y robar 50 coches en una sola noche, para salvar la vida de su hermano.",
+            "imagen": "../img/SesentaSegundos.jpg"
+        },
+        {
+            "id": 5,
+            "nombre": "Juego de Tronos",
+            "director": "Mark Mylod, Alex Graves, David Nutter",
+            "clasificacion": "Drama",
+            "anio": "2011",
+            "actores": "Emilia Clarke, Sophhie Turner, Jason Momoa...",
+            "sinopsis": "El libro mejor vendido de la serie A Song of Ice and Fire escrito por George R.R, es llevado a la pantalla chica cuando HBO decide recrear esta historia épica de fantasía. Es la descripción de dos familias poderosas, reyes y reinas, caballeros y renegados, hombres falsos y honestos, haciendo parte de un juego mortal por el control de los Siete Reinados de Westeros y por sentarse en el trono más alto. Martin es el co productor ejecutivo y uno de los escritores de la serie que fue filmada en el Norte de Irlanda y Malta.",
+            "imagen": "../img/JuegodeTronos.png"
+            
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jorge Escobar DEW Proyecto Ahorcado</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/ahorcado1vsMachine.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <h1>Ahorcado 1 VS Máquina</h1>
+            </div>
+        </div>
+        <div id="botonAtras">
+            <input type="button" value="Atras" onclick="menu()"/>
+        </div>
+        <div class="row">
+            <div class="col-lg-5 col-md-5 ">
+                <canvas id="imageView" width="500" height="400"></canvas>
+                <div id="canvas">
+                    <script type="text/javascript" src="../js/canvas.js"></script>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-5 game ">
+                <div id="tablero" class="tablero">
+                </div>
+                <div class="teclado">
+                    <div>
+                        <input type="button" class="btn btn-dark" id="Q" value="Q" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="W" value="W" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="E" value="E" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="R" value="R" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="T" value="T" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="Y" value="Y" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="U" value="U" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="I" value="I" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="O" value="O" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="P" value="P" onclick="escribir(this.value,id)">
+                    </div>
+                    <div>
+                        <input type="button" class="btn btn-dark" id="A" value="A" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="S" value="S" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="D" value="D" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="F" value="F" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="G" value="G" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="H" value="H" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="J" value="J" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="K" value="K" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="L" value="L" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="Ñ" value="Ñ" onclick="escribir(this.value,id)">
+                    </div>
+                    <div>
+                        <input type="button" class="btn btn-dark" id="Z" value="Z" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="X" value="X" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="C" value="C" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="V" value="V" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="B" value="B" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="N" value="N" onclick="escribir(this.value,id)">
+                        <input type="button" class="btn btn-dark" id="M" value="M" onclick="escribir(this.value,id)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-2 game ">
+                <input type="button" class="btn btn-success" value="Play again" onclick="play()">
+                <script>
+                </script>
+                <input type="button" class="btn btn-danger stats" value="Guardar Estadisticas" onclick="saludar()">
+                <h6 id="saludo"></h6>
+                <h6 id="lastStats"></h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="fichaTecnica"></div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/ahorcado1vsMachine.js"></script>
+</body>
+</html>
