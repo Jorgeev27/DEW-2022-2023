@@ -1,7 +1,7 @@
 /**
  * Lleva al usuario a la página del menú.
  */
-function menu(){
+ function menu(){
     window.location = "../html/menu.html";
 }
 
@@ -149,14 +149,14 @@ let tituloPeli; //variable para guardar el titulo de la pelicula
  * @param id - el id del elemento que desea cambiar.
  */
 function escribir(letra, id) {
-    if (partida1.ganador == true || partida1.fallos == 6) { // paramos la partida por si el usuario sigue presionando teclas 
-        alert("Partida Acabada");
+    if(partida1.ganador == true || partida1.fallos == 6){ // paramos la partida por si el usuario sigue presionando teclas 
+        alert("OOOOOHH!!!!!!!!! Has perdido :(");
     }else{
         document.getElementById(id).style.backgroundColor = "#FF0040"; // cada vez que pulsemos una tecla esta pasa a color rojo
         partida1.comprobarLetra(letra); // comprobamos si la tecla está en la palabra 
         document.getElementById("tablero").innerHTML = partida1.tablero.join(''); //pintamos el nuevo tablero
         if(partida1.ganador == true) { //  mostraremos la ficha de la pelicula
-            alert("has ganado");
+            alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
             window.redirect = "../FichaPelicula/ficha.html";
             //document.getElementById("fichaTecnica").innerHTML = "<iframe width='1500' height='500' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0' src='Producto1vs1.html'> </iframe>"
         }
@@ -233,13 +233,14 @@ function play(){
         fetch("../json/peliculasSeries.json")
             .then(respuesta => respuesta.json())
             //.then(datos => pintarDatos(datos, peliculas));
-            .then(datos => { return leerObj(datos) })
+            .then(datos => { 
+                return leerObj(datos) 
+            })
             .catch(error => console.log("Solicitud fallida", error));
     }
 
     /* Llamando a la función elegirPeliMachine() */
     elegirPeliMachine();
-
     jugador = prompt("nombre").toUpperCase();
     tituloPeli = document.cookie.toUpperCase(); // ahora en vez de pedir al usuario la palabra , cogemos esta de las cookies
     partida1 = new Partida(tituloPeli);
@@ -268,7 +269,7 @@ function play(){
     Ranking(jugador, partida1);
 
     document.getElementById("tablero").innerHTML = partida1.tablero.join(''); // mostramos el tablero al usuario
-    let cadena = "QWERTYUIOPASDFGHJKLÑZXCVBNM"; //creamos una cadena de todas las letras 
+    let cadena = "1234567890QWERTYUIOPASDFGHJKLÑZXCVBNM"; //creamos una cadena de todas las letras 
     for(let i = 0; i < cadena.length; i++){ //la recorremos
         document.getElementById(cadena.charAt(i)).style.backgroundColor = "#000000"; // y pintamos las letras de negro , esto es para que cuando empiece la partida no se queden las letras marcadas de la anterior.
     }
@@ -307,4 +308,4 @@ function leerObj(objeto){
 function randomTitulos(lista){
     const titulo = lista[Math.floor(Math.random() * lista.length)];
     return titulo;
-} 
+}

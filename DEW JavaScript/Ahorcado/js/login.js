@@ -1,5 +1,5 @@
 /**
- * Se llama cuando el usuario hace clic en el botón "Iniciar sesión" en el
+ * La función Login() se llama cuando el usuario hace clic en el botón "Iniciar sesión" en el
  * formulario "iniciar sesión". Comprueba si el usuario ha introducido el nombre de usuario
  * y la contraseña correctos. Si el usuario ha ingresado el nombre de usuario y la contraseña
  * correctos, es redirigido a la página "menu.html". Si el usuario ha ingresado el nombre de

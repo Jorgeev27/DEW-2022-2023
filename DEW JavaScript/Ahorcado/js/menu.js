@@ -18,5 +18,5 @@ function abrir1vsMachine() {
  */
 function index(){
     alert("Has cerrado sesión");
-    window.location = "Login.html";
+    window.location = "./Login.html";
 }

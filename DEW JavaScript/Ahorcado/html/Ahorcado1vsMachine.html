@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jorge Escobar DEW Proyecto Ahorcado</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -14,11 +14,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
-                <h1>Ahorcado 1 VS Máquina</h1>
+                <h1>Ahorcado <img src="../img/player1.jpg" alt="" height="100" width="200"> VS <img src="../img/cpu.jpg" alt="" height="100" width="100"></h1>
             </div>
         </div>
         <div id="botonAtras">
-            <input type="button" value="Atras" onclick="menu()"/>
+            <button type="button" class="btn btn-primary" onclick="menu()">Atrás</button>
         </div>
         <div class="row">
             <div class="col-lg-5 col-md-5 ">
@@ -32,45 +32,55 @@
                 </div>
                 <div class="teclado">
                     <div>
-                        <input type="button" class="btn btn-dark" id="Q" value="Q" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="W" value="W" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="E" value="E" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="R" value="R" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="T" value="T" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="Y" value="Y" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="U" value="U" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="I" value="I" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="O" value="O" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="P" value="P" onclick="escribir(this.value,id)">
+                        <button type="button" class="btn btn-dark" id="1" value="1" onclick="escribir(this.value,id)">1</button>
+                        <button type="button" class="btn btn-dark" id="2" value="2" onclick="escribir(this.value,id)">2</button>
+                        <button type="button" class="btn btn-dark" id="3" value="3" onclick="escribir(this.value,id)">3</button>
+                        <button type="button" class="btn btn-dark" id="4" value="4" onclick="escribir(this.value,id)">4</button>
+                        <button type="button" class="btn btn-dark" id="5" value="5" onclick="escribir(this.value,id)">5</button>
+                        <button type="button" class="btn btn-dark" id="6" value="6" onclick="escribir(this.value,id)">6</button>
+                        <button type="button" class="btn btn-dark" id="7" value="7" onclick="escribir(this.value,id)">7</button>
+                        <button type="button" class="btn btn-dark" id="8" value="8" onclick="escribir(this.value,id)">8</button>
+                        <button type="button" class="btn btn-dark" id="9" value="9" onclick="escribir(this.value,id)">9</button>
+                        <button type="button" class="btn btn-dark" id="0" value="0" onclick="escribir(this.value,id)">0</button>
                     </div>
                     <div>
-                        <input type="button" class="btn btn-dark" id="A" value="A" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="S" value="S" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="D" value="D" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="F" value="F" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="G" value="G" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="H" value="H" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="J" value="J" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="K" value="K" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="L" value="L" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="Ñ" value="Ñ" onclick="escribir(this.value,id)">
+                        <button type="button" class="btn btn-dark" id="Q" value="Q" onclick="escribir(this.value,id)">Q</button>
+                        <button type="button" class="btn btn-dark" id="W" value="W" onclick="escribir(this.value,id)">W</button>
+                        <button type="button" class="btn btn-dark" id="E" value="E" onclick="escribir(this.value,id)">E</button>
+                        <button type="button" class="btn btn-dark" id="R" value="R" onclick="escribir(this.value,id)">R</button>
+                        <button type="button" class="btn btn-dark" id="T" value="T" onclick="escribir(this.value,id)">T</button>
+                        <button type="button" class="btn btn-dark" id="Y" value="Y" onclick="escribir(this.value,id)">Y</button>
+                        <button type="button" class="btn btn-dark" id="U" value="U" onclick="escribir(this.value,id)">U</button>
+                        <button type="button" class="btn btn-dark" id="I" value="I" onclick="escribir(this.value,id)">I</button>
+                        <button type="button" class="btn btn-dark" id="O" value="O" onclick="escribir(this.value,id)">O</button>
+                        <button type="button" class="btn btn-dark" id="P" value="P" onclick="escribir(this.value,id)">P</button>
                     </div>
                     <div>
-                        <input type="button" class="btn btn-dark" id="Z" value="Z" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="X" value="X" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="C" value="C" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="V" value="V" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="B" value="B" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="N" value="N" onclick="escribir(this.value,id)">
-                        <input type="button" class="btn btn-dark" id="M" value="M" onclick="escribir(this.value,id)">
+                        <button type="button" class="btn btn-dark" id="A" value="A" onclick="escribir(this.value,id)">A</button>
+                        <button type="button" class="btn btn-dark" id="S" value="S" onclick="escribir(this.value,id)">S</button>
+                        <button type="button" class="btn btn-dark" id="D" value="D" onclick="escribir(this.value,id)">D</button>
+                        <button type="button" class="btn btn-dark" id="F" value="F" onclick="escribir(this.value,id)">F</button>
+                        <button type="button" class="btn btn-dark" id="G" value="G" onclick="escribir(this.value,id)">G</button>
+                        <button type="button" class="btn btn-dark" id="H" value="H" onclick="escribir(this.value,id)">H</button>
+                        <button type="button" class="btn btn-dark" id="J" value="J" onclick="escribir(this.value,id)">J</button>
+                        <button type="button" class="btn btn-dark" id="K" value="K" onclick="escribir(this.value,id)">K</button>
+                        <button type="button" class="btn btn-dark" id="L" value="L" onclick="escribir(this.value,id)">L</button>
+                        <button type="button" class="btn btn-dark" id="Ñ" value="Ñ" onclick="escribir(this.value,id)">Ñ</button>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-dark" id="Z" value="Z" onclick="escribir(this.value,id)">Z</button>
+                        <button type="button" class="btn btn-dark" id="X" value="X" onclick="escribir(this.value,id)">X</button>
+                        <button type="button" class="btn btn-dark" id="C" value="C" onclick="escribir(this.value,id)">C</button>
+                        <button type="button" class="btn btn-dark" id="V" value="V" onclick="escribir(this.value,id)">V</button>
+                        <button type="button" class="btn btn-dark" id="B" value="B" onclick="escribir(this.value,id)">B</button>
+                        <button type="button" class="btn btn-dark" id="N" value="N" onclick="escribir(this.value,id)">N</button>
+                        <button type="button" class="btn btn-dark" id="M" value="M" onclick="escribir(this.value,id)">M</button>
                     </div>
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 game ">
-                <input type="button" class="btn btn-success" value="Play again" onclick="play()">
-                <script>
-                </script>
-                <input type="button" class="btn btn-danger stats" value="Guardar Estadisticas" onclick="saludar()">
+                <button type="button" class="btn btn-primary" value="Play again" onclick="play()">Jugar otra vez</button>
+                <button type="button" class="btn btn-secondary stats" value="Guardar Estadisticas" onclick="saludar()">Guardar stats</button>
                 <h6 id="saludo"></h6>
                 <h6 id="lastStats"></h6>
             </div>

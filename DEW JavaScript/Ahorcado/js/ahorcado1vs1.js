@@ -1,7 +1,7 @@
 /**
  * Lleva al usuario a la página del menú.
  */
-function menu(){
+ function menu(){
     window.location = "../html/menu.html";
 }
 
@@ -214,7 +214,7 @@ function play(){
     Ranking(jugador, partida1);
     
     document.getElementById("tablero").innerHTML = partida1.tablero.join(''); // mostramos el tablero al usuario
-    let cadena = "QWERTYUIOPASDFGHJKLÑZXCVBNMÇ"; //creamos una cadena de todas las letras 
+    let cadena = "1234567890QWERTYUIOPASDFGHJKLÑZXCVBNMÇ"; //creamos una cadena de todas las letras 
     for(let i = 0; i < cadena.length; i++){ //la recorremos 
         document.getElementById(cadena.charAt(i)).style.backgroundColor = "#008000"; // y pintamos las letras de negro , esto es para que cuando empiece la partida no se queden las letras marcadas de la anterior.
     }
