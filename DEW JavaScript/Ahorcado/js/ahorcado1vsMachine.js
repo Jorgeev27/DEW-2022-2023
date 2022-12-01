@@ -1,7 +1,7 @@
 /**
  * Lleva al usuario a la página del menú.
  */
- function menu(){
+function menu(){
     window.location = "../html/menu.html";
 }
 
@@ -308,4 +308,4 @@ function leerObj(objeto){
 function randomTitulos(lista){
     const titulo = lista[Math.floor(Math.random() * lista.length)];
     return titulo;
-}
+} 

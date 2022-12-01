@@ -1,7 +1,7 @@
 /**
  * Lleva al usuario a la página del menú.
  */
- function menu(){
+function menu(){
     window.location = "../html/menu.html";
 }
 
