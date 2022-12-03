@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <title>Examen Ejercicio 1_ JQuery_ Jorge Escobar</title>
+</head>
+<body>
+    <!-- ABRIR EL EJERCICIO CON LIVE SERVER, YA QUE SI SE ABRE DIRECTAMENTE, LOS DATOS DEL JSON NO SE MOSTRARÁN. -->
+    <form action="index.html">
+        <button type="submit">Atrás</button><br/>
+    </form>
+    <div id="preloader">
+        <div class="loader">
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+    </div>
+    <h1>Examen Ejercicio 1_ JQuery_ Jorge Escobar</h1>
+    <div>
+        <h2>Artículos</h2>
+        <div id="articlesList"></div>
+        <div>
+            <button type="button" id="boton">Agregar al Carrito</button>
+            <button type="button" id="obtenerDatos">Actualizar Productos</button>
+        </div>
+    </div>
+    <div>
+        <h2>Cesta de la compra</h2>
+        <div>
+            <div id="lista"></div>
+            <div>
+                <p><strong>IGIC (7%): </strong><span id="igic"></span>€</p>
+                <p><strong>Importe Total: </strong><span id="total"></span>€</p>
+            </div>
+        </div>
+        <script src="assets/js/ejercicio1.js"></script>
+    </div>
+</body>
+</html>

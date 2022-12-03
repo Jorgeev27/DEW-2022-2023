@@ -1,27 +1,22 @@
 [
     {
-        "name" : "ps",
-        "nombre" : "Playstation 5",
+        "producto" : "Playstation 5",
         "precio" : 779.90
     },
     {
-        "name" : "tv",
-        "nombre" : "TV Xiaomi 43",
+        "producto" : "TV Xiaomi 43",
         "precio" : 399.00
     },
     {
-        "name" : "nevera",
-        "nombre" : "Nevera Samsung",
+        "producto" : "Nevera Samsung",
         "precio" : 1099.95
     },
     {
-        "name" : "lavadora",
-        "nombre" : "Lavadora/Secadora Balay",
+        "producto" : "Lavadora/Secadora Balay",
         "precio" : 1074.95
     },
     {
-        "name" : "xbox",
-        "nombre" : "Xbox Series S",
+        "producto" : "Xbox Series S",
         "precio" : 299.95
     }
 ]
