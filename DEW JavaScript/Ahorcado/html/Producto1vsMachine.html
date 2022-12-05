@@ -7,29 +7,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/producto1vsMachine.css">
 </head>
 <body>
-    <script>
-        function elegirPeliMachine(){
-            var randomNum= sessionStorage.getItem("numPeli"); // recogemos el numero aleatorio que contenia la posición de la pelicula escogida en el json
-            var xmlhttp = new XMLHttpRequest(); //realizamos la conexión 
-            xmlhttp.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status == 200){
-                    var myObj = JSON.parse(this.responseText); //devolvemos cada uno de los atributos del json en el html 
-                    document.getElementById("titulo").innerHTML = myObj[randomNum].Titulo; 
-                    document.getElementById("poster").innerHTML = "<img class='poster' src='" + myObj[randomNum].Poster + "'>";
-                    document.getElementById("actores").innerHTML = myObj[randomNum].Actores;
-                    document.getElementById("director").innerHTML = myObj[randomNum].Director;
-                    document.getElementById("estreno").innerHTML = myObj[randomNum].Estreno;
-                    document.getElementById("imagenes").innerHTML = "<img width='300' height='200' src='" + myObj[randomNum].Imagenes + "'>";
-                }
-            };
-            xmlhttp.open("GET", "./films.json", true);
-            xmlhttp.send();
-        }
-        elegirPeliMachine();
-    </script>
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-sm-12 ">
@@ -37,7 +16,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6 col-sm-6 ">
+            <div class="col-lg-12 col-sm-12 ">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
@@ -50,7 +29,7 @@
                             <h6 id="titulo">
                             </h6>
                         </td>
-                        <td rowspan="4">
+                        <td rowspan="2">
                             <div id="poster">
                             </div>
                         </td>
@@ -79,5 +58,6 @@
             </div>
         </div>
     </div>
+    <script src="../js/producto1vsMachine.js"></script>
 </body>
 </html>

@@ -23,7 +23,7 @@ onload = () =>{
  * letra que ha ingresado el usuario está en la palabra.
  * Funciones dentro de la clase: CrearTablero() y ComprobarLetra().
  */
-class Partida {
+class Partida{
     /**
      * Definimos las propiedades de la clase Partida.
      */
@@ -41,7 +41,7 @@ class Partida {
      * @param ganador - El ganador de la partida.
      * @param tableroResuelto - El resultado de la palabra en el tablero.
      */
-    constructor(letraUsuario) { 
+    constructor(letraUsuario){ 
         this.letraUsuario = letraUsuario; 
         this.tablero = this.crearTablero(); 
         this.fallos = 0; 
@@ -52,7 +52,7 @@ class Partida {
      * La función CrearTablero() hace crear el tablero.
      * @returns la palabra en el tablero.
      */
-    crearTablero() { 
+    crearTablero(){ 
         let huecos = ""; //variable del tablero
         ocultarCampos(perdedor,"none");
         this.tableroResuelto = this.letraUsuario.split('');
@@ -74,7 +74,7 @@ class Partida {
      * errores.
      * @param {*} letra del usuario que introduce
      */
-    comprobarLetra(letra) {
+    comprobarLetra(letra){
         let acierto = false; //establecemos los aciertos a falso
         for(let i = 0; i < this.tablero.length; i++){ 
             if(this.tableroResuelto[i] == letra){ //si la letra se encuentra en el tablero resuelto 
@@ -94,7 +94,7 @@ class Partida {
                 this.ganador = true; //el usuario gana 
             }
         }
-        switch (this.fallos) { //canvas , cuando los fallos se incrementen se va rellenando el muñeco del canvas
+        switch(this.fallos){ //canvas , cuando los fallos se incrementen se va rellenando el muñeco del canvas
             case 1: //Hace la cabeza
                 context.strokeStyle = '#000000';
                 context.save();
@@ -231,14 +231,14 @@ function play(){
  * @param id - el id del elemento que desea cambiar.
  */
 function escribir(letra, id){
-    if(partida1.ganador == true || partida1.fallos == 6) { // paramos la partida por si el usuario sigue presionando teclas 
-        alert("OOOOOHH!!!!!!!!! Has perdido :(");
+    if(partida1.ganador == true || partida1.fallos == 6){ // paramos la partida por si el usuario sigue presionando teclas 
+        alert("OOOOOHH!!!!!!!!! Has perdido.");
     }else{
         document.getElementById(id).style.backgroundColor = "#FF0040"; // cada vez que pulsemos una tecla esta pasa a color rojo
         partida1.comprobarLetra(letra); // comprobamos si la tecla está en la palabra 
         document.getElementById("tablero").innerHTML = partida1.tablero.join(''); //pintamos el nuevo tablero
         if(partida1.ganador == true){ //  mostraremos la ficha de la pelicula
-            alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
+            alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO!!!!!!!");
             window.redirect ="../FichaPelicula/ficha.html";
             //document.getElementById("fichaTecnica").innerHTML = "<iframe width='1500' height='500' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0' src='Producto1vs1.html'> </iframe>"
         } 
@@ -256,7 +256,6 @@ function escribir(letra, id){
 function ocultarCampos(objeto, display){
     objeto.style.display=display;
 }
-
 
 /**
  * La función Stats() devuelve una cadena con el número de victorias y el número total de juegos

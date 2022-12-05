@@ -16,7 +16,7 @@ onload = () => {
  * letra que ha ingresado el usuario está en la palabra.
  * Funciones dentro de la clase: CrearTablero() y ComprobarLetra().
  */
-class Partida {
+class Partida{
     /**
      * Definimos las propiedades de la clase Partida.
      */
@@ -57,7 +57,7 @@ class Partida {
         let tableroPalabra = huecos.split(''); //convertimos huecos en un array
         return tableroPalabra;
     }
-    comprobarLetra (letra){
+    comprobarLetra(letra){
         let acierto = false; //establecemos los aciertos a falso
         for (let i = 0; i < this.tablero.length; i++) {
             if (this.tableroResuelto[i] == letra) { //si la letra se encuentra en el tablero resuelto 
@@ -157,8 +157,8 @@ function escribir(letra, id) {
         document.getElementById("tablero").innerHTML = partida1.tablero.join(''); //pintamos el nuevo tablero
         if(partida1.ganador == true) { //  mostraremos la ficha de la pelicula
             alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
-            window.redirect = "../FichaPelicula/ficha.html";
-            //document.getElementById("fichaTecnica").innerHTML = "<iframe width='1500' height='500' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0' src='Producto1vs1.html'> </iframe>"
+            window.redirect = "./Producto1vsMachine.html";
+            document.getElementById("fichaTecnica").innerHTML = "<iframe width='1500' height='1500' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0' src='../html/Producto1vsMachine.html'> </iframe>"
         }
     }
 }
