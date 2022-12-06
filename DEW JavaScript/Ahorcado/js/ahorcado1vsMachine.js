@@ -157,17 +157,11 @@ function escribir(letra, id) {
         document.getElementById("tablero").innerHTML = partida1.tablero.join(''); //pintamos el nuevo tablero
         if(partida1.ganador == true) { //  mostraremos la ficha de la pelicula
             alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
-            window.redirect = "./Producto1vsMachine.html";
+            window.redirect = "../html/Producto1vsMachine.html";
             document.getElementById("fichaTecnica").innerHTML = "<iframe width='1500' height='1500' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0' src='../html/Producto1vsMachine.html'> </iframe>"
         }
     }
 }
-
-/*
-function ocultarCampos(objeto, display){
-    objeto.style.display=display;
-}
-*/
 
 /**
  * La función Stats() devuelve una cadena con el número de victorias y el número total de juegos
@@ -229,7 +223,6 @@ function play(){
      * leemos el objeto
      */
     function elegirPeliMachine(){ //creamos la funcion que permitirá jugar al usuario contra la máquina
-        let resultado; //creamos la variable resultado donde guardaremos el titulo de la pelicula
         fetch("../json/peliculasSeries.json")
             .then(respuesta => respuesta.json())
             //.then(datos => pintarDatos(datos, peliculas));
