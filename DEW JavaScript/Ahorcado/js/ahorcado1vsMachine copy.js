@@ -1,4 +1,3 @@
-
 /**
  * Lleva al usuario a la página del menú.
  */
@@ -9,7 +8,6 @@ function menu(){
 /* Llamar a la función play() cuando se carga la página. */
 onload = () => {
     play();
-    document.getElementById("fichaTecnica").style.display = "none";
 }
 
 /**
@@ -159,7 +157,8 @@ function escribir(letra, id) {
         document.getElementById("tablero").innerHTML = partida1.tablero.join(''); //pintamos el nuevo tablero
         if(partida1.ganador == true) { //  mostraremos la ficha de la pelicula
             alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
-            document.getElementById("fichaTecnica").style.display = "block";
+            window.redirect = "../html/Producto1vsMachine.html";
+            document.getElementById("fichaTecnica").innerHTML = "<iframe width='1500' height='1500' frameborder='0' scrolling='no'  marginheight='0' marginwidth='0' src='../html/Producto1vsMachine.html'> </iframe>"
         }
     }
 }

@@ -12,7 +12,7 @@ function elegirPeliMachine(){
             document.getElementById("sinopsis").innerHTML = myObj[randomNum].sinopsis;
             document.getElementById("poster").innerHTML = "<img width='400' height='400' src='" + myObj[randomNum].imagen + "'>";
         }
-    };
+    }
     xmlhttp.open("GET", "../json/peliculasSeries.json", true);
     xmlhttp.send();
 }
