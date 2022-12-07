@@ -157,10 +157,10 @@ function escribir(letra, id) {
         document.getElementById(id).style.backgroundColor = "#FF0040"; // cada vez que pulsemos una tecla esta pasa a color rojo
         partida1.comprobarLetra(letra); // comprobamos si la tecla está en la palabra 
         document.getElementById("tablero").innerHTML = partida1.tablero.join(''); //pintamos el nuevo tablero
-        if(partida1.ganador == true) { //  mostraremos la ficha de la pelicula
-            alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
-            document.getElementById("fichaTecnica").style.display = "block";
-        }
+    }
+    if(partida1.ganador == true) { //  mostraremos la ficha de la pelicula
+        alert("HAS CONSEGUIDO ADIVINAR LA PALABRA: HAS GANADOO :) !!!!!!!");
+        document.getElementById("fichaTecnica").style.display = "block";
     }
 }
 
@@ -231,6 +231,7 @@ function play(){
                 return leerObj(datos) 
             })
             .catch(error => console.log("Solicitud fallida", error));
+            document.getElementById("fichaTecnica").style.display="none";
     }
 
     /* Llamando a la función elegirPeliMachine() */
