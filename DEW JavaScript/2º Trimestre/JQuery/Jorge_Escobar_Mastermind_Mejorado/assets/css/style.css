@@ -1,0 +1,125 @@
+:root {
+    --diametroMonedaPequenia: 32px;
+    --diametroMonedaGrande: 64px;
+    --diametroMonedaCargando: 150px;
+    --anchoConf: 300px;
+}
+
+.imgLogo {
+    width: var(--diametroMonedaPequenia);
+}
+
+.tamanioMoneda {
+    width: var(--diametroMonedaGrande);
+    height: var(--diametroMonedaGrande);
+    z-index: 1000;
+}
+
+.monedaSolucion {
+    width: var(--diametroMonedaPequenia);
+    height: var(--diametroMonedaPequenia);
+    z-index: 999;
+}
+
+.monedaIntento {
+    background-color: gray;
+}
+
+.error {
+    font-size: small;
+    color: red;
+}
+
+#intentos {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 350px;
+}
+
+.fondo-info {
+    background-color: lightskyblue;
+    border: 2px solid lightskyblue;
+}
+
+.fondo-intentos {
+    background-color: #ffe8cd;
+    border: 2px solid #9f5700;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.partidaGanda {
+    background-color: lightgreen;
+    border: 2px solid green;
+}
+
+.partidaPerdida {
+    background-color: #ffbfaa;
+    border: 2px solid red;
+}
+
+#botonConfiguracion {
+    width: var(--anchoConf);
+    display: flex;
+    justify-content: end;
+}
+
+#configuracionPartida {
+    z-index: 1001;
+    position: absolute;
+    top: 50px;
+    background-color: lightskyblue;
+    border: 2px solid #409dc4;
+    width: var(--anchoConf); 
+}
+
+input[type="color"] {
+    width: var(--diametroMonedaPequenia);
+    height: var(--diametroMonedaPequenia);
+    border: none;
+    padding: 0;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+
+#fondoTransparente {
+    z-index: 2000;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.textoCargando {
+    height: 10vh;
+}
+
+.monedaCargando {
+    width: var(--diametroMonedaCargando);
+    width: var(--diametroMonedaCargando);
+}
+
+.loader {
+    width: 100%;
+    height: 90vh;
+    border-radius: 50%;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
