@@ -1,28 +1,39 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FRUTAS } from 'src/app/mock/mock-frutas';
 import { Fruta } from 'src/app/modelo/fruta';
+import { frutaServicio } from 'src/app/servicios/frutaServicio';
 
 @Component({
   selector: 'app-frutas',
   templateUrl: './frutas.component.html',
   styleUrls: ['./frutas.component.css']
 })
-export class FrutasComponent {
-  /* Asignando el valor de la constante FRUTAS a la variable frutas. */
+export default class FrutasComponent implements OnInit {
   frutas = FRUTAS;
-
-  /* Declarar una variable de tipo Fruta y también está declarando que puede ser indefinida. */
   frutaSeleccionada: Fruta | undefined;
-
-  /* Declarar una variable de tipo booleano y también declarar que puede ser indefinida. */
   mostrarFruta: boolean = false;
 
+
+
+  fruta: Fruta[] = [];
   /**
-   * La función toma un parámetro de tipo Fruta, y establece el valor de la propiedad frutaSeleccionada al valor del parámetro
-   * @param {Fruta} fruta - Fruta seleccionada
+   * La función toma un parámetro de tipo Fruta, y establece el valor de la propiedad frutaSeleccionada al valor del parámetro.
+   * @param {Fruta} fruta - Fruta que se ha seleccionado.
    */
   onSelect(fruta: Fruta){
     this.frutaSeleccionada = fruta;
+  }
+
+  ngOnInit(): void {
+    
+  }
+
+  constructor(private frutaService:frutaServicio){
+
+  }
+
+  getFrutas(): void{
+    this.fruta = this.frutaService.getFrutas();
   }
 
   /**
@@ -35,5 +46,9 @@ export class FrutasComponent {
     }else if(this.mostrarFruta === true){
       this.mostrarFruta = false;
     }
+  }
+
+  eliminarFruta(id: number){
+    this.fruta = this.frutaService.eliminarFruta(id);
   }
 }

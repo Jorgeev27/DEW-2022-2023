@@ -14,8 +14,6 @@ export class frutaServicio{
     getFrutas(): Fruta[]{
         return FRUTAS;
     }
-
-    /* Asignando el valor de la función `getFrutas()` a la variable `frutas`. */
     frutas = this.getFrutas();
 
     /**
@@ -23,6 +21,11 @@ export class frutaServicio{
      * @returns Variedad de frutas.
      */
     obtenerFrutas(){
+        return this.frutas;
+    }
+
+    eliminarFruta(id:number){
+        this.frutas = this.frutas?.filter((item)=>item.id !== id)
         return this.frutas;
     }
 }

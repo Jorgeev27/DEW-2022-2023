@@ -5,8 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FrutasComponent } from './components/frutas/frutas.component';
+import FrutasComponent from './components/frutas/frutas.component';
 import { FrutasDetallesComponent } from './components/frutas-detalles/frutas-detalles.component';
+import { CrearFrutaComponent } from './components/crear-fruta/crear-fruta.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { FrutasDetallesComponent } from './components/frutas-detalles/frutas-det
     HeaderComponent,
     FooterComponent,
     FrutasComponent,
-    FrutasDetallesComponent
+    FrutasDetallesComponent,
+    CrearFrutaComponent,
+    
   ],
   imports: [
     BrowserModule,
