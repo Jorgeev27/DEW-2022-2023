@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { IntroduccionMarvelComponent } from './components/introduccion-marvel/introduccion-marvel.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CardMarvelComponent } from './components/card-marvel/card-marvel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroduccionMarvelComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CardMarvelComponent
   ],
   imports: [
     BrowserModule,

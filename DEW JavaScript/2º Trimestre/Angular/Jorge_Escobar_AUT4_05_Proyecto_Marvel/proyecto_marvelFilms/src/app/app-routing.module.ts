@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
+import { CardMarvelComponent } from './components/card-marvel/card-marvel.component';
 
 const routes: Routes = [
-  {path: 'listaPeliculas', component: HeaderComponent}
+  {path: 'listaPeliculas', component: CardMarvelComponent}
 ];
 
 @NgModule({
