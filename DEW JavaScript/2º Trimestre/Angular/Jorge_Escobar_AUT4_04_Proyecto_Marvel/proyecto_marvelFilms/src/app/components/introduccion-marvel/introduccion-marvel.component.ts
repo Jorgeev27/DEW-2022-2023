@@ -7,9 +7,7 @@ import { PeliculaService } from 'src/app/services/pelicula.service';
   templateUrl: './introduccion-marvel.component.html',
 })
 export class IntroduccionMarvelComponent implements OnInit{
-
   ngOnInit(): void {
     
   }
-
 }

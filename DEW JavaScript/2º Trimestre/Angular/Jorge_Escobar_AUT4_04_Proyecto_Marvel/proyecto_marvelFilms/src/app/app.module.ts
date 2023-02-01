@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardMarvelComponent } from './components/card-marvel/card-marvel.component';
 import { HttpClientModule } from  '@angular/common/http';
+import { PipePipe } from './pipes/pipe.pipe';
+import { CardDetailComponent } from './components/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { HttpClientModule } from  '@angular/common/http';
     HeaderComponent,
     FooterComponent,
     CardMarvelComponent,
+    PipePipe,
+    CardDetailComponent,
   ],
   imports: [
     BrowserModule,
