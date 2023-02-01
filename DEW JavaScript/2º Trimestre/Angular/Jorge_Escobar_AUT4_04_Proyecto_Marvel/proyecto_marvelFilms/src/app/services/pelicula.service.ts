@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import { Subject, Observable } from "rxjs";
 import { Pelicula } from "../model/pelicula";
 
@@ -7,5 +8,5 @@ import { Pelicula } from "../model/pelicula";
 })
 
 export class PeliculaService{
-
+    
 }
