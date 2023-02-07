@@ -8,6 +8,8 @@ import { IntroduccionMarvelComponent } from './components/introduccion-marvel/in
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PeliculasMarvelComponent } from './components/peliculas-marvel/peliculas-marvel.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { PeliculasMarvelComponent } from './components/peliculas-marvel/pelicula
     IntroduccionMarvelComponent,
     HeaderComponent,
     FooterComponent,
-    PeliculasMarvelComponent
+    PeliculasMarvelComponent,
+    SeriesMarvelComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

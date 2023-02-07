@@ -4,6 +4,4 @@ import { Component } from '@angular/core';
   selector: 'app-introduccion-marvel',
   templateUrl: './introduccion-marvel.component.html',
 })
-export class IntroduccionMarvelComponent {
-
-}
+export class IntroduccionMarvelComponent {}
