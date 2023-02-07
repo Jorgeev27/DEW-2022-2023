@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PeliculasMarvelComponent } from './components/peliculas-marvel/peliculas-marvel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.component';
+import { DetallePeliculaMarvelComponent } from './components/detalle-pelicula-marvel/detalle-pelicula-marvel.component';
+import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel/crear-pelicula-marvel.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.
     HeaderComponent,
     FooterComponent,
     PeliculasMarvelComponent,
-    SeriesMarvelComponent
+    SeriesMarvelComponent,
+    DetallePeliculaMarvelComponent,
+    CrearPeliculaMarvelComponent
   ],
   imports: [
     BrowserModule,

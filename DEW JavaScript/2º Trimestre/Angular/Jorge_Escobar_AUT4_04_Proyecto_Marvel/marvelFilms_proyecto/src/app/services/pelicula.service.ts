@@ -42,4 +42,16 @@ export class PeliculaService{
         this.movie.push(peli);
         this.peli$ = of(this.movie);
     }
+
+    /**
+     * La función toma una identificación, luego filtra la matriz de películas para eliminar la
+     * película con la identificación coincidente, luego establece el observable peli$ en la nueva
+     * matriz de películas y finalmente llama a la función obtenerPeliculas() para actualizar la vista
+     * @param {number} id - número
+     */
+    borrarPeliculas(id: number){
+        this.movie = this.movie.filter((element) => element.id !== id)
+        this.peli$ = of(this.movie);
+        this.obtenerPeliculas();
+    }
 }

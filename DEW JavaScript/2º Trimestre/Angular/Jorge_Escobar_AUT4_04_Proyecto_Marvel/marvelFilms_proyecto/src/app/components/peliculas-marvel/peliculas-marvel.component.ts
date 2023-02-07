@@ -13,4 +13,15 @@ export class PeliculasMarvelComponent implements OnInit {
   ngOnInit() {
     this.pelis = this.peliSer.movie;
   }
+  
+  borrar(id: number){
+    this.peliSer.borrarPeliculas(id);
+    this.recargarPeliculas();
+  }
+
+  recargarPeliculas(){
+    this.peliSer.peli$?.subscribe((data) =>{
+      this.pelis = data;
+    })
+  }
 }
