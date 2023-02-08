@@ -8,6 +8,7 @@ import { PeliculasMarvelComponent } from './components/peliculas-marvel/pelicula
 import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.component';
 
 
+/* Definición de las rutas de la aplicación. */
 const routes: Routes = [
   {path: '', component: MainComponent},
   {path: 'marvel', component: IntroduccionMarvelComponent},
@@ -21,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

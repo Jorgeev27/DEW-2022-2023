@@ -24,7 +24,7 @@ export class PeliculaService{
     }
 
     /**
-     * Obtiene los datos de la API y luego los agrega al array de películas.
+     * La función obtenerPeliculas() obtiene los datos de la API y luego los agrega al array de películas.
      */
     obtenerPeliculas(){
         this.http.get<any>('https://www.qando.es/docs/films.php').subscribe(data => {
@@ -44,10 +44,10 @@ export class PeliculaService{
     }
 
     /**
-     * La función toma una identificación, luego filtra la matriz de películas para eliminar la
-     * película con la identificación coincidente, luego establece el observable peli$ en la nueva
-     * matriz de películas y finalmente llama a la función obtenerPeliculas() para actualizar la vista
-     * @param {number} id - número
+     * La función borrarPeliculas() toma una identificación, luego filtra el array de películas para eliminar la
+     * película con la identificación coincidente, luego establece el observable peli$ en el nuevo
+     * array de películas y finalmente llama a la función obtenerPeliculas() para actualizar la vista.
+     * @param {number} id - Identificador de la película a borrar
      */
     borrarPeliculas(id: number){
         this.movie = this.movie.filter((element) => element.id !== id)

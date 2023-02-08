@@ -33,4 +33,4 @@ import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
