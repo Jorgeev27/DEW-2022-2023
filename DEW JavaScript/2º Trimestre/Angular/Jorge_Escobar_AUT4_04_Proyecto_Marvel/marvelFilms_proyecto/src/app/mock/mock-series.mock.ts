@@ -1,10 +1,11 @@
 import { Serie } from "../model/serie";
 
+/* Creación de un array constante de objetos de tipo Serie. */
 export const SERIES: Serie[] = [
-    {id: 80, name: 'Daredevil'},
-    {id: 81, name: 'Agents of S.H.I.E.L.D.'},
-    {id: 82, name: 'Agent Carter'},
-    {id: 83, name: 'Inhumans'},
-    {id: 84, name: 'Helstrom'},
-    {id: 85, name: 'Cloak & Dagger'}
+    {id: 20080, name: 'Daredevil'},
+    {id: 20081, name: 'Agents of S.H.I.E.L.D.'},
+    {id: 20082, name: 'Agent Carter'},
+    {id: 20083, name: 'Inhumans'},
+    {id: 20084, name: 'Helstrom'},
+    {id: 20085, name: 'Cloak & Dagger'}
 ]
