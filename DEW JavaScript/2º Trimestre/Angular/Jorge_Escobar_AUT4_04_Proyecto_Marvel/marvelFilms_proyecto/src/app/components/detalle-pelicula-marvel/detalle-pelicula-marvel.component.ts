@@ -8,6 +8,7 @@ import { PeliculaService } from 'src/app/services/pelicula.service';
   templateUrl: './detalle-pelicula-marvel.component.html',
 })
 export class DetallePeliculaMarvelComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private servicePeli: PeliculaService) {}
 
   ngOnInit(): void {
     

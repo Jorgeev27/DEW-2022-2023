@@ -1,3 +1,4 @@
+/* Importación de la clase Serie desde el archivo model/serie.ts. */
 import { Serie } from "../model/serie";
 
 /* Creación de un array constante de objetos de tipo Serie. */

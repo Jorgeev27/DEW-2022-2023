@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Pelicula } from 'src/app/model/pelicula';
 import { PeliculaService } from 'src/app/services/pelicula.service';
 
