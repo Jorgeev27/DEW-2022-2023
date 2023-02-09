@@ -8,9 +8,12 @@ import { PeliculaService } from 'src/app/services/pelicula.service';
   templateUrl: './detalle-pelicula-marvel.component.html',
 })
 export class DetallePeliculaMarvelComponent implements OnInit {
+  /**
+   * El constructor es una función que se llama cuando se crea una nueva instancia de la clase.
+   * @param {ActivatedRoute} route - ActivatedRoute
+   * @param {PeliculaService} servicePeli - PeliculaServicio
+   */
   constructor(private route: ActivatedRoute, private servicePeli: PeliculaService) {}
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 }
