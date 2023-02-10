@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: 'marvel', component: IntroduccionMarvelComponent},
   {path: 'listaPeliculas', component: PeliculasMarvelComponent},
   {path: 'listaSeries', component: SeriesMarvelComponent},
-  {path: 'detallesPelicula', component: DetallePeliculaMarvelComponent},
+  {path: 'detallesPelicula/:id', component: DetallePeliculaMarvelComponent},
   {path: 'crearPelicula', component: CrearPeliculaMarvelComponent}
 ];
 

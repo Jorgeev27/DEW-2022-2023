@@ -27,8 +27,8 @@ export class PeliculaService{
      * La función obtenerPeliculas() obtiene los datos de la API y luego los agrega al array de películas.
      */
     obtenerPeliculas(){
-        this.http.get<any>('https://www.qando.es/docs/films.php').subscribe(data => {
-            data.forEach((element:Pelicula )=> {
+        this.http.get<any>('https://mcuapi.herokuapp.com/api/v1/movies').subscribe(data => {
+            data.data.forEach((element:Pelicula)=> {
                 this.agregarPeliculas(element);
             });
         });
@@ -52,6 +52,15 @@ export class PeliculaService{
     borrarPeliculas(id: number){
         this.movie = this.movie.filter((element) => element.id !== id)
         this.peli$ = of(this.movie);
-        this.obtenerPeliculas();
+        
+    }
+
+    buscarPelicula(id: number){
+        let peliculaEncontrada = this.movie.find((buscaPeli) => buscaPeli.id === id)!;
+        return peliculaEncontrada;
+    }
+
+    cogerId(){
+        return this.movie[this.movie.length -1].id;
     }
 }

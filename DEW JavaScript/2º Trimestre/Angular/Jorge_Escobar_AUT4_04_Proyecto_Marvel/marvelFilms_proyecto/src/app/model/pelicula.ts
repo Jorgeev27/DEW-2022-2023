@@ -1,6 +1,8 @@
 /* Creando una nueva interfaz llamada Pelicula. */
 export interface Pelicula{
     id: number,
-    name: string,
-    poster: string
+    title: string,
+    cover_url: string,
+    release_date: string,
+    overview: string
 }

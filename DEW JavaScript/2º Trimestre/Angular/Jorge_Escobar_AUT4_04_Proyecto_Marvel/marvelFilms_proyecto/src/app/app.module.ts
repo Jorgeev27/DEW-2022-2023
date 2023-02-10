@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.component';
 import { DetallePeliculaMarvelComponent } from './components/detalle-pelicula-marvel/detalle-pelicula-marvel.component';
 import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel/crear-pelicula-marvel.component';
+import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel
     PeliculasMarvelComponent,
     SeriesMarvelComponent,
     DetallePeliculaMarvelComponent,
-    CrearPeliculaMarvelComponent
+    CrearPeliculaMarvelComponent,
+    FaseUniversoPeliculaPipe
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,8 @@ export class PeliculasMarvelComponent implements OnInit {
   ngOnInit() {
     this.pelis = this.peliSer.movie;
   }
+
+  
   
   /**
    * La función borrar() toma una identificación como parámetro, llama a la función deleteMovie en el servicio de películas
