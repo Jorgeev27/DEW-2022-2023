@@ -13,6 +13,7 @@ import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.
 import { DetallePeliculaMarvelComponent } from './components/detalle-pelicula-marvel/detalle-pelicula-marvel.component';
 import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel/crear-pelicula-marvel.component';
 import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
+import { CaracterEspecialPeliculaPipe } from './pipes/caracterEspecialPelicula.pipe';
 
 /* El módulo principal de la aplicación. */
 @NgModule({
@@ -27,7 +28,8 @@ import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
     SeriesMarvelComponent,
     DetallePeliculaMarvelComponent,
     CrearPeliculaMarvelComponent,
-    FaseUniversoPeliculaPipe
+    FaseUniversoPeliculaPipe,
+    CaracterEspecialPeliculaPipe
   ],
   /* Importando los módulos que necesitamos usar en nuestra aplicación. */
   imports: [
@@ -35,7 +37,9 @@ import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
     AppRoutingModule,
     HttpClientModule
   ],
+  /* Una lista de servicios que están disponibles para toda la aplicación. */
   providers: [],
+  /* Decirle a Angular que AppComponent es el componente raíz de la aplicación. */
   bootstrap: [AppComponent]
 })
 export class AppModule {}

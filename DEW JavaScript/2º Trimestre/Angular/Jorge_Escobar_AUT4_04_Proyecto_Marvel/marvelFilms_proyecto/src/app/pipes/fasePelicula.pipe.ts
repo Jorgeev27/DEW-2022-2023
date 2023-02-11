@@ -28,6 +28,8 @@ export class FaseUniversoPeliculaPipe implements PipeTransform{
             fasePelicula = "3";
         }else if(fechaDePelicula >= 2020 && fechaDePelicula <= 2022){
             fasePelicula = "4";
+        }else if(fechaDePelicula >= 2023 && fechaDePelicula <= 2024){
+            fasePelicula = "5";
         }else{
             fasePelicula = "ERROR!! Fase de película desconocida";
         }

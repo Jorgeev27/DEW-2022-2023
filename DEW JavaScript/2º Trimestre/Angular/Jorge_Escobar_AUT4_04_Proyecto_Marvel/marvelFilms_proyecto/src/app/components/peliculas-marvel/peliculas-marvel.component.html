@@ -15,7 +15,7 @@
             <div class="card col-12 col-md-6 col-lg-4 g-4" *ngFor="let pelicula of pelis">
                 <img src="{{pelicula.cover_url}}" class="img-fluid imgCards mx-auto mt-4" alt="" style="width: 40%;">
                 <div class="card-body text-center">
-                    <h3 class="card-title text-center text-black">{{pelicula.title}}</h3>
+                    <h3 class="card-title text-center text-black">{{pelicula.title | caracterEspecialPelicula}}</h3>
                 </div>
                 <div class="card-footer">
                     <div class="row text-center">
