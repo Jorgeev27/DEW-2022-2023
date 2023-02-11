@@ -55,11 +55,21 @@ export class PeliculaService{
         
     }
 
+    /**
+     * La función buscarPelicula() toma un número de identificación como argumento y devuelve el objeto de película que
+     * tiene el mismo número de identificación que el argumento.
+     * @param {number} id - ID de la película que se encuentra
+     * @returns Película que se encontró.
+     */
     buscarPelicula(id: number){
         let peliculaEncontrada = this.movie.find((buscaPeli) => buscaPeli.id === id)!;
         return peliculaEncontrada;
     }
 
+    /**
+     * Devuelve la identificación de la última película en el array.
+     * @returns Último elemento del array.
+     */
     cogerId(){
         return this.movie[this.movie.length -1].id;
     }

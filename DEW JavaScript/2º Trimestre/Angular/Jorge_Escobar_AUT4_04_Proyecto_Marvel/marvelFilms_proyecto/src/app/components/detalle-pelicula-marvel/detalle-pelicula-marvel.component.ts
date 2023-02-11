@@ -1,3 +1,4 @@
+/* Importación de los componentes, servicios y modelos necesarios. */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Pelicula } from 'src/app/model/pelicula';
@@ -9,8 +10,9 @@ import { PeliculaService } from 'src/app/services/pelicula.service';
 })
 export class DetallePeliculaMarvelComponent implements OnInit {
 
-  peli: Pelicula ={id: 0, title: "", cover_url: "", release_date: "", overview: ""};
-
+  /* Creando un nuevo objeto de tipo Pelicula. */
+  peli: Pelicula = {id: 0, title: "", cover_url: "", release_date: "", overview: ""};
+  
   id: number = 0;
   title: string = "";
   cover_url: string = "";
@@ -25,10 +27,18 @@ export class DetallePeliculaMarvelComponent implements OnInit {
    */
   constructor(private route: ActivatedRoute, private servicePeli: PeliculaService) {}
 
+  /**
+   * La función ngOnInit() es un enlace de ciclo de vida que se llama después de que Angular haya
+   * inicializado todas las propiedades vinculadas a datos de una directiva.
+   */
   ngOnInit(): void {
     this.obtenerPelicula();
   }
 
+  /**
+   * La función obtenerPelicula() obtiene el ID de la película de la API y luego usa ese ID
+   * para encontrar la película en el array de películas.
+   */
   obtenerPelicula(){
     let peliId = Number(this.route.snapshot.paramMap.get('id'));
     this.peli = this.servicePeli.buscarPelicula(peliId);
@@ -39,6 +49,10 @@ export class DetallePeliculaMarvelComponent implements OnInit {
     this.overview = this.peli.overview;
   }
 
+  /**
+   * La función editarPelicula() toma como referencia la variable editar. Si es verdadera, configúrela como falsa y
+   * se muestra el formulario de editar la pelicula. Si la variable editar es falsa, configúrela como verdadera y no se muestra el formulario.
+   */
   editarPelicula(){
     if(this.editar === true){
       this.editar = false;
@@ -46,4 +60,9 @@ export class DetallePeliculaMarvelComponent implements OnInit {
       this.editar = true;
     }
   }
+
+  /* Una función que se utiliza para mostrar la descripción general de la película. */
+  maxLength = 300;
+  isClose: boolean = false;
+  onClick = () => this.isClose = !this.isClose;
 }

@@ -4,7 +4,7 @@ import { Pelicula } from 'src/app/model/pelicula';
 
 @Component({
   selector: 'app-peliculas-marvel',
-  templateUrl: './peliculas-marvel.component.html',
+  templateUrl: './peliculas-marvel.component.html'
 })
 export class PeliculasMarvelComponent implements OnInit {
   /* Declarar un array de objetos Pelicula. */

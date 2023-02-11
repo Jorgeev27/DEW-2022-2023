@@ -1,3 +1,4 @@
+/* Importación de los componentes que se utilizarán en la aplicación. */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel/crear-pelicula-marvel.component';
@@ -18,8 +19,10 @@ const routes: Routes = [
   {path: 'crearPelicula', component: CrearPeliculaMarvelComponent}
 ];
 
+/* Importando el RouterModule y las rutas definidas en la constante de rutas. */
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule {}

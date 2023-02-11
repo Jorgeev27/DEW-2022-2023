@@ -46,15 +46,21 @@
                             <br/>
                             <input type="text" class="form" id="poster">
                         </div>
-                        <button type="button" class="btn btn-primary">Enviar</button>
+                        <button type="button" class="btn btn-primary">Modificar</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="row mt-3">
-            <div class="col-12 col-md-12 col-lg-12">
-                <h2 class="text-center">{{overview}}</h2>
+            <div class="col-10 col-md-10 col-lg-10">
+                <h2 class="text-black">{{(overview.trim().length > 300 && isClose)? (overview | slice:0:300)+'...':(overview)}}</h2>
+            </div>
+            <div class="col-2 col-md-2 col-lg-2">
+                <button class="btn btn-primary" type="button" (click)="onClick()">
+                    {{isClose ? 'Ver más' : 'Ver menos'}}
+                </button>   
             </div>
         </div>
     </div>
 </div>
+<br/>

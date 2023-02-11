@@ -1,6 +1,6 @@
+/* Importando los módulos que necesitamos usar en nuestra aplicación. */
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
@@ -14,7 +14,9 @@ import { DetallePeliculaMarvelComponent } from './components/detalle-pelicula-ma
 import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel/crear-pelicula-marvel.component';
 import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
 
+/* El módulo principal de la aplicación. */
 @NgModule({
+  /* Declarando todos los componentes que vamos a utilizar en nuestra aplicación. */
   declarations: [
     AppComponent,
     MainComponent,
@@ -27,6 +29,7 @@ import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
     CrearPeliculaMarvelComponent,
     FaseUniversoPeliculaPipe
   ],
+  /* Importando los módulos que necesitamos usar en nuestra aplicación. */
   imports: [
     BrowserModule,
     AppRoutingModule,
