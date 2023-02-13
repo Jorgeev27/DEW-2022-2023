@@ -8,7 +8,6 @@ import { MainComponent } from './components/main/main.component';
 import { PeliculasMarvelComponent } from './components/peliculas-marvel/peliculas-marvel.component';
 import { SeriesMarvelComponent } from './components/series-marvel/series-marvel.component';
 
-
 /* Definición de las rutas de la aplicación. */
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -25,4 +24,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
+/* La clase AppRoutingModule es un módulo que contiene las rutas para la aplicación. */
 export class AppRoutingModule {}

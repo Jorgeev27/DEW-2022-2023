@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* El módulo principal de la aplicación. */
 @NgModule({
+
   /* Declarando todos los componentes que vamos a utilizar en nuestra aplicación. */
   declarations: [
     AppComponent,
@@ -45,4 +46,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   /* Decirle a Angular que AppComponent es el componente raíz de la aplicación. */
   bootstrap: [AppComponent]
 })
+
+/* Es una clase que está decorada con el decorador @NgModule */
 export class AppModule {}

@@ -10,7 +10,7 @@ import { Pipe, PipeTransform } from "@angular/core";
 export class FaseUniversoPeliculaPipe implements PipeTransform{
 
     /**
-     * Toma una cadena, la divide en un array, convierte el primer elemento de la matriz en un número
+     * La función transform() toma una cadena, la divide en un array, convierte el primer elemento de la matriz en un número
      * entero y luego lo compara con una serie de números para determinar a qué fase del Universo
      * Cinematográfico de Marvel pertenece la película.
      * @param {string} fecha - Fecha en la que se estrena la película para colocarla en su correspondiente fase.

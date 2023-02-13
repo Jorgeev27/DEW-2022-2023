@@ -8,8 +8,9 @@ import { Pipe, PipeTransform } from "@angular/core";
 
 /* La clase CaracterEspecialPeliculaPipe implementa el método de transformación. */
 export class CaracterEspecialPeliculaPipe implements PipeTransform{
+
     /**
-     * Toma una cadena, verifica si contiene dos puntos y, si los contiene, reemplaza los dos puntos
+     * La función transform() toma una cadena, verifica si contiene dos puntos y, si los contiene, reemplaza los dos puntos
      * con un espacio y un paréntesis izquierdo, y luego agrega un paréntesis derecho al final de la cadena.
      * @param {string} value - Valor a transformar.
      * @returns Valor de la variable cadena.

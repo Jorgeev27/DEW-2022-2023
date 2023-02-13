@@ -1,12 +1,17 @@
+/* Importación del componente, OnInit, PeliculaService y Pelicula desde el núcleo angular. */
 import { Component, OnInit } from '@angular/core';
 import { PeliculaService } from 'src/app/services/pelicula.service';
 import { Pelicula } from 'src/app/model/pelicula';
 
+/* Un decorador que se utiliza para definir los metadatos de la clase. */
 @Component({
   selector: 'app-peliculas-marvel',
   templateUrl: './peliculas-marvel.component.html'
 })
-export class PeliculasMarvelComponent implements OnInit {
+
+/* Exportando la clase PeliculasMarvelComponent e implementando la interfaz OnInit. */
+export class PeliculasMarvelComponent implements OnInit{
+
   /* Declarar un array de objetos Pelicula. */
   pelis: Pelicula[] = [];
   /**
@@ -23,16 +28,15 @@ export class PeliculasMarvelComponent implements OnInit {
     this.pelis = this.peliSer.movie;
   }
 
-  
-  
   /**
    * La función borrar() toma una identificación como parámetro, llama a la función deleteMovie en el servicio de películas
    * y luego llama a la función recargarPeliculas().
-   * @param {number} id - número
+   * @param {number} id - ID de la película que se quiere borrar.
    */
   borrar(id: number){
     this.peliSer.borrarPeliculas(id);
     this.recargarPeliculas();
+    alert("Película borrada con éxito");
   }
 
   /**

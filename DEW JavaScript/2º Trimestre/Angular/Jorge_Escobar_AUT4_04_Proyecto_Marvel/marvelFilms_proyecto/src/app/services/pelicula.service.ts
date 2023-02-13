@@ -1,13 +1,18 @@
+/* Importando los módulos necesarios para el funcionamiento del servicio. */
 import { Injectable } from "@angular/core";
 import { Pelicula } from "../model/pelicula";
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from "rxjs";
 
+/* Un decorador que le dice a Angular que este servicio debe ser creado por el inyector de la
+aplicación raíz. */
 @Injectable({
     providedIn: 'root',
 })
 
+/* Exportando la clase PeliculaService. */
 export class PeliculaService{
+
     /* Declarando un array de tipo Pelicula. */
     movie: Pelicula[] = [];
 
@@ -47,13 +52,22 @@ export class PeliculaService{
         }
     }
 
-    //ESTAS 2 FUNCIONES LAS HICE AHORA
+    /**
+     * La función tenerPeliculas() devuelve los datos del observable.
+     * @returns Datos del observable.
+     */
     tenerPeliculas(){
         return this.peli$?.subscribe((data) => {
             return data;
         })
     }
 
+    /**
+     * La función actualizarPelicula() toma una identificación y un objeto de Pelicula, luego encuentra la película con la
+     * identificación dada y luego actualiza la película con el objeto de Pelicula dado.
+     * @param {number} id - ID de la película.
+     * @param {Pelicula} peliMovie - Película.
+     */
     actualizarPelicula(id: number, peliMovie: Pelicula){
         let peliculaModificar = this.buscarPelicula(id);
         peliculaModificar.title = peliMovie.title;
@@ -68,7 +82,7 @@ export class PeliculaService{
      * La función borrarPeliculas() toma una identificación, luego filtra el array de películas para eliminar la
      * película con la identificación coincidente, luego establece el observable peli$ en el nuevo
      * array de películas y finalmente llama a la función obtenerPeliculas() para actualizar la vista.
-     * @param {number} id - Identificador de la película a borrar
+     * @param {number} id - ID de la película a borrar.
      */
     borrarPeliculas(id: number){
         this.movie = this.movie.filter((element) => element.id !== id)
@@ -79,7 +93,7 @@ export class PeliculaService{
     /**
      * La función buscarPelicula() toma un número de identificación como argumento y devuelve el objeto de película que
      * tiene el mismo número de identificación que el argumento.
-     * @param {number} id - ID de la película que se encuentra
+     * @param {number} id - ID de la película que se encuentra.
      * @returns Película que se encontró.
      */
     buscarPelicula(id: number){
@@ -88,7 +102,7 @@ export class PeliculaService{
     }
 
     /**
-     * Devuelve la identificación de la última película en el array.
+     * La función cogerId() devuelve la identificación de la última película en el array.
      * @returns Último elemento del array.
      */
     cogerId(){
