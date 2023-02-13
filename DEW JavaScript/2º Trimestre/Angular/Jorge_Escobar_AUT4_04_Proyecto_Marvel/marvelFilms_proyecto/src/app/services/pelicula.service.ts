@@ -39,8 +39,29 @@ export class PeliculaService{
      * @param {Pelicula} peli - Película.
      */
     agregarPeliculas(peli: Pelicula){
-        this.movie.push(peli);
+        if(this.movie.find(element => peli === element)){
+            alert("ERROR!!! Pelicula con mismo ID");
+        }else{
+            this.movie.push(peli);
+            this.peli$ = of(this.movie);
+        }
+    }
+
+    //ESTAS 2 FUNCIONES LAS HICE AHORA
+    tenerPeliculas(){
+        return this.peli$?.subscribe((data) => {
+            return data;
+        })
+    }
+
+    actualizarPelicula(id: number, peliMovie: Pelicula){
+        let peliculaModificar = this.buscarPelicula(id);
+        peliculaModificar.title = peliMovie.title;
+        peliculaModificar.release_date = peliMovie.release_date;
+        peliculaModificar.overview = peliMovie.overview;
+        peliculaModificar.cover_url = peliMovie.cover_url;
         this.peli$ = of(this.movie);
+        this.tenerPeliculas();
     }
 
     /**

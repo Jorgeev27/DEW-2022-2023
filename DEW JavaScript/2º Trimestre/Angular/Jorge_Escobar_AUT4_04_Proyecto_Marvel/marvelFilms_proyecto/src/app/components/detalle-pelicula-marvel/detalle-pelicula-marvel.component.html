@@ -25,29 +25,27 @@
             </div>
             <div class="col-12 col-md-6 col-lg-6" *ngIf="editar===true">
                 <div class="form text-center">
-                    <form>
-                        <div class="mb-3">
-                            <label for="titulo" class="form">Titulo:</label>
-                            <br/>
-                            <input type="text" class="form" id="titulo">
-                        </div>
-                        <div class="mb-3">
-                            <label for="lanzamiento" class="form">Año lanzamiento:</label>
-                            <br/>
-                            <input type="email" class="form" id="lanzamiento">
-                        </div>
-                        <div class="mb-3">
-                            <label for="sinopsis" class="form">Sinopsis:</label>
-                            <br/>
-                            <input type="text" class="form" id="sinopsis">
-                        </div>
-                        <div class="mb-3">
-                            <label for="poster" class="form">Póster:</label>
-                            <br/>
-                            <input type="text" class="form" id="poster">
-                        </div>
-                        <button type="button" class="btn btn-primary">Modificar</button>
-                    </form>
+                    <div class="mb-3">
+                        <label for="titulo" class="form">Titulo:</label>
+                        <br/>
+                        <input type="text" [(ngModel)]="peliculaSeleccionada.title" placeholder="Iron Man"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lanzamiento" class="form">Año lanzamiento:</label>
+                        <br/>
+                        <input type="text" [(ngModel)]="peliculaSeleccionada.release_date" placeholder="2020-01-01"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sinopsis" class="form">Sinopsis:</label>
+                        <br/>
+                        <input type="text" [(ngModel)]="peliculaSeleccionada.overview" placeholder="Sinopsis de la película"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="poster" class="form">Póster:</label>
+                        <br/>
+                        <input type="text" [(ngModel)]="peliculaSeleccionada.cover_url" placeholder="Póster de la película"/>
+                    </div>
+                    <button type="button" class="btn btn-primary" (click)="modificarPelicula(id, peliculaSeleccionada)" [routerLink]="['/listaPeliculas']">Modificar</button>
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ import { DetallePeliculaMarvelComponent } from './components/detalle-pelicula-ma
 import { CrearPeliculaMarvelComponent } from './components/crear-pelicula-marvel/crear-pelicula-marvel.component';
 import { FaseUniversoPeliculaPipe } from './pipes/fasePelicula.pipe';
 import { CaracterEspecialPeliculaPipe } from './pipes/caracterEspecialPelicula.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /* El módulo principal de la aplicación. */
 @NgModule({
@@ -35,7 +36,9 @@ import { CaracterEspecialPeliculaPipe } from './pipes/caracterEspecialPelicula.p
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   /* Una lista de servicios que están disponibles para toda la aplicación. */
   providers: [],

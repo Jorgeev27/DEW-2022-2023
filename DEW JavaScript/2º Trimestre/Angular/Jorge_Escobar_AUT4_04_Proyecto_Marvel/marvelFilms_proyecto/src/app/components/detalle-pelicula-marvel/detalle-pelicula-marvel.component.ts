@@ -19,6 +19,7 @@ export class DetallePeliculaMarvelComponent implements OnInit {
   release_date: string = "";
   overview: string = "";
   editar:boolean=false;
+  peliculaSeleccionada: Pelicula = {id: 0, title: "", release_date: "", overview: "", cover_url:""};
 
   /**
    * El constructor es una función que se llama cuando se crea una nueva instancia de la clase.
@@ -47,6 +48,12 @@ export class DetallePeliculaMarvelComponent implements OnInit {
     this.cover_url = this.peli.cover_url;
     this.release_date = this.peli.release_date;
     this.overview = this.peli.overview;
+  }
+
+  //ESTA FUNCIÓN LA HICE AHORA
+  modificarPelicula(id: number, peliculaSeleccionada: Pelicula){
+    this.servicePeli.actualizarPelicula(id, peliculaSeleccionada);
+    alert("Película modificada con éxito");
   }
 
   /**

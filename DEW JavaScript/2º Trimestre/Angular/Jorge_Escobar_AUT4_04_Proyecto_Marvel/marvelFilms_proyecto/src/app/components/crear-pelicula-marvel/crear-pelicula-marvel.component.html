@@ -4,27 +4,27 @@
             <h2 class="text-center text-black text-decoration-underline fw-bold">Añadir Película</h2>
         </div>
     </div>
-    <div class="form text-center">
-        <form>
+    <div class="text-center">
+        <form [formGroup]="formInsertar" (ngSubmit)="enviarPelicula()">
             <div class="mb-3">
                 <label for="titulo" class="form">Titulo:</label>
                 <br/>
-                <input type="text" class="form" id="titulo">
+                <input type="text" class="form" id="titulo" formControlName="title">
             </div>
             <div class="mb-3">
                 <label for="lanzamiento" class="form">Año lanzamiento:</label>
                 <br/>
-                <input type="email" class="form" id="lanzamiento">
+                <input type="email" class="form" id="lanzamiento" formControlName="release_date">
             </div>
             <div class="mb-3">
                 <label for="sinopsis" class="form">Sinopsis:</label>
                 <br/>
-                <input type="text" class="form" id="sinopsis">
+                <input type="text" class="form" id="sinopsis" formControlName="overview">
             </div>
             <div class="mb-3">
                 <label for="poster" class="form">Póster:</label>
                 <br/>
-                <input type="text" class="form" id="poster">
+                <input type="text" class="form" id="poster" formControlName="cover_url">
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
