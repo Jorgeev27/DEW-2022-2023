@@ -1,0 +1,17 @@
+El proyecto lo he divido en las siguientes carpetas:
+
+components(donde tenemos los componentes necesarios para crear nuestra aplicación).
+
+Dentro de componentes tenemos detalles-personaje: que te da los detalles del personaje.
+                              footer: footer de la aplicacion
+                              header: header de la aplicacion
+                              main: página principal de la aplicacion
+                              personajes-mock: los personajes del mock de la aplicacion
+                              personajes-api: los personajes cogidas de la API
+mock(mock de los personajes).
+model(modelo de los personajes).
+pipes(pipes para el género según el personaje).
+services(el servicio de la aplicación).
+routing (ruteo)
+app-component
+app-module

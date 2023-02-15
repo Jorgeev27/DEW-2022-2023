@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 col-md-12 col-lg-12">
+            <h2 class="text-center text-black text-decoration-underline fw-bold">Lista de Personajes</h2>
+        </div>
+    </div>
+    <div class="row mt-3 row-cols-1 row-cols-md-2 g-4">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let personajes of person">
+            <div class="card">
+                <h3 class="card-title text-center text-black">{{personajes.name}}</h3>
+                <div class="card-body text-center">
+                    <h3 class="card-title text-center text-black">Gender: {{personajes.gender}}</h3>
+                </div>
+                <div class="card-footer text-muted">
+                    <h6 class="">{{personajes.description}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>

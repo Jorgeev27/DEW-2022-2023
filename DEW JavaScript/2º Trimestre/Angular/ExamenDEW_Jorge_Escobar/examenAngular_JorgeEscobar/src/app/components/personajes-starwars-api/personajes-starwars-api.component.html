@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-12 col-md-12 col-lg-12">
+            <h2 class="text-center text-black text-decoration-underline fw-bold">Lista de Personajes</h2>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12 col-md-12 col-lg-12 text-center">
+            <button type="button" class="btn btn-warning text-black" routerLink="/crearPelicula">Añadir Película</button>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+            <div class="card col-12 col-md-6 col-lg-4 g-4" *ngFor="let personajes of perso">
+                <div class="card-body text-center">
+                    <h3 class="card-title text-center text-black">{{personajes.name}}</h3>
+                </div>
+                <div class="card-footer">
+                    <div class="row text-center">
+                        <div class="col-6 col-md-6 col-lg-6">
+                            <button type="button" class="btn btn-primary" routerLink="/detallesPersonaje/{{personajes.id}}">Detalles</button>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6">
+                            <button type="button" class="btn btn-danger" (click)="borrar(personajes.id)">Borrar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<br/>
